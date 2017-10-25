@@ -35,6 +35,10 @@
     border-bottom: 3px solid #424951;
 }
 
+.footer {
+    clear:both;
+    width:100%;
+}
 
 /* header */
 .header-top {
@@ -44,22 +48,27 @@
     clear: both;
 }
 
-.header-bottom {
-    width: 960px;
-    height: 200px;
-    margin: 10px auto;
-	clear:both;
+.header-left {
+    width: 480px;
+    height: 70px;
+    float: left;
+}
+
+.header-right {
+    width: 480px;
+    height: 70px;
+    float: left;
 }
 
 /* footer */
 .footer {
-	clear:both;
-    width:960px;
-    height:100%;
-    margin:0px auto;
-    text-align:left;
+    width:100%;
+    height:50px;
+    margin:5px auto;
+    text-align:center;
     background-color: #ffffff;
-    margin-bottom: 10px;
+    line-height: 50px;
+    border-top:1px solid #cccccc;
 }
 
 /* menu */

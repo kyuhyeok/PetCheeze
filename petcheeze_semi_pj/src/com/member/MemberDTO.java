@@ -5,7 +5,9 @@ public class MemberDTO {
 	private String userEmail, email1, email2;
 	private String  userName, addr0, addr1, addr2;
 	private String tel, tel1,tel2,tel3;
+	private String userPwd, birth, pname;  //pname¿∫ ∆Í¿Ã∏ß
 	private String createdDate, modifyDate;
+	
 	public String getUserEmail() {
 		return userEmail;
 	}
@@ -102,7 +104,7 @@ public class MemberDTO {
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
-	private String userPwd, birth, pname;  //pname¿∫ ∆Í¿Ã∏ß
+	
 	
 	
 	

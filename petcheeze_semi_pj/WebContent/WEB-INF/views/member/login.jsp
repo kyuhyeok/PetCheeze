@@ -92,7 +92,11 @@ function sendLogin() {
 			 	    <td><input type="text" name="userId" style="height:37px;border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;"></td>
 			 	    
 			 	    <td rowspan="2" width="150px">
-			      	 <input type="image" src="/resource/images/btn_login.png" style="height: 84px;" onclick="sendLogin()">
+			      	 <a>
+			      	  <img src="<%=cp %>/resource/images/btn_login.png" width="120px" height="84px">
+			      	 </a>
+			      	 
+			 	    
 			 	    </td>
 			 	  </tr>
 			 	  <tr style="border: 1px solid #cccccc;">
@@ -123,7 +127,7 @@ function sendLogin() {
 			 	     </a>
 			 	   </td>
 			 	   <td style="width: 200px;" align="center">
-			 	   <input type="image" src="/resource/images/join.png" style="height: 40px">
+			 	   <input type="image" src="<%=cp %>/resource/images/join.png" style="height: 40px">
 			 	   </td>
 				  </tr>
 		

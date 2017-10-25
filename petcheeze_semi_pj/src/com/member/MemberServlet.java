@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @ WebServlet("/member/*")
 public class MemberServlet extends HttpServlet {
@@ -50,6 +51,46 @@ public class MemberServlet extends HttpServlet {
 	
 	protected void loginSubmit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		
+		HttpSession session = req.getSession();
+		
+		MemberDAO dao = new MemberDAO();
+		String email = req.getParameter("userId");
+		String pwd = req.getParameter("userPwd");
+		
+		MemberDTO dto = dao.readMember(email);
+		
+		if(dto==null||!dto.getUserPwd().equals(pwd)) {
+			req.setAttribute("message", "아이디 또는 패스워드가 일치하지 않습니다.");
+			forward(req, resp, "/WEB-INF/views/member/login.jsp");
+			return;
+		}
+		
+		SessionInfo info = new SessionInfo();
+		info.setUserId(email);
+		info.setUserName(dto.getUserName());
+		
+		session.setAttribute("member", info);
+		String cp = req.getContextPath();
+		resp.sendRedirect(cp);
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
