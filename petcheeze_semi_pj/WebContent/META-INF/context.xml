@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context><!--Resource name="jdbc/myoracle"은 아무거나 설정 가능-->
+        <Resource name="jdbc/myoracle" auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="oracle.jdbc.driver.OracleDriver"
+              url="jdbc:oracle:thin:@192.168.40.37:1521:XE"
+              username="pet" password="java0321"
+              maxActive="20" maxIdle="10"
+              maxWait="-1"/>
+</Context>
