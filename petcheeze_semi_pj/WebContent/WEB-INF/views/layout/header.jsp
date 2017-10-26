@@ -52,7 +52,7 @@ $(function(){
     <div class="header-bottom">
 
             <a href="<%=cp%>/" style="text-decoration: none;display:block; margin-left:260px; margin-right:260px;">
-                <img src="resource\images\펫치즈.PNG" style="max-width: 300px; max-height: 300px; display:block; margin-bottom:10px; margin-left:auto; margin-right:auto;">
+                <img src="<%=cp%>/resource/images/petcheeze.PNG" style="max-width: 400px; max-height: 400px; display:block; margin-left:auto; margin-right:auto;">
             </a>
     </div> 
 
@@ -60,28 +60,28 @@ $(function(){
 <div class="menu">
     <ul class="nav">
         <li>
-            <a href="#" style="margin:auto;">육포</a>
+            <a href="#" style="margin:35px 35px; text-align:center;">육포</a>
         </li>
         
         <li>
-            <a href="#" style="margin:auto;">뼈&껌</a>
+            <a href="#" style="margin:35px 35px; text-align:center;">뼈&껌</a>
         </li>       
 
         <li>
-            <a href="#" style="margin:auto;">영양파우더</a>        
+            <a href="#" style="margin:35px 35px; text-align:center;">영양파우더</a>        
         </li>
 
         <li>
-            <a href="#" style="margin:auto;">말이&큐브</a>        
+            <a href="#" style="margin:35px 35px; text-align:center;">말이&큐브</a>        
         </li>
         
         <li>
-            <a href="#" style="margin:auto;">세트메뉴</a>   
+            <a href="#" style="margin:35px 35px; text-align:center;">세트메뉴</a>   
         </li>
 
         <li>
-        	 <a href="#" style="margin:auto;">공지사항</a>
+        	 <a href="#" style="margin:35px 35px; text-align:center;">공지사항</a>
         </li> 
-      
+      </ul>
 </div>
 <div class="body-space"></div>
