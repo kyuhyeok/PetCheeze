@@ -13,7 +13,8 @@
 <title>spring</title>
 
 <link rel="stylesheet" href="<%=cp%>/resource/css/menu.css" type="text/css">	<!-- menu용 CSS(규혁) -->
-
+<link rel="stylesheet" href="<%=cp%>/resource/css/style.css" type="text/css">
+<link rel="stylesheet" href="<%=cp%>/resource/css/layout.css" type="text/css">
 </head>
 <body>
 

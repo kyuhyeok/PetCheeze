@@ -189,7 +189,7 @@
         
         .main1_2_board{
             position:relative;
-            width:370px;
+            width:358px;
             height:168px;
             padding:5px;
             border:1px solid #e5e4e4;
@@ -203,14 +203,14 @@
         }
         
         .board_sj{
-            padding: 5 0 0px 10px;
+            padding: 5px 0 0 10px;
             vertical-align:middle;
             width:106px;
             height:35px;
         }
         
         .bestbox_title{
-            margin:60 auto 40;
+            margin:60px auto 40px;
             width:1150px;
             text-align: center;
             height:43px;
