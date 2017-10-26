@@ -21,6 +21,22 @@
   </error-page>
   -->
   
+  <filter>
+  	<filter-name>characterEncoding</filter-name>
+  	<filter-class>com.filter.CharacterEncodingFilter</filter-class>
+  	
+  	<init-param>
+  	 <param-name>charset</param-name>
+  	 <param-value>utf-8</param-value>
+  	</init-param>
+  	
+  </filter>
+  <filter-mapping>
+   <filter-name>characterEncoding</filter-name>
+   <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
   
   <context-param>
   	<param-name>server</param-name>
@@ -35,6 +51,7 @@
   	<param-value>java$!</param-value>
   </context-param> 
   
+  
   <servlet>
   	<servlet-name>demoServlet</servlet-name>
     <servlet-class>com.demo1.DemoServlet</servlet-class>
@@ -46,8 +63,9 @@
     	<param-name>city</param-name>
     	<param-value>seoul</param-value>
     </init-param>
-    
   </servlet>
+  
+  
   <servlet-mapping>
     <servlet-name>demoServlet</servlet-name>
     <url-pattern>/demo</url-pattern>

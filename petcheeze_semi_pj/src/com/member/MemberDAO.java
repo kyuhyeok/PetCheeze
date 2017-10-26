@@ -13,12 +13,15 @@ public class MemberDAO {
 		PreparedStatement pstmt= null;
 		StringBuffer sb= new StringBuffer();
 		ResultSet rs = null;
-		Connection conn=null;
 		
+		Connection conn=null;
+		System.out.println(userEmail);
 		try {
+			
 			conn=DBCPConn.getConnection();
+			
 			sb.append("SELECT m1.email email, name, addr0,addr1,addr2,tel");
-			sb.append("       pwd,birth,pname");
+			sb.append("       ,pwd,birth,pname");
 			sb.append(" FROM member1 m1");
 			sb.append(" LEFT OUTER JOIN member2 m2 ");
 			sb.append(" ON m1.email=m2.email");
@@ -27,7 +30,7 @@ public class MemberDAO {
 			pstmt=conn.prepareStatement(sb.toString());
 			pstmt.setString(1, userEmail);
 			rs=pstmt.executeQuery();
-			
+		
 			if(rs.next()) {
 				dto=new MemberDTO();
 				dto.setUserEmail(rs.getString("email"));
@@ -36,6 +39,7 @@ public class MemberDAO {
 					dto.setEmail1(ss[0]);
 					dto.setEmail2(ss[0]);
 				}
+				
 				dto.setUserName(rs.getString("name"));
 				dto.setUserPwd(rs.getString("pwd"));
 				dto.setBirth(rs.getString("birth"));
@@ -61,7 +65,7 @@ public class MemberDAO {
 			if(conn!=null)
 				DBCPConn.close(conn);
 		}
-		
+	
 		return dto;
 	}
 	

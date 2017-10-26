@@ -34,7 +34,7 @@ public class MemberServlet extends HttpServlet {
 		req.setCharacterEncoding("utf-8");
 		
 		String uri = req.getRequestURI();
-		System.out.println(uri);
+	
 		//uri에 따른 작업 구분
 		if(uri.indexOf("login.do")!=-1) {
 			loginForm(req,resp);
@@ -58,6 +58,8 @@ public class MemberServlet extends HttpServlet {
 		String pwd = req.getParameter("userPwd");
 		
 		MemberDTO dto = dao.readMember(email);
+		//System.out.println(dto.getUserEmail());
+		//System.out.println(dto.getUserPwd());
 		
 		if(dto==null||!dto.getUserPwd().equals(pwd)) {
 			req.setAttribute("message", "아이디 또는 패스워드가 일치하지 않습니다.");
@@ -70,7 +72,10 @@ public class MemberServlet extends HttpServlet {
 		info.setUserName(dto.getUserName());
 		
 		session.setAttribute("member", info);
+		
+		System.out.println("로그인성공");
 		String cp = req.getContextPath();
+		
 		resp.sendRedirect(cp);
 		
 	}

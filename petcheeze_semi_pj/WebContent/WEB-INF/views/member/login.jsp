@@ -92,10 +92,8 @@ function sendLogin() {
 			 	    <td><input type="text" name="userId" style="height:37px;border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;"></td>
 			 	    
 			 	    <td rowspan="2" width="150px">
-			      	 <a>
-			      	  <img src="<%=cp %>/resource/images/btn_login.png" width="120px" height="84px">
-			      	 </a>
 			      	 
+			      	  <input type="image" src="<%=cp %>/resource/images/btn_login.png" width="120px" height="84px" onclick="sendLogin()">
 			 	    
 			 	    </td>
 			 	  </tr>
@@ -108,7 +106,7 @@ function sendLogin() {
 			 	<table>
 
 			 	 <tr align="center" height="40" >
-			    	<td><span style="color: blue;">메세지 나올곳..${message}</span></td>
+			    	<td><span style="color: blue;">${message}</span></td>
 			 	 </tr>
 			 	</table>
 			 	
