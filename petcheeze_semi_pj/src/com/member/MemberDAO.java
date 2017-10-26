@@ -15,7 +15,7 @@ public class MemberDAO {
 		ResultSet rs = null;
 		
 		Connection conn=null;
-		System.out.println(userEmail);
+		
 		try {
 			
 			conn=DBCPConn.getConnection();

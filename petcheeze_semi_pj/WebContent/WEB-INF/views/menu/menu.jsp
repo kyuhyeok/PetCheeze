@@ -5,15 +5,16 @@
 <%
    String cp = request.getContextPath();
 %>
-
+<!--작성자 : 규혁 -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>spring</title>
+<title>PetCheeze</title>
 
 <link rel="stylesheet" href="<%=cp%>/resource/css/menu.css" type="text/css">	<!-- menu용 CSS(규혁) -->
-
+<link rel="stylesheet" href="<%=cp%>/resource/css/style.css" type="text/css">
+<link rel="stylesheet" href="<%=cp%>/resource/css/layout.css" type="text/css">
 </head>
 <body>
 
@@ -38,7 +39,7 @@
 	    <ul class="menu_list">
 	        <li class="menu_list_li">
 	            <div class="box">
-	                <a href="/product/detail.html?product_no=31&cate_no=24&display_group=1" name="anchorBoxName_31"><img src="//www.petcheeze.co.kr/web/product/medium/201701/31_shop1_468859.jpg" id="eListPrdImage31_1" alt="" class="thumb"/></a>
+	                <a href="/product/detail.html?product_no=31&cate_no=24&display_group=1"><img src="//www.petcheeze.co.kr/web/product/medium/201701/31_shop1_468859.jpg" class="thumb"/></a>
 	                <p class="name_box">
 	                    <a href="/product/detail.html?product_no=31&cate_no=24&display_group=1"><span class="name">오리안심져키(50g)</span></a>
 	                </p>
