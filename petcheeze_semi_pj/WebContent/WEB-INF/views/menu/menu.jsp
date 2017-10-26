@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <title>spring</title>
 
-<link rel="stylesheet" href="<%=cp%>/resource/css/main.css" type="text/css">	<!-- menu용 CSS(규혁) -->
+<link rel="stylesheet" href="<%=cp%>/resource/css/menu.css" type="text/css">	<!-- menu용 CSS(규혁) -->
 
 </head>
 <body>
