@@ -13,39 +13,12 @@ body {
 
 a {
     cursor: pointer;
-    color: #000000;
+    color: #7f7f7f;
     text-decoration: none;
-    /* line-height: 150%; */
-	/* box-sizing: border-box;*/  /* padding과 border는 크기에 포함되지 않음 */
 }
 a:hover, a:active {
-    color: #F28011;
+    color: #7f7f7f;
     text-decoration: underline;
-}
-
-.btn {
-    color:#333333;
-    font-weight:500;
-    font-family:"Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
-    border:1px solid #cccccc;
-    background-color:#fff;
-    text-align:center;
-    cursor:cursor;
-    padding:3px 10px 5px;
-    border-radius:4px;
-}
-.btn:active, .btn:focus, .btn:hover {
-    background-color:#e6e6e6;
-    border-color: #adadad;
-    color: #333333;
-}
-.btn[disabled], fieldset[disabled] .btn {
-    pointer-events: none;
-    cursor: not-allowed;
-    filter: alpha(opacity=65);
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    opacity: .65;
 }
 
 .btnConfirm {
@@ -60,10 +33,10 @@ a:hover, a:active {
 }
 
 .boxTF {
-    border:1px solid #999999;
-    padding:3px 5px 5px;
-    border-radius:4px;
-    background-color:#ffffff;
+    border:1px solid #e7e8ea;
+    height : 30px;
+    text-align:left;
+    width : 191px;
     font-family:"Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
 }
 .boxTF[readonly] {
@@ -72,9 +45,10 @@ a:hover, a:active {
 }
 
 .selectField {
-    border:1px solid #999999;
-    padding:2px 5px 4px;
-    border-radius:4px;
+    border:1px solid #e7e8ea;
+    height : 30px;
+    text-align:left;
+    width : 85px;
     font-family:"Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
 }
 

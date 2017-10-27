@@ -72,7 +72,6 @@ function sendLogin() {
 <body>
 
 <div class="header">
-   
 </div>
 	
 <div class="container">
