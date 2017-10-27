@@ -200,6 +200,7 @@ h2{
 }
 
 .bestbox_title{
+	clear: both;
     margin:60px auto 40px;
     width:1150px;
     text-align: center;
@@ -209,16 +210,19 @@ h2{
 }
 
 .bestbox_content{
-    width:1150px;
+	text-align:center;
     height:220px; 
     position:relative;
     border-top:1px solid #ffffff;
     border-bottom:1px solid #d1d1d2;
 }
 
+.bestbox_content ul{display:inline-block; *display:inline; zoom:1;}
+
+.bestbox_content ul li{float:left; margin-left:-1px; z-index:1;}
+
 .prdList{
-    float:center;
-    align:center;
+    float:left;
     margin: 0 20px 20 20px;
     width:220px;
     height:220px;
