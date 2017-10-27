@@ -41,7 +41,7 @@
 }
 
 .odbtn{
-	width: 90px;
+	width: 100px;
 	height: 30px;
 	background-color: black;
 	color:white;
@@ -56,7 +56,40 @@
 	text-align: center;
 	border-radius: 5px;
 }
+.userInfo{
+	border: 5px solid #eeeeee;
+	width: 1150px; 
+	height: 90px;
+	margin-bottom: 50px;
+	padding: 5px 5px 5px 10px;
+
+}
+.carttable2{
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border: 1px solid black;
+	width: 1140px;
+	margin: 30px auto;
+}
+.carttable2 th{
+	height: 40px;
+	text-align: center;
+	background-color: #f5f5f5;
+}
+.carttable2 td{
+	height: 60px;
+	text-align: center;
+	border-right: 1px solid #eeeeee;
+}
+.stepImg{
+	width: 1100px;
+	height : 50px;
+	margin: 20px auto 30px;
+}
+
 </style>
+
+
 <script type="text/javascript">
 function updateCnt(){
 	
@@ -70,6 +103,31 @@ function updateCnt(){
 
 <div style="width: 1150px; margin: 50px auto;" >
 <form name="cartForm">
+
+
+<ul style="margin: 50px auto 20px;">
+	<li style="list-style: none; text-align: center;">c a r t</li>
+</ul>
+
+<div align="center">
+	<img class="stepImg" src="<%=cp%>/resource/images/img_step1.gif">
+</div>
+
+<div class="userInfo">
+	<div style="border-right: 1px solid #eeeeee; width: 105px; height:50px; float: left; margin: 10px 3px; padding-top: 10px; padding-left: 20px; ">혜택정보</div>
+	<div style="float: left;">
+		<div style="width : 1000px;height:32px; clear: both; padding-left: 10px; padding-top: 5px; border-bottom: 1px solid #cccccc">박가람님</div>
+		<div style="width : 1000px;height:32px; clear: both; padding-left: 10px; padding-top: 5px;">
+		<span>가용적립금 : </span>
+		<span style="color: #ff8aa9;">3000원</span>   
+		<span>쿠폰 : </span>
+		<span style="color: #ff8aa9;">0개</span>  
+		</div>
+	</div>
+</div>
+
+
+
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">국내배송상품</a></li>
   <li role="presentation"><a href="#">해외배송상품</a></li>
@@ -123,9 +181,7 @@ function updateCnt(){
 		<td style="border-right: 1px solid #cccccc">5000원<br>조건</td>
 		<td style="border-right: 1px solid #cccccc">11600원</td>
 		<td style="border-right: 1px solid #cccccc">
-			<button type="button" class="odbtn">
-  				<span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span> 주문하기
-			</button><br>
+			<button type="button" class="odbtn"> 주문하기</button><br>
 			<button type="button" class="odbtn">관심상품등록</button><br>
 			<button type="button" class="odbtn">삭제</button>
 		</td>	
@@ -161,7 +217,7 @@ function updateCnt(){
   	</tr>
   </table>
 
-	<table class="carttable">
+	<table class="carttable2">
 		<tr height="40px">
 		  <th>총 상품구매</th>
 		  <th>총 배송비</th>
@@ -170,10 +226,36 @@ function updateCnt(){
 		<tr height="60">
 		  <td>33600원</td>
 		  <td>+5000원</td>
-		  <td style="border-right: 1px solid #cccccc">38600원</td>
+		  <td style="border-right: 1px solid black;">38600원</td>
 		</tr>	
 	</table>
 
+	<div style="text-align: center; margin: 30px auto 70px;">
+		 <button type="button" class="btn btn-primary btn-lg">전체상품주문</button>
+		<button type="button" class="btn btn-default btn-lg active">선택상품주문</button>
+	</div>
+	
+	
+  <div style="border: 2px solid #ededed; padding: 10px;">
+	<div style="border-bottom: 2px solid #ededed; height: 30px;">이용안내</div>
+	<div class="content">
+        <h4>장바구니 이용안내</h4>
+        <ul>
+	<li class="item1">해외배송 상품과 국내배송 상품은 함께 결제하실 수 없으니 장바구니 별로 따로 결제해 주시기 바랍니다.</li>
+            <li class="item2">해외배송 가능 상품의 경우 국내배송 장바구니에 담았다가 해외배송 장바구니로 이동하여 결제하실 수 있습니다.</li>
+            <li class="item3">선택하신 상품의 수량을 변경하시려면 수량변경 후 [변경] 버튼을 누르시면 됩니다.</li>
+            <li class="item4">[쇼핑계속하기] 버튼을 누르시면 쇼핑을 계속 하실 수 있습니다.</li>
+            <li class="item5">장바구니와 관심상품을 이용하여 원하시는 상품만 주문하거나 관심상품으로 등록하실 수 있습니다.</li>
+            <li class="item6">파일첨부 옵션은 동일상품을 장바구니에 추가할 경우 마지막에 업로드 한 파일로 교체됩니다.</li>
+        </ul>
+	<h4>무이자할부 이용안내</h4>
+        <ul>
+	<li class="item1">상품별 무이자할부 혜택을 받으시려면 무이자할부 상품만 선택하여 [주문하기] 버튼을 눌러 주문/결제 하시면 됩니다.</li>
+            <li class="item2">[전체 상품 주문] 버튼을 누르시면 장바구니의 구분없이 선택된 모든 상품에 대한 주문/결제가 이루어집니다.</li>
+            <li class="item3">단, 전체 상품을 주문/결제하실 경우, 상품별 무이자할부 혜택을 받으실 수 없습니다.</li>
+        </ul>
+	</div>
+  </div>
 
 </form>
 </div>
