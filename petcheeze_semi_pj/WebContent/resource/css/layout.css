@@ -10,38 +10,39 @@
     width:100%;
     height:100;
     text-align:left;
-}
-
-.body-space {
-    clear:both;
-    margin: 5px auto;
-    min-height: 5px;
-    min-height: 5px;
+    background-color: #fff;
+    padding-bottom: 20px;
 }
 
 .body-container {
     clear:both;
-    margin: 0px auto 15px;
-    min-height: 950px;
-    min-height: 450px;
+    margin: 0px auto;
+    min-height: 500px;
 }
+
+.body-containertable {
+    clear:both;
+    margin: 0px auto;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ffeab3;
+}
+
 
 .body-title {
     color: #424951;
     padding-top: 20px;
     padding-bottom: 5px;
     margin: 0 0 25px 0;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #ffeab3;
 }
 .body-title h3 {
     font-size: 23px;
-    min-width: 300px;
     font-family:"Malgun Gothic", "맑은 고딕", NanumGothic, 나눔고딕, 돋움, sans-serif;
     font-weight: bold;
     margin: 0 0 -5px 0;
-    padding-bottom: 5px;
+    padding-bottom: 12px;
     display: inline-block;
-    border-bottom: 3px solid #424951;
 }
 
 .footer {
@@ -55,6 +56,7 @@
     width: 1150px;
     height: 70px;
     clear: both;
+
 }
 
 .header-bottom {
@@ -83,7 +85,7 @@
     width: 1150px;
     min-height: 42px;
     clear: both;
-    border-top: 1px solid #ffe299;
+    border-top: 1px solid #ffeab3;
     border-bottom: 1.35px solid #ffd700;
     box-sizing: border-box;
     text-align: center;
@@ -110,9 +112,8 @@ ul.nav li a {
   line-height: 45px;
   color: #555;
   text-decoration: none;
-  padding: 15px 15px;
+  padding: 12px 12px;
   vertical-align: middle;
-  margin: 0px 30px;
 }
 
 ul.nav .current a, ul.nav li:hover > a {
