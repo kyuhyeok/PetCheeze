@@ -73,7 +73,6 @@ public class MemberServlet extends HttpServlet {
 		
 		session.setAttribute("member", info);
 		
-		System.out.println("로그인성공");
 		String cp = req.getContextPath();
 		
 		resp.sendRedirect(cp);
