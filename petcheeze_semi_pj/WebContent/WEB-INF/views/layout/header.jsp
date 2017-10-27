@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=UTF-8" %>
+﻿﻿<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -43,7 +43,7 @@ $(function(){
                     &nbsp;|&nbsp;
                     <a href="<%=cp%>/#">정보수정</a>
             </c:if>
- 
+  
         </div>
 
 
@@ -51,7 +51,7 @@ $(function(){
 
     <div class="header-bottom">
 
-            <a href="<%=cp%>/" style="text-decoration: none;display:block; margin-left:260px; margin-right:260px;">
+            <a href="<%=cp%>/" style="text-decoration: none; display:block; margin-left:260px; margin-right:260px;">
                 <img src="<%=cp%>/resource/images/petcheeze.PNG" style="max-width: 400px; max-height: 400px; display:block; margin-left:auto; margin-right:auto;">
             </a>
     </div> 
@@ -60,28 +60,27 @@ $(function(){
 <div class="menu">
     <ul class="nav">
         <li>
-            <a href="#" style="margin:35px 35px; text-align:center;">육포</a>
+            <a href="#" style="margin:45px 45px; text-align:center; font-size: 17px;">육포</a>
         </li>
         
         <li>
-            <a href="#" style="margin:35px 35px; text-align:center;">뼈&껌</a>
+            <a href="#" style="margin:45px 45px; text-align:center;font-size: 17px;">뼈&amp;껌</a>
         </li>       
 
         <li>
-            <a href="#" style="margin:35px 35px; text-align:center;">영양파우더</a>        
+            <a href="#" style="margin:45px 45px; text-align:center;font-size: 17px;">영양파우더</a>        
         </li>
 
         <li>
-            <a href="#" style="margin:35px 35px; text-align:center;">말이&큐브</a>        
+            <a href="#" style="margin:45px 45px; text-align:center;font-size: 17px;">말이&amp;큐브</a>        
         </li>
         
         <li>
-            <a href="#" style="margin:35px 35px; text-align:center;">세트메뉴</a>   
+            <a href="#" style="margin:45px 45px; text-align:center;font-size: 17px;">세트메뉴</a>   
         </li>
 
         <li>
-        	 <a href="#" style="margin:35px 35px; text-align:center;">공지사항</a>
+        	 <a href="<%=cp%>/bbs/list.do" style="margin:35px 35px; text-align:center;font-size: 17px;">공지사항&amp;이벤트</a>
         </li> 
       </ul>
-</div>
-<div class="body-space"></div>
+</div><br>
