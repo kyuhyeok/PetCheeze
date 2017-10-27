@@ -84,7 +84,8 @@
 	                    <span class="name">배송방법 : 택배</span></li>
 	            </ul>
 	            <div class="status">
-	                <img src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/ico_product_recommended.gif" class="icon" alt="추천" /> <img src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/ico_product_new.gif" class="icon" alt="New" />
+	                <img src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/ico_product_recommended.gif" class="icon" alt="추천" /> 
+	                <img src="//img.echosting.cafe24.com/design/skin/admin/ko_KR/ico_product_new.gif" class="icon" alt="New" />
 	            </div>
 	        </div>
 	    </li>
