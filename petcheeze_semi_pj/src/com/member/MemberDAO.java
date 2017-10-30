@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import com.util.DBCPConn;
 
 public class MemberDAO {
+		
 
 	public MemberDTO readMember(String userEmail) {
 		MemberDTO dto = null;
@@ -15,7 +16,7 @@ public class MemberDAO {
 		ResultSet rs = null;
 		
 		Connection conn=null;
-		
+		System.out.println(userEmail);
 		try {
 			
 			conn=DBCPConn.getConnection();
@@ -67,6 +68,54 @@ public class MemberDAO {
 		}
 	
 		return dto;
+	}
+	
+	public int insertMember(MemberDTO dto) {
+		
+		int result=0;
+		
+		PreparedStatement pstmt=null;
+		Connection conn=null;
+		StringBuffer sb=new StringBuffer();
+		
+		try {
+			conn=DBCPConn.getConnection();
+			
+			sb.append("INSERT INTO member1 (email,name,addr0,addr1,addr2,tel)");
+			sb.append("		VALUES (?,?,?,?,?,?)");
+			
+			pstmt=conn.prepareStatement(sb.toString());
+			pstmt.executeQuery();
+			
+			pstmt.setString(1, dto.getUserEmail());
+			pstmt.setString(2, dto.getUserName());
+			pstmt.setString(3, dto.getAddr0());
+			pstmt.setString(4, dto.getAddr1());
+			pstmt.setString(5, dto.getAddr2());
+			pstmt.setString(6, dto.getTel());
+			
+			pstmt.close();
+			
+			conn=DBCPConn.getConnection();
+			
+			sb.append("INSERT INTO member2 (pwd,birth,pname)");
+			sb.append("		VALUES (?,?,?)");
+			
+			pstmt=conn.prepareStatement(sb.toString());
+			result=pstmt.executeUpdate();
+			
+			pstmt.setString(1, dto.getUserPwd());
+			pstmt.setString(2, dto.getBirth());
+			pstmt.setString(3, dto.getPname());
+			
+			pstmt.close();
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		
+		return result;
 	}
 	
 }
