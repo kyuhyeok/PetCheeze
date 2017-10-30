@@ -34,7 +34,7 @@ $(function(){
                     &nbsp;|&nbsp;
                 <a href="<%=cp%>/member/#">주문</a>
                     &nbsp;|&nbsp;
-                <a href="<%=cp%>/member/#">마이페이지</a>                
+                <a href="<%=cp%>/member/mypage.do/">마이페이지</a>                
             </c:if>
             <c:if test="${not empty sessionScope.member}">
                 <span style="color:blue;">${sessionScope.member.userName}</span>님
