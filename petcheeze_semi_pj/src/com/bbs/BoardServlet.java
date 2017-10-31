@@ -51,6 +51,8 @@ public class BoardServlet extends MyServlet {
 			updateSubmit(req, resp);
 		} else if(uri.indexOf("delete.do")!=-1) {
 			delete(req, resp);
+		}else if(uri.indexOf("board.do")!=-1) {
+			boardForm(req, resp);
 		}
 	}
 
@@ -148,6 +150,12 @@ public class BoardServlet extends MyServlet {
 		// ±Û¾²±â Æû
 		req.setAttribute("mode", "created");
 		String path="/WEB-INF/views/bbs/created.jsp";
+		forward(req, resp, path);
+	}
+	
+	private void boardForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String path="/WEB-INF/views/bbs/board.jsp";
 		forward(req, resp, path);
 	}
 	
