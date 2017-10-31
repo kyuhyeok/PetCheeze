@@ -24,7 +24,7 @@ $(function(){
 </script>
 
    <div class="header-top">
-        <div style="padding-top: 10px; float: right; display: block; ">
+        <div style="padding-top: 10px; float: left; display: block; ">
             <c:if test="${empty sessionScope.member}">
                 <a href="<%=cp%>/member/login.do">로그인</a>
                     &nbsp;|&nbsp;
