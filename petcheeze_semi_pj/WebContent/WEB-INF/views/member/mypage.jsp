@@ -80,7 +80,10 @@ border-collapse: collapse;border-spacing: 0px; text-align: justify;" >
 border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;" >
 <tr>
 <td align="center">
-	<input type="image" src="<%=cp%>/resource/images/mypage_01.png" onmouseover="this.src='<%=cp%>/resource/images/mypage_01_r.png';" onmouseout="this.src='<%=cp%>/resource/images/mypage_01.png';" >
+	<img src="<%=cp%>/resource/images/mypage_01.png" 
+	     onmouseover="this.src='<%=cp%>/resource/images/mypage_01_r.png';" 
+	     onmouseout="this.src='<%=cp%>/resource/images/mypage_01.png';" 
+	     onclick="javascript:location.href='<%=cp%>/order/order_list.do';">
 </td>
 </tr>
 </table>
@@ -89,7 +92,10 @@ border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;
 border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;" >
 <tr>
 <td align="center">
-	<input type="image" src="<%=cp%>/resource/images/mypage_02.png" onmouseover="this.src='<%=cp%>/resource/images/mypage_02_r.png';" onmouseout="this.src='<%=cp%>/resource/images/mypage_02.png';" >
+	<img src="<%=cp%>/resource/images/mypage_02.png" 
+	onmouseover="this.src='<%=cp%>/resource/images/mypage_02_r.png';" 
+	onmouseout="this.src='<%=cp%>/resource/images/mypage_02.png';" 
+	onclick="javascript:location.href='<%=cp%>/order/order_list.do';">
 </td>
 </tr>
 </table>
@@ -98,7 +104,10 @@ border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;
 border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;" >
 <tr>
 <td align="center">
-	<input type="image" src="<%=cp%>/resource/images/mypage_03.png" onmouseover="this.src='<%=cp%>/resource/images/mypage_03_r.png';" onmouseout="this.src='<%=cp%>/resource/images/mypage_03.png';" >
+	<img src="<%=cp%>/resource/images/mypage_03.png" 
+	onmouseover="this.src='<%=cp%>/resource/images/mypage_03_r.png';" 
+	onmouseout="this.src='<%=cp%>/resource/images/mypage_03.png';" 
+	onclick="javascript:location.href='<%=cp%>/order/order_list.do';">
 </td>
 </tr>
 </table>
@@ -111,7 +120,10 @@ border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;
 border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;" >
 <tr>
 <td align="center">
-	<input type="image" src="<%=cp%>/resource/images/mypage_04.png" onmouseover="this.src='<%=cp%>/resource/images/mypage_04_r.png';" onmouseout="this.src='<%=cp%>/resource/images/mypage_04.png';" >
+	<img src="<%=cp%>/resource/images/mypage_04.png" 
+	onmouseover="this.src='<%=cp%>/resource/images/mypage_04_r.png';" 
+	onmouseout="this.src='<%=cp%>/resource/images/mypage_04.png';" 
+	onclick="javascript:location.href='<%=cp%>/order/milege.do';">
 </td>
 </tr>
 </table>
@@ -120,7 +132,10 @@ border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;
 border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;" >
 <tr>
 <td align="center">
-	<input type="image" src="<%=cp%>/resource/images/mypage_05.png" onmouseover="this.src='<%=cp%>/resource/images/mypage_05_r.png';" onmouseout="this.src='<%=cp%>/resource/images/mypage_05.png';" >
+	<img src="<%=cp%>/resource/images/mypage_05.png" 
+	onmouseover="this.src='<%=cp%>/resource/images/mypage_05_r.png';" 
+	onmouseout="this.src='<%=cp%>/resource/images/mypage_05.png';" 
+	onclick="javascript:location.href='<%=cp%>/bbs/board.do';">
 </td>
 </tr>
 </table>
@@ -129,7 +144,10 @@ border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;
 border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;" >
 <tr>
 <td align="center">
-	<input type="image" src="<%=cp%>/resource/images/mypage_06.png" onmouseover="this.src='<%=cp%>/resource/images/mypage_06_r.png';" onmouseout="this.src='<%=cp%>/resource/images/mypage_06.png';" >
+	<img  src="<%=cp%>/resource/images/mypage_06.png" 
+	onmouseover="this.src='<%=cp%>/resource/images/mypage_06_r.png';" 
+	onmouseout="this.src='<%=cp%>/resource/images/mypage_06.png';" 
+	onclick="javascript:location.href='<%=cp%>/order/address.do';">
 </td>
 </tr>
 </table>
