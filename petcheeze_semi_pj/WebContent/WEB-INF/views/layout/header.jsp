@@ -57,23 +57,23 @@ $(function(){
 <div class="menu">
     <ul class="nav">
         <li>
-            <a href="<%=cp%>/bbs/member.do?pdkindcode=2" 
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=2" 
             style="margin:45px 45px; text-align:center; font-size: 17px;">육포</a></li>
         
         <li>
-            <a href="<%=cp%>/bbs/member.do?pdkindcode=4" style="margin:45px 45px; text-align:center;font-size: 17px;">뼈&amp;껌</a>
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=4" style="margin:45px 45px; text-align:center;font-size: 17px;">뼈&amp;껌</a>
         </li>       
 
         <li>
-            <a href="<%=cp%>/bbs/member.do?pdkindcode=1" style="margin:45px 45px; text-align:center;font-size: 17px;">영양파우더</a>        
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=1" style="margin:45px 45px; text-align:center;font-size: 17px;">영양파우더</a>        
         </li>
 
         <li>
-            <a href="<%=cp%>/bbs/member.do?pdkindcode=5" style="margin:45px 45px; text-align:center;font-size: 17px;">말이&amp;큐브</a>        
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=5" style="margin:45px 45px; text-align:center;font-size: 17px;">말이&amp;큐브</a>        
         </li>
         
         <li>
-            <a href="<%=cp%>/bbs/member.do?pdkindcode=3" style="margin:45px 45px; text-align:center;font-size: 17px;">세트메뉴</a>   
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=3" style="margin:45px 45px; text-align:center;font-size: 17px;">세트메뉴</a>   
         </li>
 
         <li>
