@@ -6,6 +6,7 @@
    String cp = request.getContextPath();
 %>
 
+<script type="text/javascript" src="<%=cp%>/resource/jquery/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 //엔터 처리
 $(function(){
@@ -23,7 +24,7 @@ $(function(){
 </script>
 
    <div class="header-top">
-        <div style="padding-top: 10px;  float: right ;">
+        <div style="padding-top: 10px; float: left; display: block; ">
             <c:if test="${empty sessionScope.member}">
                 <a href="<%=cp%>/member/login.do">로그인</a>
                     &nbsp;|&nbsp;
@@ -56,36 +57,35 @@ $(function(){
 <div class="menu">
     <ul class="nav">
         <li>
-            <a href="#" style="margin:45px 45px; text-align:center; font-size: 17px;">육포</a>
-        </li>
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=2" 
+            style="margin:45px 45px; text-align:center; font-size: 17px;">육포</a></li>
         
         <li>
-            <a href="#" style="margin:45px 45px; text-align:center;font-size: 17px;">뼈&amp;껌</a>
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=4" style="margin:45px 45px; text-align:center;font-size: 17px;">뼈&amp;껌</a>
         </li>       
 
         <li>
-            <a href="#" style="margin:45px 45px; text-align:center;font-size: 17px;">영양파우더</a>        
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=1" style="margin:45px 45px; text-align:center;font-size: 17px;">영양파우더</a>        
         </li>
 
         <li>
-            <a href="#" style="margin:45px 45px; text-align:center;font-size: 17px;">말이&amp;큐브</a>        
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=5" style="margin:45px 45px; text-align:center;font-size: 17px;">말이&amp;큐브</a>        
         </li>
         
         <li>
-            <a href="#" style="margin:45px 45px; text-align:center;font-size: 17px;">세트메뉴</a>   
+            <a href="<%=cp%>/menu/menu.do?pdkindcode=3" style="margin:45px 45px; text-align:center;font-size: 17px;">세트메뉴</a>   
         </li>
 
         <li>
-        	 <a href="<%=cp%>/bbs/list.do" style="margin:35px 35px; text-align:center;font-size: 17px;">공지사항&amp;이벤트</a>
+        	 <a href="<%=cp%>/bbs/list.do" style="margin:35px 35px; text-align:center;font-size: 17px;">고객센터</a>
         </li> 
       </ul>
 </div>
 
     <div class="header-bottom">
-
-            <a href="<%=cp%>/" style="text-decoration: none; display:block; margin: 0px auto;">
+			<br>
             <br>
-            <br>
+            <a href="<%=cp%>/">
                 <img src="<%=cp%>/resource/images/petcheeze.PNG" style="max-width: 400px; max-height: 400px; display:block; margin: 0px auto;">
             </a>
     </div><br><br> 
