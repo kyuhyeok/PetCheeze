@@ -15,17 +15,18 @@ public class BoardDAO {
 	// 데이터 추가
 	public int insertBoard(BoardDTO dto) {
 		int result=0;
+		Connection conn=null;
 		PreparedStatement pstmt=null;
+		
 		StringBuffer sb=new StringBuffer();
 		
 		try {
-			sb.append("INSERT INTO bbs(num, userId, subject, content) ");
-			sb.append(" VALUES (bbs_seq.NEXTVAL, ?, ?, ?)");
+			sb.append("INSERT INTO ALLAMLIST(ALNUM, ALSUBJECT, ALCONTENT) ");
+			sb.append(" VALUES (ALLAMLIST_seq.NEXTVAL, ?, ?)");
 			
 			pstmt=conn.prepareStatement(sb.toString());
-			pstmt.setString(1, dto.getUserId());
-			pstmt.setString(2, dto.getSubject());
-			pstmt.setString(3, dto.getContent());
+			pstmt.setString(1, dto.getSubject());
+			pstmt.setString(2, dto.getContent());
 			
 			result=pstmt.executeUpdate();
 			
@@ -41,7 +42,6 @@ public class BoardDAO {
 		
 		return result;
 	}
-	
 	// 데이터 개수
 	public int dataCount() {
 		int result=0;
@@ -83,16 +83,15 @@ public class BoardDAO {
 		int result=0;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String sql;
+		String sql = null;
 		
 		try {
-			sql="SELECT NVL(COUNT(*), 0)  FROM bbs b JOIN member1 m ON b.userId=m.userId ";
-			if(searchKey.equals("userName")) {
-				sql+="  WHERE INSTR(userName, ?) = 1 ";
-			} else if(searchKey.equals("created")) {
+			//날짜 검색
+			if(searchKey.equals("created")) {
 				searchValue=searchValue.replaceAll("-", "");
 				sql+="  WHERE TO_CHAR(created, 'YYYYMMDD') = ? ";
-			} else {
+			//내용 검색
+			} else{
 				sql+="  WHERE INSTR(" + searchKey+ ", ?) >= 1 ";
 			}
 			
@@ -134,10 +133,8 @@ public class BoardDAO {
 		try {
 			sb.append("SELECT * FROM (");
 			sb.append("    SELECT ROWNUM rnum, tb.* FROM (");
-			sb.append("        SELECT num, b.userId, userName, subject");
-			sb.append("            ,TO_CHAR(created, 'YYYY-MM-DD') created");
+			sb.append("        SELECT num, userName, SUBJECT ,TO_CHAR(created, 'YYYY-MM-DD') created");
 			sb.append("            ,hitCount");
-			sb.append("            FROM bbs b JOIN member1 m ON b.userId=m.userId  ");
 			sb.append("	       ORDER BY num DESC");
 			sb.append("    ) tb WHERE ROWNUM <= ? ");
 			sb.append(") WHERE rnum >= ? ");
@@ -152,7 +149,6 @@ public class BoardDAO {
 				BoardDTO dto=new BoardDTO();
 				
 				dto.setNum(rs.getInt("num"));
-				dto.setUserId(rs.getString("userId"));
 				dto.setUserName(rs.getString("userName"));
 				dto.setSubject(rs.getString("subject"));
 				dto.setHitCount(rs.getInt("hitCount"));
@@ -191,13 +187,11 @@ public class BoardDAO {
 		try {
 			sb.append("SELECT * FROM (");
 			sb.append("    SELECT ROWNUM rnum, tb.* FROM (");
-			sb.append("        SELECT num, b.userId, userName, subject");
-			sb.append("            ,TO_CHAR(created, 'YYYY-MM-DD') created");
-			sb.append("            ,hitCount");
-			sb.append("            FROM bbs b JOIN member1 m ON b.userId=m.userId ");
-			if(searchKey.equals("userName")) {
-				sb.append("        WHERE  INSTR(userName, ?) = 1  ");
-			} else if(searchKey.equals("created")) {
+			sb.append("        SELECT NUM, userName, SUBJECT");
+			sb.append("            ,TO_CHAR(created, 'YYYY-MM-DD') created, hitCount");
+			
+			
+			if(searchKey.equals("created")) {
 				searchValue=searchValue.replaceAll("-", "");
 				sb.append("        WHERE TO_CHAR(created, 'YYYYMMDD') = ?  ");
 			} else {
@@ -218,7 +212,6 @@ public class BoardDAO {
 				BoardDTO dto=new BoardDTO();
 				
 				dto.setNum(rs.getInt("num"));
-				dto.setUserId(rs.getString("userId"));
 				dto.setUserName(rs.getString("userName"));
 				dto.setSubject(rs.getString("subject"));
 				dto.setHitCount(rs.getInt("hitCount"));
@@ -254,7 +247,7 @@ public class BoardDAO {
 		String sql;
 		
 		try {
-			sql="UPDATE bbs SET hitCount=hitCount+1  WHERE num=?";
+			sql="UPDATE ALLAMLIST SET hitCount=hitCount+1  WHERE num=?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			result=pstmt.executeUpdate();
@@ -280,9 +273,8 @@ public class BoardDAO {
 		StringBuffer sb=new StringBuffer();
 		
 		try {
-			sb.append("SELECT num, b.userId, userName, subject, content");
+			sb.append("SELECT num, userName, subject, content");
 			sb.append("   ,created, hitCount ");
-			sb.append("   FROM bbs b JOIN member1 m ON b.userId=m.userId  ");
 			sb.append("   WHERE num = ? ");
 
 			pstmt = conn.prepareStatement(sb.toString());
