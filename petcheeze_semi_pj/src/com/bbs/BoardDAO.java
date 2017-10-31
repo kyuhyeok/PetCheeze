@@ -24,6 +24,9 @@ public class BoardDAO {
 			sb.append("INSERT INTO ALLAMLIST(ALNUM, ALSUBJECT, ALCONTENT) ");
 			sb.append(" VALUES (ALLAMLIST_seq.NEXTVAL, ?, ?)");
 			
+			//자동 번호 시퀸스 생성
+			//카운트는 시퀸스 생성X
+			
 			pstmt=conn.prepareStatement(sb.toString());
 			pstmt.setString(1, dto.getSubject());
 			pstmt.setString(2, dto.getContent());
@@ -50,7 +53,7 @@ public class BoardDAO {
 		String sql;
 		
 		try {
-			sql="SELECT NVL(COUNT(*), 0) FROM bbs";
+			sql="SELECT NVL(COUNT(*), 0) FROM ALLAMLIST";
 			pstmt=conn.prepareStatement(sql);
 			
 			rs=pstmt.executeQuery();
