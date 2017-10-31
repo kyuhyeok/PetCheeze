@@ -51,6 +51,8 @@ public class BoardServlet extends MyServlet {
 			updateSubmit(req, resp);
 		} else if(uri.indexOf("delete.do")!=-1) {
 			delete(req, resp);
+		}else if(uri.indexOf("board.do")!=-1) {
+			boardForm(req, resp);
 		}
 	}
 
@@ -151,6 +153,12 @@ public class BoardServlet extends MyServlet {
 		forward(req, resp, path);
 	}
 	
+	private void boardForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String path="/WEB-INF/views/bbs/board.jsp";
+		forward(req, resp, path);
+	}
+	
 	private void createdSubmit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// 글 저장
 		String cp = req.getContextPath();
@@ -205,9 +213,6 @@ public class BoardServlet extends MyServlet {
 		BoardDTO preReadDto=dao.preReadBoard(dto.getNum(), searchKey, searchValue);
 		BoardDTO nextReadDto=dao.nextReadBoard(dto.getNum(), searchKey, searchValue);
 		
-		// 게시물 공감 개수
-		int countLikeBoard = dao.countLikeBoard(num);
-		
 		// 리스트나 이전글/다음글에서 사용할 파라미터
 		String query="page="+page;
 		if(searchValue.length()!=0) {
@@ -221,7 +226,6 @@ public class BoardServlet extends MyServlet {
 		req.setAttribute("query", query);
 		req.setAttribute("preReadDto", preReadDto);
 		req.setAttribute("nextReadDto", nextReadDto);
-		req.setAttribute("countLikeBoard", countLikeBoard);
 		
 		// 포워딩
 		String path="/WEB-INF/views/bbs/article.jsp";

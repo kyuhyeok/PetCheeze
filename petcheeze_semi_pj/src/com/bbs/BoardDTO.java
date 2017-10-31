@@ -3,6 +3,12 @@ package com.bbs;
 public class BoardDTO {
 	private int listNum, num;
 	private String userId, userName;
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	private String subject, content;
 	private String created;
 	private int hitCount;
@@ -24,12 +30,6 @@ public class BoardDTO {
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 	public String getSubject() {
 		return subject;
