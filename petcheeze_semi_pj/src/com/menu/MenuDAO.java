@@ -263,7 +263,7 @@ public class MenuDAO {
 			
 			sb.append("SELECT tb.* FROM (");
 			sb.append("SELECT pdName, pdImage, pdMaker, pdContent, p.pdCode, pdcnt, pdPrice, pdMil, pdTotcnt, pdkindcode, pdnew");
-			sb.append(" FROM pd p JOIN orderdetail o ON p.pdcode=o.pdcode");
+			sb.append(" FROM pd p JOIN (SELECT pdcode ,SUM(pdcnt) pdcnt FROM orderdetail GROUP BY pdcode) o ON p.pdcode=o.pdcode");
 			sb.append(" ORDER BY pdcnt DESC");
 			sb.append(") tb WHERE ROWNUM<=?");
 			
