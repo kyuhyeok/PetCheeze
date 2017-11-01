@@ -90,6 +90,16 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 <td style="width: 111px; height: 52px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >취소/교환/반품</td>
 </tr>
 
+<c:choose>
+
+<c:when test="${empty list}"> 
+<tr style="border-collapse: collapse;border-spacing: 0px;"> 
+<td colspan="7" style="width: 1150px; height: 130px; padding-top: 5px; padding-bottom:5px; border: 1px solid silver;"  >주문한 상품이 없습니다.</td>
+</tr>
+</c:when>
+
+
+<c:when test="${not empty list}">
 <c:forEach var="list" items="${list}"> 
 
 <tr style="border-collapse: collapse;border-spacing: 0px;"> 
@@ -103,8 +113,9 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 </tr>
 
 </c:forEach>
+</c:when>
 
-
+</c:choose>
 </table>
 
 

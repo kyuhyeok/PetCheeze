@@ -359,7 +359,7 @@ height: 50px; margin: 0px auto; border-collapse: collapse;border-spacing: 0px; t
 </table>
 
 
-
+<c:if test="${mode=='created'}">
 <table style="width: 1150px; 
 height: 50px; margin: 10px auto 0px; border-collapse: collapse;border-spacing: 0px; text-align: justify;" >
 <tr>
@@ -607,7 +607,7 @@ o 로그 기록 <br>
 										onchange="form.sendButton.disabled = !checked">&nbsp;동의함
 </div>
 
-
+</c:if>
 
 <div align="center" style="width: 1150px;height: 250px; margin: 30px auto;">
 

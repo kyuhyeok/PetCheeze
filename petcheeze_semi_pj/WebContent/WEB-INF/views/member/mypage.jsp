@@ -95,7 +95,7 @@ border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;
 	<img src="<%=cp%>/resource/images/mypage_02.png" 
 	onmouseover="this.src='<%=cp%>/resource/images/mypage_02_r.png';" 
 	onmouseout="this.src='<%=cp%>/resource/images/mypage_02.png';" 
-	onclick="javascript:location.href='<%=cp%>/order/order_list.do';">
+	onclick="javascript:location.href='<%=cp%>/member/update.do';">
 </td>
 </tr>
 </table>
