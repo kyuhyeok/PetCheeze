@@ -20,7 +20,7 @@ public class MenuDAO {
 		try {
 			conn=DBCPConn.getConnection();
 			
-			sql="INSERT INTO pd(pdcode, pdcontent, pdimage, pdmaker, pdmil, pdname, pdprice, pdkindcode) VALUES(?,?,?,?,?,?,?,?)";
+			sql="INSERT INTO pd(pdcode, pdcontent, pdimage, pdmaker, pdmil, pdname, pdprice, pdnew, pdkindcode) VALUES(?,?,?,?,?,?,?,?,?)";
 			
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, dto.getPdCode());
@@ -30,7 +30,8 @@ public class MenuDAO {
 			pstmt.setInt(5, dto.getPdMil());
 			pstmt.setString(6, dto.getPdName());
 			pstmt.setInt(7, dto.getPdPrice());
-			pstmt.setInt(8, dto.getPdKindcode());
+			pstmt.setString(8, dto.getPdNew());
+			pstmt.setInt(9, dto.getPdKindcode());
 			result=pstmt.executeUpdate();
 			
 			pstmt.close();
@@ -53,7 +54,7 @@ public class MenuDAO {
 		try {
 			conn=DBCPConn.getConnection();
 			
-			sql="UPDATE pd SET pdcontent, pdimage, pdmaker, pdmil, pdname, pdprice, pdkindcode WHERE pdcode=?";
+			sql="UPDATE pd SET pdcontent, pdimage, pdmaker, pdmil, pdname, pdprice, pdkindcode, pdnew WHERE pdcode=?";
 			
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getPdContent());
@@ -63,7 +64,8 @@ public class MenuDAO {
 			pstmt.setString(5, dto.getPdName());
 			pstmt.setInt(6, dto.getPdPrice());
 			pstmt.setInt(7, dto.getPdKindcode());
-			pstmt.setInt(8, dto.getPdCode());
+			pstmt.setString(8, dto.getPdNew());
+			pstmt.setInt(9, dto.getPdCode());
 			result=pstmt.executeUpdate();
 			
 			pstmt.close();
@@ -113,7 +115,7 @@ public class MenuDAO {
 		try {
 			conn=DBCPConn.getConnection();
 			
-			sql="DELETE FROM pdcode, pdcontent, pdimage, pdmaker, pdmil, pdname, pdprice, pdtotcnt, pdkindcode WHERE pdcode=?";
+			sql="SELECT pdcode, pdcontent, pdimage, pdmaker, pdmil, pdname, pdprice, pdtotcnt, pdkindcode, pdnew FROM pd WHERE pdcode=?";
 			
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, pdCode);
@@ -130,6 +132,7 @@ public class MenuDAO {
 				dto.setPdPrice(rs.getInt("pdprice"));
 				dto.setPdTotcnt(rs.getInt("pdtotcnt"));
 				dto.setPdKindcode(rs.getInt("pdkindcode"));
+				dto.setPdNew(rs.getString("pdnew"));
 			}
 			
 			rs.close();
@@ -144,7 +147,7 @@ public class MenuDAO {
 		return dto;
 	}
 	
-	public int dataCount() {
+	public int dataCount(int pdKindcode) {
 		int result=0;
 		Connection conn=null;
 		PreparedStatement pstmt=null;
@@ -155,9 +158,15 @@ public class MenuDAO {
 			conn=DBCPConn.getConnection();
 			
 			sql="SELECT NVL(COUNT(*), 0) FROM pd";
-			
-			pstmt=conn.prepareStatement(sql);
-			rs=pstmt.executeQuery();
+			if(pdKindcode!=0) {
+				sql+=" WHERE pdkindcode=?";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setInt(1, pdKindcode);
+				rs=pstmt.executeQuery();
+			}else {
+				pstmt=conn.prepareStatement(sql);
+				rs=pstmt.executeQuery();
+			}
 			
 			if(rs.next())
 				result=rs.getInt(1);
@@ -173,7 +182,7 @@ public class MenuDAO {
 		return result;
 	}
 	
-	public List<MenuDTO> listMenuPage(int start, int end, int pdKindcode){
+	public List<MenuDTO> listMenuPage(int start, int end, int pdKindcode, String sort){
 		Connection conn=null;
 		List<MenuDTO> list=new ArrayList<>();
 		PreparedStatement pstmt=null;
@@ -185,24 +194,132 @@ public class MenuDAO {
 			
 			sb.append("SELECT * FROM (");
 			sb.append("SELECT ROWNUM rnum, tb.* FROM (");
-			sb.append("SELECT pdName, pdImage, pdMaker, pdContent, pdCode, pdPrice, pdMil, pdTotcnt");
-			sb.append(" FROM pd WHERE pdkindcode=? ORDER BY pdcode DESC");
+			sb.append("SELECT pdName, pdImage, pdMaker, pdContent, pdCode, pdPrice, pdMil, pdTotcnt, pdkindcode, pdnew");
+			sb.append(" FROM pd");
+			if(pdKindcode!=0)
+				sb.append(" WHERE pdkindcode=?");
+			if(sort.equals("new"))
+				sb.append(" ORDER BY pdnew DESC, pdcode DESC");
+			else if(sort.equals("name"))
+				sb.append(" ORDER BY pdname");
+			else if(sort.equals("lowprice"))
+				sb.append(" ORDER BY pdprice");
+			else if(sort.equals("highprice"))
+				sb.append(" ORDER BY pdprice DESC");
+			else
+				sb.append(" ORDER BY pdcode DESC");
 			sb.append(") tb WHERE ROWNUM<=?");
 			sb.append(") WHERE rnum>=?");
 			
 			pstmt=conn.prepareStatement(sb.toString());
-			pstmt.setInt(1, pdKindcode);
-			pstmt.setInt(2, end);
-			pstmt.setInt(3, start);
+			if(pdKindcode!=0) {
+				pstmt.setInt(1, pdKindcode);
+				pstmt.setInt(2, end);
+				pstmt.setInt(3, start);
+			}else {
+				pstmt.setInt(1, end);
+				pstmt.setInt(2, start);
+			}
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MenuDTO dto=new MenuDTO();
+				dto.setPdCode(rs.getInt("pdcode"));
+				dto.setPdContent(rs.getString("pdcontent"));
+				dto.setPdImage(rs.getString("pdimage"));
+				dto.setPdMaker(rs.getString("pdmaker"));
+				dto.setPdMil(rs.getInt("pdmil"));
+				dto.setPdName(rs.getString("pdname"));
+				dto.setPdPrice(rs.getInt("pdprice"));
+				dto.setPdTotcnt(rs.getInt("pdtotcnt"));
+				dto.setPdKindcode(rs.getInt("pdkindcode"));
+				dto.setPdNew(rs.getString("pdnew"));
+				
+				list.add(dto);
+			}
+			
+			rs.close();
+			pstmt.close();
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			if(conn!=null)
+				DBCPConn.close(conn);
+		}
+		
+		return list;
+	}
+	
+	public List<MenuDTO> bestMenuPage(){
+		Connection conn=null;
+		List<MenuDTO> list=new ArrayList<>();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		StringBuffer sb=new StringBuffer();
+		int bestCnt=5;
+		
+		try {
+			conn=DBCPConn.getConnection();
+			
+			sb.append("SELECT tb.* FROM (");
+			sb.append("SELECT pdName, pdImage, pdMaker, pdContent, p.pdCode, pdcnt, pdPrice, pdMil, pdTotcnt, pdkindcode, pdnew");
+			sb.append(" FROM pd p JOIN orderdetail o ON p.pdcode=o.pdcode");
+			sb.append(" ORDER BY pdcnt DESC");
+			sb.append(") tb WHERE ROWNUM<=?");
+			
+			pstmt=conn.prepareStatement(sb.toString());
+			pstmt.setInt(1, bestCnt);
 			rs=pstmt.executeQuery();
 			
 			while(rs.next()) {
 				MenuDTO dto=new MenuDTO();
 				dto.setPdCode(rs.getInt("pdcode"));
 				dto.setPdImage(rs.getString("pdimage"));
+				dto.setPdKindcode(rs.getInt("pdkindcode"));
+				
+				list.add(dto);
+			}
+			
+			rs.close();
+			pstmt.close();
+		} catch (SQLException e) {
+			System.out.println(e.toString());
+		} finally {
+			if(conn!=null)
+				DBCPConn.close(conn);
+		}
+		
+		return list;
+	}
+	
+	public List<MenuDTO> newMenuPage(){
+		Connection conn=null;
+		List<MenuDTO> list=new ArrayList<>();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		StringBuffer sb=new StringBuffer();
+		
+		try {
+			conn=DBCPConn.getConnection();
+			
+			sb.append("SELECT pdName, pdImage, pdMaker, pdContent, pdCode, pdPrice, pdMil, pdTotcnt, pdkindcode, pdnew");
+			sb.append(" FROM pd WHERE pdnew=1");
+			
+			pstmt=conn.prepareStatement(sb.toString());
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MenuDTO dto=new MenuDTO();
+				dto.setPdCode(rs.getInt("pdcode"));
+				dto.setPdContent(rs.getString("pdcontent"));
+				dto.setPdImage(rs.getString("pdimage"));
 				dto.setPdMaker(rs.getString("pdmaker"));
+				dto.setPdMil(rs.getInt("pdmil"));
 				dto.setPdName(rs.getString("pdname"));
 				dto.setPdPrice(rs.getInt("pdprice"));
+				dto.setPdTotcnt(rs.getInt("pdtotcnt"));
+				dto.setPdKindcode(rs.getInt("pdkindcode"));
+				dto.setPdNew(rs.getString("pdnew"));
 				
 				list.add(dto);
 			}

@@ -18,9 +18,15 @@ package com.menu;
 //	);
 
 public class MenuDTO {
-	private String pdName, pdImage, pdMaker, pdContent;
+	private String pdName, pdImage, pdMaker, pdContent, pdNew;
 	private int pdCode, pdPrice, pdMil, pdTotcnt, pdKindcode, pdKind;
 	
+	public String getPdNew() {
+		return pdNew;
+	}
+	public void setPdNew(String pdNew) {
+		this.pdNew = pdNew;
+	}
 	public String getPdName() {
 		return pdName;
 	}
