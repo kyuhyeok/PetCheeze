@@ -25,7 +25,7 @@ function checkemail() {
     if(!str) {
         alert("이메일을 입력하세요. ");
         f.email1.focus();
-        return;
+        return false;
     }
 
     str = f.email2.value;
@@ -33,43 +33,39 @@ function checkemail() {
     if(!str) {
         alert("이메일을 입력하세요. ");
         f.email2.focus();
-        return;
+        return false;
     }
     
     f.action = "<%=cp%>/member/email_check.do";
 	
-	f.submit();
 	
-	
-	
+    return true;
 }
 
 function memberOk() {
 	var f = document.memberForm;
 	var str;
-
-	str = f.userId.value;
-	str = str.trim();
 	
 
+	
 	str = f.userPwd.value;
 	str = str.trim();
 	if(!str) {
 		alert("패스워드를 입력하세요. ");
 		f.userPwd.focus();
-		return;
+		return false;
 	}
 	if(!/^(?=.*[a-z])(?=.*[!@#$%^*+=-]|.*[0-9]).{5,10}$/i.test(str)) { 
 		alert("패스워드는 5~10자이며 하나 이상의 숫자나 특수문자가 포함되어야 합니다.");
-		f.userPwd.focus();
-		return;
+		f.userPwd.focus();	
+		return false;
 	}
 	f.userPwd.value = str;
 
 	if(str!= f.userPwdCheck.value) {
         alert("패스워드가 일치하지 않습니다. ");
         f.userPwdCheck.focus();
-        return;
+        return false;
 	}
 	
     str = f.userName.value;
@@ -77,16 +73,16 @@ function memberOk() {
     if(!str) {
         alert("이름을 입력하세요. ");
         f.userName.focus();
-        return;
+        return false;
     }
     f.userName.value = str;
 
     str = f.birth.value;
 	str = str.trim();
-    if(!str || !isValidDateFormat(str)) {
+    if(!str) {
         alert("생년월일를 입력하세요[YYYY-MM-DD]. ");
         f.birth.focus();
-        return;
+        return false;
     }
     
     str = f.tel1.value;
@@ -94,7 +90,7 @@ function memberOk() {
     if(!str) {
         alert("전화번호를 입력하세요. ");
         f.tel1.focus();
-        return;
+        return false;
     }
 
     str = f.tel2.value;
@@ -102,12 +98,12 @@ function memberOk() {
     if(!str) {
         alert("전화번호를 입력하세요. ");
         f.tel2.focus();
-        return;
+        return false;
     }
     if(!/^(\d+)$/.test(str)) {
         alert("숫자만 가능합니다. ");
         f.tel2.focus();
-        return;
+        return false;
     }
 
     str = f.tel3.value;
@@ -115,12 +111,12 @@ function memberOk() {
     if(!str) {
         alert("전화번호를 입력하세요. ");
         f.tel3.focus();
-        return;
+        return false;
     }
     if(!/^(\d+)$/.test(str)) {
         alert("숫자만 가능합니다. ");
         f.tel3.focus();
-        return;
+        return false;
     }
     
     str = f.email1.value;
@@ -128,7 +124,7 @@ function memberOk() {
     if(!str) {
         alert("이메일을 입력하세요. ");
         f.email1.focus();
-        return;
+        return false;
     }
 
     str = f.email2.value;
@@ -136,7 +132,7 @@ function memberOk() {
     if(!str) {
         alert("이메일을 입력하세요. ");
         f.email2.focus();
-        return;
+        return false;
     }
 
     var mode="${mode}";
@@ -145,8 +141,9 @@ function memberOk() {
     } else if(mode=="update") {
     	f.action = "<%=cp%>/member/update_ok.do";
     }
+	
+    return true;
 
-    f.submit();
 }
 
 
@@ -167,8 +164,18 @@ function changeEmail() {
         f.email1.focus();
     }
     
+    return true;
+
+    
 }
 
+function emailcheck() {
+	var f=document.memberForm;
+	
+	f.action = "<%=cp%>/member/email_check.do";
+	
+
+}
 
 
 </script>
@@ -186,7 +193,7 @@ function changeEmail() {
 
 <div>
 
-<form name="memberForm" method="post">
+<form name="memberForm" method="post" onsubmit="return memberOk();">
 
 <h1><p align="center"  style="width: 1150px; margin:10px auto;">J O I N</p></h1>
 
@@ -216,8 +223,8 @@ height: 50px; margin: 0px auto; border-collapse: collapse;border-spacing: 0px; t
 <tr>
 <td style="border: 1px solid silver; width:200px ; padding: 10px 10px;" >이메일★</td>
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<input type="text"  name="email1" value="${dto.email1}" style="height: 22px;">
-@<input type="text"  name="email2" value="${dto.email2}" readonly="readonly" style="height: 22px;margin-left: 5px; " >
+<input type="text"  name="email1" value="${email1}" style="height: 22px;">
+@<input type="text"  name="email2" value="${email2}" readonly="readonly" style="height: 22px;margin-left: 5px; " >
 <select name="selectEmail" onchange="changeEmail();" style="height: 22px; width:100px;margin-left: 5px;">
 <option value="">선택</option>
 <option value="naver.com" ${dto.email2=="naver.com" ? "selected='selected'" : ""}>naver.com</option>
@@ -231,7 +238,7 @@ height: 50px; margin: 0px auto; border-collapse: collapse;border-spacing: 0px; t
 <option value="gmail.com" ${dto.email2=="gmail.com" ? "selected='selected'" : ""}>gmail.com</option>
 <option value="direct">직접입력</option>
 </select>
-<input type="image" src="<%=cp%>/resource/images/btn_overlap_id.gif"  name="recheck" onclick="" style=" margin-left: 3px;" >${message}
+<img src="<%=cp%>/resource/images/btn_overlap_id.gif" style=" margin-left: 3px;" onclick="emailcheck();"><br>${message}
 </td>
 </tr>
 <!-- 비밀번호 -->
@@ -259,20 +266,20 @@ height: 50px; margin: 0px auto; border-collapse: collapse;border-spacing: 0px; t
 <tr >
 <td rowspan="3" style="border: 1px solid silver; width:200px ; padding: 10px 10px;" >주소★</td>
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<input type="text"  name="name" style="height: 22px; width:75px;" >
--<input  type="image" src="<%=cp%>/resource/images/btn_zipcode.gif"  name="zipcode" style=" margin-left: 5px;" >
+<input type="text"  name="addr0" style="height: 22px; width:75px;" >
+-<img  src="<%=cp%>/resource/images/btn_zipcode.gif"  name="zipcode" style=" margin-left: 5px;" >
 </td>
 </tr>
 <tr>
 
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<input type="text"  name="name" style="height: 22px; width:300px; float: left;">&nbsp;기본주소
+<input type="text"  name="addr1" style="height: 22px; width:300px; float: left;">&nbsp;기본주소
 </td>
 </tr>
 <tr>
 
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<input type="text"  name="name" style="height: 22px; width:300px; float: left;">&nbsp;나머지 주소
+<input type="text"  name="addr2" style="height: 22px; width:300px; float: left;">&nbsp;나머지 주소
 </td>
 </tr>
 <!-- 일반전화 -->
@@ -304,8 +311,6 @@ height: 50px; margin: 0px auto; border-collapse: collapse;border-spacing: 0px; t
 <td style="border: 1px solid silver; width:200px ; padding: 10px 10px" >생년월일</td>
 <td style="padding: 10px 10px">
 <input type="text" name="birth" style="width:120px;">
-<input type="radio" name="ps" checked="checked">&nbsp;양력
-<input type="radio" name="ps">&nbsp;음력
 
  <p class="help-block">생년월일은 2000-01-01 형식으로 입력 합니다.</p>
 </td>
@@ -343,7 +348,7 @@ height: 50px; margin: 0px auto; border-collapse: collapse;border-spacing: 0px; t
 <tr>
 <td style="border: 1px solid silver; width:200px ; padding: 10px 10px" >반려견의 이름</td>
 <td style="padding: 10px 10px; border: 1px solid silver;">
-<input type="text" name="petname" style="width:200px;">
+<input type="text" name="pname" style="width:200px;">
 
 </td>
 </tr>
@@ -607,12 +612,12 @@ o 로그 기록 <br>
 
 <c:choose>
 	<c:when test="${mode=='created'}">
-	<input name="sendButton" onclick="memberOK();" type="image" src="<%=cp%>/resource/images/btn_member_join1.gif">
-	<input name="cancleButton" onclick="javascript:location.href='<%=cp%>/member/login.do';"  type="image" src="<%=cp%>/resource/images/btn_member_join_cancel.gif">
+	<input type="image" src="<%=cp%>/resource/images/btn_member_join1.gif">
+	<img onclick="javascript:location.href='<%=cp%>/member/login.do';" src="<%=cp%>/resource/images/btn_member_join_cancel.gif">
 	</c:when>
 	<c:when test="${mode=='update'}">
-	<input name="sendButton" onclick="memberOK();" type="image" src="<%=cp%>/resource/images/btn_modify_member.gif">
-	<input name="cancleButton" onclick="javascript:location.href='<%=cp%>/member/login.do';"  type="image" src="<%=cp%>/resource/images/btn_modify_cancel.gif">
+	<input  src="<%=cp%>/resource/images/btn_modify_member.gif">
+	<img   src="<%=cp%>/resource/images/btn_modify_cancel.gif">
 	</c:when>
 </c:choose>
 

@@ -77,6 +77,7 @@ public class MemberDAO {
 		PreparedStatement pstmt=null;
 		Connection conn=null;
 		StringBuffer sb=new StringBuffer();
+		System.out.println("sd");
 		
 		try {
 			conn=DBCPConn.getConnection();
@@ -85,7 +86,7 @@ public class MemberDAO {
 			sb.append("		VALUES (?,?,?,?,?,?)");
 			
 			pstmt=conn.prepareStatement(sb.toString());
-			pstmt.executeQuery();
+			
 			
 			pstmt.setString(1, dto.getUserEmail());
 			pstmt.setString(2, dto.getUserName());
@@ -94,20 +95,25 @@ public class MemberDAO {
 			pstmt.setString(5, dto.getAddr2());
 			pstmt.setString(6, dto.getTel());
 			
+			pstmt.executeUpdate();
+			
 			pstmt.close();
 			
-			conn=DBCPConn.getConnection();
+			sb=new StringBuffer();
 			
-			sb.append("INSERT INTO member2 (pwd,birth,pname)");
-			sb.append("		VALUES (?,?,?)");
+			sb.append("INSERT INTO member2 (email,pwd,birth,pname)");
+			sb.append("		VALUES (?,?,?,?)");
 			
 			pstmt=conn.prepareStatement(sb.toString());
+			
+			pstmt.setString(1, dto.getUserEmail());
+			pstmt.setString(2, dto.getUserPwd());
+			pstmt.setString(3, dto.getBirth());
+			pstmt.setString(4, dto.getPname());
+			
 			result=pstmt.executeUpdate();
 			
-			pstmt.setString(1, dto.getUserPwd());
-			pstmt.setString(2, dto.getBirth());
-			pstmt.setString(3, dto.getPname());
-			
+
 			pstmt.close();
 			
 			
