@@ -22,7 +22,6 @@ public class MenuServlet extends MyServlet {
 		req.setCharacterEncoding("utf-8");
 		
 		String uri=req.getRequestURI();
-		String cp=req.getContextPath();
 		
 		if(uri.indexOf("menu.do")!=-1) {
 			menuPage(req, resp);
@@ -72,8 +71,8 @@ public class MenuServlet extends MyServlet {
 		list=dao.listMenuPage(start, end, pdKindcode);
 		
 		//∆‰¿Ã¬° √≥∏Æ
-		String list_url=cp+"/menu/menu_page.jsp?pdkindcode="+pdKindcode;
-		String menu_detail_url=cp+"/menu/menu_detail.jsp?page="+current_page+"&pdkindcode="+pdKindcode;
+		String list_url=cp+"/menu/menu.do?pdkindcode="+pdKindcode;
+		String menu_detail_url=cp+"/menu/menu_detail.do?page="+current_page+"&pdkindcode="+pdKindcode;
 		
 		String paging=util.paging(current_page, total_page, list_url);
 		
