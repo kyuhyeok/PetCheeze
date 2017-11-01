@@ -32,26 +32,26 @@
 
     	var str = f.subject.value;
         if(!str) {
-            alert("제목을 입력하세요. ");
             f.subject.focus();
-            return;
+            return false;
         }
 
     	str = f.content.value;
         if(!str) {
-            alert("내용을 입력하세요. ");
             f.content.focus();
-            return;
+            return false;
         }
     	
-        var mode="${mode}";
-        if(mode=="created")
+    	var mode="${mode}";
+    	if(mode=="created")
     		f.action="<%=cp%>/bbs/created_ok.do";
     	else if(mode=="update")
     		f.action="<%=cp%>/bbs/update_ok.do";
 
 		return true;
 	}
+  
+  
 </script>
 
 </head>
@@ -73,7 +73,7 @@
 				제공하는 제품과 서비스를 소개합니다
 			</div>
 
-			<form name="boardForm" method="post">
+			<form name="boardForm" method="post" onsubmit="return sendBoard();">
 				<div>
 					<table
 						style="width: 1100px; margin: 20px auto 0px; border-spacing: 0px;">
@@ -112,7 +112,7 @@
 								<td colspan="4" align="center">
 									
 									<button type="submit" class="btn btn-primary" style="border: 1px solid #e7e8ea; height: 42px; text-align: center; width: 76px;"
-										onclick="sendBoard();">${mode=="created"?"등록하기":"수정완료"}</button>
+										>${mode=="created"?"등록하기":"수정완료"}</button>
 									
 									<button type="reset" class="btn" style="border: 1px solid #e7e8ea; height: 42px; text-align: center; width: 76px;">다시입력</button>
 									
