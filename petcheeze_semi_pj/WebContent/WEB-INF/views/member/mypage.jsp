@@ -144,7 +144,7 @@ border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;
 border-collapse: collapse;border-spacing: 0px; text-align: justify; float: left;" >
 <tr>
 <td align="center">
-	<img  src="<%=cp%>/resource/images/mypage_06.png" 
+	<img src="<%=cp%>/resource/images/mypage_06.png" 
 	onmouseover="this.src='<%=cp%>/resource/images/mypage_06_r.png';" 
 	onmouseout="this.src='<%=cp%>/resource/images/mypage_06.png';" 
 	onclick="javascript:location.href='<%=cp%>/order/address.do';">

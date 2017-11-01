@@ -15,12 +15,6 @@
 <link rel="stylesheet" href="<%=cp%>/resource/css/style.css" type="text/css">
 <link rel="stylesheet" href="<%=cp%>/resource/css/layout.css" type="text/css">
 
-<script type="text/javascript">
-
-
-</script>
-
-
 </head>
 <body>
 
@@ -29,9 +23,7 @@
 </div>
 
 
-<div>
-
-<form name="memberForm" method="post">
+<form name="orderForm" method="post">
 
 <h4><p align="center"  style="width: 1150px; margin:10px auto;">O R D E R</p></h4>
 
@@ -53,17 +45,17 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 
 <table style="width: 1150px; height: 90px; margin: 30px auto 0px; border: 5px solid #EAEAEA;
 border-collapse: collapse;border-spacing: 0px; font-size: 12px;" >
-<tr>
-<td style="margin-left: 20px; margin-top: 25px; width: 39px; height: 24px;  float: left; border: 1px solid silver; text-align: center; background: #f2f2f2;" >오늘</td>
-<td style="margin-top: 25px; width: 39px; height: 24px;  float: left; border: 1px solid silver; text-align: center; background: #f2f2f2;" >1주일</td>
-<td style="margin-top: 25px; width: 39px; height: 24px;  float: left; border: 1px solid silver; text-align: center; background: #f2f2f2;" >1개월</td>
-<td style="margin-top: 25px; width: 39px; height: 24px;  float: left; border: 1px solid silver; text-align: center; background: #f2f2f2;" >3개월</td>
-<td style="margin-top: 25px; width: 39px; height: 24px;  float: left; border: 1px solid silver; text-align: center; background: #f2f2f2;" >6개월</td>
-<td style="margin-left: 20px; margin-top: 25px; float: left; text-align: right; " ><input type="text" style="height: 22px;width: 150px;"></td>
-<td style="float: left; margin-left: 5px; margin-top: 30px;text-align: right; " ><input type="image" src="<%=cp%>/resource/images/ico_cal.gif"></td>
+<tr >
+<td style="margin-left: 20px; padding-top:2px; margin-top: 25px; width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=today" onclick="date()" >오늘</a></td>
+<td style="margin-top: 25px;padding-top:2px; width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=week"  onclick="date()">1주일</a></td>
+<td style="margin-top: 25px; padding-top:2px;width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=month" onclick="date()">1달</a></td>
+<td style="margin-top: 25px; padding-top:2px;width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=3month" onclick="date()">3달</a></td>
+<td style="margin-top: 25px; padding-top:2px;width: 39px; height: 22px;  float: left; border: 1px solid silver; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=6month"  onclick="date()">6달</a></td>
+<td style="margin-left: 20px; margin-top: 25px; float: left;  " ><input type="text" value="${today}" style="height: 22px;width: 120px;text-align: center; "></td>
+<td style="float: left; margin-left: 5px; margin-top: 30px;text-align: right; "><input type="image" id="datepicker1" src="<%=cp%>/resource/images/ico_cal.gif"></td>
 <td style="float: left; margin-left: 5px; margin-top: 28px;text-align: right;" >~</td>
-<td style="margin-left: 10px; margin-top: 25px; float: left; text-align: right; " ><input type="text" style="height: 22px;width: 150px;"></td>
-<td style="float: left; margin-left: 5px; margin-top: 30px;text-align: right; " ><input type="image" src="<%=cp%>/resource/images/ico_cal.gif"></td>
+<td style="margin-left: 10px; margin-top: 25px; float: left; " ><input type="text" value="${duringdate}" style="height: 22px;width: 120px;text-align: center;"></td>
+<td style="float: left; margin-left: 5px; margin-top: 30px;text-align: right; " ><input type="image" id="datepicker2" src="<%=cp%>/resource/images/ico_cal.gif"></td>
 <td style="float: left; margin-left: 10px; margin-top: 27px;text-align: right; " ><input type="image" src="<%=cp%>/resource/images/btn_search.gif"></td>
 
 </tr>
@@ -89,9 +81,21 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 <td style="width: 111px; height: 52px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >주문처리상태</td>
 <td style="width: 111px; height: 52px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >취소/교환/반품</td>
 </tr>
+
+<c:forEach var="list" items="${list}"> 
+
 <tr style="border-collapse: collapse;border-spacing: 0px;"> 
-<td colspan="7" style="width: 199px; height: 150px; border: 1px solid silver; border-right: 1px solid silver; padding-top: 5px; padding-bottom:5px;"  ><b>주문내역이 없습니다</b></td>
+<td style="width: 135px; height: 150px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver; "  >${list.orderDate}<br>[${list.orderCode}]</td>
+<td style="width: 93px; height: 150px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdImage}</td>
+<td style="width: 526px; height: 150px;padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdName}</td>
+<td style="width: 61px; height: 150px;  padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdCnt}</td>
+<td style="width: 111px; height: 150px;  padding-top: 5px; padding-bottom:5px;border-bottom: 1px solid silver;  "  >${list.totalPrice}</td>
+<td style="width: 111px; height: 150px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.orederState}</td>
+<td style="width: 111px; height: 150px;  padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >취소/교환/반품</td>
 </tr>
+
+</c:forEach>
+
 
 </table>
 
@@ -104,7 +108,7 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 <input type="image" src="<%=cp%>/resource/images/btn_page_last.gif">
 </div>
 
-
+</form>
 
 	<div class="footer" >
 	    <jsp:include page="/WEB-INF/views/layout/footer.jsp"></jsp:include>
