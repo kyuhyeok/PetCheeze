@@ -12,17 +12,12 @@
 <meta charset="UTF-8">
 <title>PetCheeze</title>
 
-<link rel="stylesheet" href="<%=cp%>/resource/css/style.css"
-	type="text/css">
-<link rel="stylesheet" href="<%=cp%>/resource/css/layout.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="<%=cp%>/resource/jquery/css/smoothness/jquery-ui.min.css"
-	type="text/css">
-
+<link rel="stylesheet" href="<%=cp%>/resource/css/style.css" type="text/css">
+<link rel="stylesheet" href="<%=cp%>/resource/css/layout.css" type="text/css">
+<link rel="stylesheet" href="<%=cp%>/resource/jquery/css/smoothness/jquery-ui.min.css" type="text/css">
 <script type="text/javascript" src="<%=cp%>/resource/js/util.js"></script>
-<script type="text/javascript"
-	src="<%=cp%>/resource/jquery/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="<%=cp%>/resource/jquery/js/jquery-1.12.4.min.js"></script>
+
 <script type="text/javascript">
 	function searchList() {
 		var f=document.searchForm;
@@ -36,7 +31,6 @@
 	<div class="header">
 		<jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
 	</div>
-
 
 	<div class="container">
 		<div class="body-container"
@@ -53,7 +47,11 @@
 				<table
 					style="width: 100%; margin: 15px 0px 5px; border-spacing: 0px;">
 					<tr height="35">
-						<td align="left" width="50%"></td>
+						<td align="left" width="50%">
+							<button type="button" class="btn btn-default btn-sm wbtn"
+							style="border: 1px solid #e9e8ea; height: 32px; text-align: center; width: 76px;"
+							onclick="javascript:location.href='<%=cp%>/bbs/list.do';">새로고침</button>
+						</td>
 
 						<td align="right" width="50%">
 							<form name="searchForm" method="post">
@@ -96,9 +94,7 @@
 					</tbody>
 
 				</table>
-				
-				
-				
+
 				<div style="text-align: center; min-height: 50px; line-height: 50px; border-bottom: 1px solid #cccccc;">
 					<table style="width: 100%; margin: 0px auto; border-spacing: 0px;">
 					<c:if test="${dataCount==0 }">
@@ -114,16 +110,11 @@
 				<table style="width: 100%; margin: 10px auto; border-spacing: 10px;">
 
 					<tr height="40">
-						<td align="right" width="100">
-							<button type="button" class="btn btn-default btn-sm wbtn"
-								style="border: 1px solid #e9e8ea; height: 42px; text-align: center; width: 76px;"
-								onclick="javascript:location.href='<%=cp%>/bbs/list.do';">새로고침</button>
-						</td>
-
-						<td align="left" width="100">
-							<button type="button" class="btn btn-primary btn-sm bbtn"
-								style="border: 1px solid #e7e8ea; height: 42px; text-align: center; width: 76px;"
+						<td align="center" width="100">
+							<c:if test="${sessionScope.member.userId=='admin'}">
+							<button type="button" style="border: 1px solid #c0c0c0; height: 42px; text-align: center; width: 76px;"
 								onclick="javascript:location.href='<%=cp%>/bbs/created.do';">글쓰기</button>
+							</c:if>
 						</td>
 					</tr>
 				</table>
