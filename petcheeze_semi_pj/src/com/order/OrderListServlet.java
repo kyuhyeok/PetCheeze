@@ -41,7 +41,7 @@ public class OrderListServlet extends MyServlet{
 	}
 	
 	protected void orderListForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-	
+		
 		String duringdate=req.getParameter("duringdate");
 		Calendar cal=new GregorianCalendar(Locale.KOREA);
 		
@@ -99,6 +99,12 @@ public class OrderListServlet extends MyServlet{
 				String strDate=sdf.format(cal.getTime());
 				req.setAttribute("duringdate", strDate);
 			}
+			
+			
+			
+			
+			
+			
 			
 			
 		} catch (Exception e) {

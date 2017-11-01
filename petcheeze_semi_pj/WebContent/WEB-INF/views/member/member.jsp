@@ -613,11 +613,11 @@ o 로그 기록 <br>
 <c:choose>
 	<c:when test="${mode=='created'}">
 	<input type="image" src="<%=cp%>/resource/images/btn_member_join1.gif">
-	<img onclick="javascript:location.href='<%=cp%>/member/login.do';" src="<%=cp%>/resource/images/btn_member_join_cancel.gif">
+	<img onclick="javascript:location.href='<%=cp%>/main/main.do';" src="<%=cp%>/resource/images/btn_member_join_cancel.gif">
 	</c:when>
 	<c:when test="${mode=='update'}">
 	<input  src="<%=cp%>/resource/images/btn_modify_member.gif">
-	<img   src="<%=cp%>/resource/images/btn_modify_cancel.gif">
+	<img   onclick="javascript:location.href='<%=cp%>/main/main.do';" src="<%=cp%>/resource/images/btn_modify_cancel.gif">
 	</c:when>
 </c:choose>
 

@@ -53,7 +53,7 @@ public class MemberServlet extends HttpServlet {
 			pwdForm(req, resp);
 		}else if (uri.indexOf("pwd_ok.do")!=-1) {
 			pwdSubmit(req, resp);
-		}else if (uri.indexOf("update_ok.do")!=-1) {
+		}else if (uri.indexOf("update.do")!=-1) {
 			updateSubmit(req, resp);
 		}else if (uri.indexOf("email_check.do")!=-1) {
 			checkEmail(req, resp);
@@ -165,7 +165,7 @@ public class MemberServlet extends HttpServlet {
 	protected void memberSubmit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		MemberDAO dao=new MemberDAO();
 		MemberDTO dto=new MemberDTO();
-		System.out.println("1212");
+
 		dto.setUserEmail(req.getParameter("email1")+"@"+req.getParameter("email2"));
 		dto.setUserName(req.getParameter("userName"));
 		dto.setUserPwd(req.getParameter("userPwd"));
@@ -210,9 +210,17 @@ public class MemberServlet extends HttpServlet {
 		
 	}
 	
+	protected void updateForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		
+		forward(req, resp, "/WEB-INF/views/member/member.jsp");
+	}
+	
 	protected void updateSubmit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		
+		MemberDAO dao=new MemberDAO();
+		MemberDTO dto=new MemberDTO();
 		
+		forward(req, resp, "/WEB-INF/views/member/member.jsp");
 	}
 
 }
