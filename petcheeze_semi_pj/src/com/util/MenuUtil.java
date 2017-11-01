@@ -73,7 +73,6 @@ public class MenuUtil {
 		return sb.toString();
 	}
     
-    //********************************************
     // 특수문자를 HTML 문자로 변경
 	public String escape(String str) {
 		if(str==null||str.length()==0)
@@ -103,7 +102,6 @@ public class MenuUtil {
 		return builder.toString();
 	}
 
-    //********************************************
     // 특수문자를 HTML 문자로 변경 및 엔터를 <br>로 변경 
      public String htmlSymbols(String str) {
 		if(str==null||str.length()==0)
@@ -120,7 +118,6 @@ public class MenuUtil {
     	 return str;
      }
 
-    //********************************************
  	// 문자열의 내용중 원하는 문자열을 다른 문자열로 변환
  	// String str = replaceAll(str, "\n", "<br>"); // 엔터를 <br>로 변환
  	public String replaceAll(String str, String oldStr, String newStr) throws Exception {
@@ -144,17 +141,6 @@ public class MenuUtil {
  		return sb.toString();
  	}
 
-    //********************************************
- 	// E-Mail 검사
-     public boolean isValidEmail(String email) {
-         if (email==null) return false;
-         boolean b = Pattern.matches(
-        	 "[\\w\\~\\-\\.]+@[\\w\\~\\-]+(\\.[\\w\\~\\-]+)+", 
-             email.trim());
-         return b;
-     }
-
-    //********************************************
  	// NULL 인 경우 ""로 
      public String checkNull(String str) {
          String strTmp;
