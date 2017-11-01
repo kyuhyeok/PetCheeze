@@ -30,7 +30,7 @@ $(function(){
                     &nbsp;|&nbsp;
                 <a href="<%=cp%>/member/member.do">회원가입</a>
                     &nbsp;|&nbsp;
-                <a href="<%=cp%>/cart/nomem_cart.do">장바구니</a>
+                <a href="<%=cp%>/cart/list2.do">장바구니</a>
                     &nbsp;|&nbsp;
                 <a href="<%=cp%>/order/order_list.do">주문</a>
                     &nbsp;|&nbsp;
@@ -43,7 +43,7 @@ $(function(){
                     &nbsp;|&nbsp;
                     <a href="<%=cp%>/member/update.do">정보수정</a>
                       &nbsp;|&nbsp;
-                <a href="<%=cp%>/cart/nomem_list.do">장바구니</a>
+                <a href="<%=cp%>/cart/list.do">장바구니</a>
                     &nbsp;|&nbsp;
                 <a href="<%=cp%>/order/order_list.do">주문</a>
                     &nbsp;|&nbsp;
