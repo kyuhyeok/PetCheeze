@@ -34,10 +34,8 @@ li{
 }
 
 .function {
-    margin: 0;
+    margin: 17px 0 20px 0;
     padding: 0;
-    overflow: hidden;
-    line-height: 10px;
 }
 
 .prdCount {
@@ -76,7 +74,6 @@ li{
     width: 25%;
     margin: 0 0 30px;
     color: #838383;
-    vertical-align: top;
     list-style: none;
 }
 
@@ -137,6 +134,35 @@ li{
 .menu_paging{
     padding: 30px 0 40px;
     text-align: center;
+}
+
+.menu_paging ol{
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+}
+
+.menu_paging ol li{
+    margin: 0 0 0 -1px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    color: #757575;
+}
+
+.menu_paging ol li a.this{
+    padding-bottom: 6px;
+    color: #8b8582;
+}
+
+.menu_paging ol li a{
+    padding: 9px 0;
+    width: 33px;
+    display: block;
+    font-weight: bold;
+    line-height: 14px;
+    background: #ffffff;
 }
 
 .menu_paging_btn{
