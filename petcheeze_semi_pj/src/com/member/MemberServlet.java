@@ -22,6 +22,9 @@ public class MemberServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("aaa");
+		String uri = req.getRequestURI();
+		System.out.println(uri);
 		process(req, resp);
 	}
 	
@@ -34,7 +37,7 @@ public class MemberServlet extends HttpServlet {
 		req.setCharacterEncoding("utf-8");
 		
 		String uri = req.getRequestURI();
-	
+		System.out.println(uri);
 		//uri에 따른 작업 구분
 		if(uri.indexOf("login.do")!=-1) {
 			loginForm(req,resp);
@@ -50,6 +53,8 @@ public class MemberServlet extends HttpServlet {
 			pwdForm(req, resp);
 		}else if (uri.indexOf("pwd_ok.do")!=-1) {
 			pwdSubmit(req, resp);
+		}else if (uri.indexOf("update.do")!=-1) {
+			updateForm(req, resp);
 		}else if (uri.indexOf("update_ok.do")!=-1) {
 			updateSubmit(req, resp);
 		}else if (uri.indexOf("email_check.do")!=-1) {
@@ -84,10 +89,12 @@ public class MemberServlet extends HttpServlet {
 		}
 		
 		SessionInfo info = new SessionInfo();
+		
 		info.setUserId(email);
 		info.setUserName(dto.getUserName());
 		
 		session.setAttribute("member", info);
+		
 		
 		String cp = req.getContextPath();
 		
@@ -139,6 +146,8 @@ public class MemberServlet extends HttpServlet {
 			req.setAttribute("title", "회원가입");
 			req.setAttribute("mode", "created");
 			req.setAttribute("message", message);
+			req.setAttribute("email1", req.getParameter("email1"));
+			req.setAttribute("email2", req.getParameter("email2"));
 			forward(req, resp, "/WEB-INF/views/member/member.jsp");
 			return;
 		}
@@ -151,20 +160,16 @@ public class MemberServlet extends HttpServlet {
 		req.setAttribute("message", sb.toString());
 		
 		forward(req, resp,"/WEB-INF/views/member/member.jsp");
-		
-		String cp=req.getContextPath();
-		resp.sendRedirect(cp);
+
 		
 		
 	}
 	
 	
-	
-	
 	protected void memberSubmit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		MemberDAO dao=new MemberDAO();
 		MemberDTO dto=new MemberDTO();
-		
+
 		dto.setUserEmail(req.getParameter("email1")+"@"+req.getParameter("email2"));
 		dto.setUserName(req.getParameter("userName"));
 		dto.setUserPwd(req.getParameter("userPwd"));
@@ -174,11 +179,12 @@ public class MemberServlet extends HttpServlet {
 		dto.setAddr2(req.getParameter("addr2"));
 		dto.setTel(req.getParameter("tel1")+"-"+req.getParameter("tel2")+"-"+req.getParameter("tel3"));
 		dto.setPname(req.getParameter("pname"));
-		
+
 		int result=dao.insertMember(dto);
+		
 		if(result==0) {
 			String message="회원 가입이 실패 했습니다.";
-			
+			System.out.println("회원 가입이 실패 했습니다.");
 			req.setAttribute("title", "회원가입");
 			req.setAttribute("mode", "created");
 			req.setAttribute("message", message);
@@ -194,10 +200,7 @@ public class MemberServlet extends HttpServlet {
 		req.setAttribute("message", sb.toString());
 		
 		forward(req, resp,"/WEB-INF/views/member/complete.jsp");
-		
-		String cp=req.getContextPath();
-		resp.sendRedirect(cp);
-		
+
 		
 	}
 	
@@ -211,8 +214,59 @@ public class MemberServlet extends HttpServlet {
 		
 	}
 	
+	protected void updateForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		
+		MemberDAO dao=new MemberDAO();
+		MemberDTO dto=new MemberDTO();
+		
+		req.setAttribute("mode", "update");
+		HttpSession session=req.getSession();
+		SessionInfo info=(SessionInfo)session.getAttribute("member");
+
+		dto=dao.readMember(info.getUserId());
+		
+		req.setAttribute("update", dto);
+
+		
+		forward(req, resp, "/WEB-INF/views/member/member.jsp");
+	}
+	
 	protected void updateSubmit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		
+		MemberDAO dao=new MemberDAO();
+		MemberDTO dto=new MemberDTO();
+		
+		
+		dto.setUserEmail(req.getParameter("email1")+"@"+req.getParameter("email2"));
+		dto.setUserName(req.getParameter("userName"));
+		dto.setUserPwd(req.getParameter("userPwd"));
+		dto.setBirth(req.getParameter("birth"));
+		dto.setAddr0(req.getParameter("addr0"));
+		dto.setAddr1(req.getParameter("addr1"));
+		dto.setAddr2(req.getParameter("addr2"));
+		dto.setTel(req.getParameter("tel1")+"-"+req.getParameter("tel2")+"-"+req.getParameter("tel3"));
+		dto.setPname(req.getParameter("pname"));
+
+		int result=dao.updateMember(dto);
+		
+		if(result==0) {
+			String message="정보수정이 실패하였습니다..";
+
+			req.setAttribute("title", "정보수정완료");
+			req.setAttribute("mode", "update");
+			req.setAttribute("message", message);
+			forward(req, resp, "/WEB-INF/views/member/member.jsp");
+			return;
+		}
+		
+		StringBuffer sb=new StringBuffer();
+		sb.append("<b>"+dto.getUserName()+"</b>님 정보수정이 완료 되었습니다.");
+		sb.append("메인화면으로 이동하여 로그인 하시기 바랍니다.<br>");
+		
+		req.setAttribute("title", "정보수정완료");
+		req.setAttribute("message", sb.toString());
+		
+		forward(req, resp,"/WEB-INF/views/member/complete2.jsp");
 		
 	}
 

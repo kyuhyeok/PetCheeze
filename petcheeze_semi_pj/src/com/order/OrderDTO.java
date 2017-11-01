@@ -1,9 +1,21 @@
 package com.order;
 
 public class OrderDTO {
-	int orderCode,totalPrice,pdCnt;
+	int orderCode,pdCnt,pdCode,pdPrice,totalPrice;
 	String orderDate,orederState,email,pdImage,pdName;
 	
+	public int getPdPrice() {
+		return pdPrice;
+	}
+	public void setPdPrice(int pdPrice) {
+		this.pdPrice = pdPrice;
+	}
+	public int getPdCode() {
+		return pdCode;
+	}
+	public void setPdCode(int pdCode) {
+		this.pdCode = pdCode;
+	}
 	public String getPdName() {
 		return pdName;
 	}

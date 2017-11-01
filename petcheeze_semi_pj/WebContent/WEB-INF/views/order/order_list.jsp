@@ -15,6 +15,14 @@
 <link rel="stylesheet" href="<%=cp%>/resource/css/style.css" type="text/css">
 <link rel="stylesheet" href="<%=cp%>/resource/css/layout.css" type="text/css">
 
+<script type="text/javascript">
+	function searchList() {
+		var f=document.searchForm;
+		f.action="<%=cp%>/bbs/list.do";
+		f.submit();
+	}
+</script>
+
 </head>
 <body>
 
@@ -82,31 +90,34 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 <td style="width: 111px; height: 52px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >취소/교환/반품</td>
 </tr>
 
+<c:choose>
+
+<c:when test="${empty list}"> 
+<tr style="border-collapse: collapse;border-spacing: 0px;"> 
+<td colspan="7" style="width: 1150px; height: 130px; padding-top: 5px; padding-bottom:5px; border: 1px solid silver;"  >주문한 상품이 없습니다.</td>
+</tr>
+</c:when>
+
+
+<c:when test="${not empty list}">
 <c:forEach var="list" items="${list}"> 
 
 <tr style="border-collapse: collapse;border-spacing: 0px;"> 
-<td style="width: 135px; height: 150px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver; "  >${list.orderDate}<br>[${list.orderCode}]</td>
-<td style="width: 93px; height: 150px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdImage}</td>
-<td style="width: 526px; height: 150px;padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdName}</td>
-<td style="width: 61px; height: 150px;  padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdCnt}</td>
-<td style="width: 111px; height: 150px;  padding-top: 5px; padding-bottom:5px;border-bottom: 1px solid silver;  "  >${list.totalPrice}</td>
-<td style="width: 111px; height: 150px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.orederState}</td>
-<td style="width: 111px; height: 150px;  padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >취소/교환/반품</td>
+<td style="width: 135px; height: 130px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver; "  >${list.orderDate}<br>[${list.orderCode}]</td>
+<td style="width: 93px; height: 130px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" ><img style="max-height: 130px;max-width: 93px;" src="<%=cp%>/resource/images/product_contents/${list.pdCode}/${list.pdImage}" class="thumb"/></td>
+<td style="width: 526px; height: 130px;padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdName}</td>
+<td style="width: 61px; height: 130px;  padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdCnt}</td>
+<td style="width: 111px; height: 130px;  padding-top: 5px; padding-bottom:5px;border-bottom: 1px solid silver;  "  >${list.totalPrice}</td>
+<td style="width: 111px; height: 130px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.orederState}</td>
+<td style="width: 111px; height: 130px;  padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >취소/교환/반품</td>
 </tr>
 
 </c:forEach>
+</c:when>
 
-
+</c:choose>
 </table>
 
-
-<div align="center" style="margin-top: 30px;">
-<input type="image" src="<%=cp%>/resource/images/btn_page_first.gif">
-<input type="image" src="<%=cp%>/resource/images/btn_page_prev.gif">
-
-<input type="image" src="<%=cp%>/resource/images/btn_page_next.gif">
-<input type="image" src="<%=cp%>/resource/images/btn_page_last.gif">
-</div>
 
 </form>
 

@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>spring</title>
+<title>login</title>
 
 
 
@@ -78,27 +78,27 @@ function sendLogin() {
 	<div>
 
 	    <div align="center">
-	    	<div style="text-align: center;">
+	    	<div style="text-align: center; margin-top: 120px">
 	        	<span style="font-weight: bold; font-size:27px; color: #424951;">l o g i n</span>
 	        </div>
 	        
 	       
 			 <form name="loginForm" method="post" action="">
-			   <fieldset style="width: 70%; height: 300px; padding-top: 50px; margin-top: 20px;">
-			 	<table style="border-spacing: 10px">
+			   <fieldset style="width: 500px; height: 270px; padding-top: 50px; margin-top: 50px;">
+			 	<table style="border-spacing: 10px;">
 			 	  <tr>
 			 	    <td align="center">아이디</td>
-			 	    <td><input type="text" name="userId" style="height:37px;border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;"></td>
+			 	    <td><input type="text" name="userId" style="height:37px;border:1px solid #cccccc;"></td>
 			 	    
 			 	    <td rowspan="2" width="150px">
-			      	 
+			      	 &nbsp;&nbsp;&nbsp;
 			      	  <input type="image" src="<%=cp %>/resource/images/btn_login.png" width="120px" height="84px" onclick="sendLogin()">
 			 	    
 			 	    </td>
 			 	  </tr>
 			 	  <tr style="border: 1px solid #cccccc;">
 			 	  	<td align="center">비밀번호</td>
-			 	  	<td><input type="password" name="userPwd" style="height:37px;border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;"></td>
+			 	  	<td><input type="password" name="userPwd" style="height:37px;border:1px solid #cccccc;"></td>
 			 	  </tr>
 			 	</table>  
 			 	
@@ -130,10 +130,7 @@ function sendLogin() {
 		
 				</table>
 			
-				<div style="margin-top: 10px">
-				    <span>회원가입을 하시면 더욱 특별한 혜택을 ..</span>
-				</div>
-				
+			
 
   					
 				
