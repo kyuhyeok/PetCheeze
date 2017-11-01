@@ -77,7 +77,7 @@ public class MenuServlet extends MyServlet {
 		
 		//ÆäÀÌÂ¡ Ã³¸®
 		String list_url=cp+"/menu/menu.do?pdkindcode="+pdKindcode;
-		String menu_detail_url=cp+"/menu/menu_detail.do?page="+current_page+"&pdkindcode="+pdKindcode;
+		String menu_detail_url=cp+"/menu/menu_detail.do";
 		
 		String paging=util.paging(current_page, total_page, list_url);
 		

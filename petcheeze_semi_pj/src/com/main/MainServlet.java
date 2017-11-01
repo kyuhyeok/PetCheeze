@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.menu.MenuDAO;
 import com.menu.MenuDTO;
-import com.util.MenuUtil;
 import com.util.MyServlet;
 
 @WebServlet("/main.do")
