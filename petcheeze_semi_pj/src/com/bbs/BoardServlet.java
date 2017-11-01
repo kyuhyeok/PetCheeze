@@ -242,16 +242,16 @@ public class BoardServlet extends MyServlet {
 		BoardDAO dao = new BoardDAO();
 	
 		String page=req.getParameter("page");
-		int num=Integer.parseInt(	req.getParameter("num"));
+		int num=Integer.parseInt(req.getParameter("num"));
 		BoardDTO dto=dao.readBoard(num);
 		
 		if(dto==null) {
 			resp.sendRedirect(cp+"/bbs/list.do?page="+page);
 			return;
 		}
-		
+
 		// 게시물을 올린 사용자가 아니면
-		if(! dto.getUserId().equals(info.getUserId())) {
+		if(! info.getUserId().equals("admin")) {
 			resp.sendRedirect(cp+"/bbs/list.do?page="+page);
 			return;
 		}
@@ -269,6 +269,7 @@ public class BoardServlet extends MyServlet {
 		String cp = req.getContextPath();
 		BoardDAO dao = new BoardDAO();
 		HttpSession session=req.getSession();
+		@SuppressWarnings("unused")
 		SessionInfo info=(SessionInfo)session.getAttribute("member");
 	
 		String page=req.getParameter("page");
@@ -283,7 +284,7 @@ public class BoardServlet extends MyServlet {
 		dto.setSubject(req.getParameter("subject"));
 		dto.setContent(req.getParameter("content"));
 		
-		dao.updateBoard(dto, info.getUserId());
+		dao.updateBoard(dto);
 		
 		resp.sendRedirect(cp+"/bbs/list.do?page="+page);
 	}

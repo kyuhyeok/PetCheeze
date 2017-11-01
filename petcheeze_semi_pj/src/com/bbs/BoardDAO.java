@@ -327,28 +327,31 @@ public class BoardDAO {
         try {
             if(searchValue!=null && searchValue.length() != 0) {
                 sb.append("SELECT ROWNUM, tb.* FROM ( ");
-                sb.append("  SELECT alnum, subject FROM bbs b JOIN member1 m ON b.userId=m.userId ");
-                if(searchKey.equals("userName")) {
-                	sb.append("     WHERE (INSTR(userName, ?) = 1)  ");
-                } else if(searchKey.equals("created")) {
-                	searchValue=searchValue.replaceAll("-", "");
-                	sb.append("     WHERE (TO_CHAR(created, 'YYYYMMDD') = ?) ");
-                } else {
-                	sb.append("     WHERE (INSTR(" + searchKey + ", ?) >= 1) ");
-                }
+                sb.append("  SELECT alnum, alsubject ,TO_CHAR(aldate, 'YYYY-MM-DD') aldate, alhit");
+        		sb.append("			FROM ALLAMLIST ");
+                
+        		if(searchKey.equals("aldate")) {
+        			searchValue=searchValue.replaceAll("-", "");
+        			sb.append("        WHERE TO_CHAR(aldate, 'YYYYMMDD') = ?  ");
+        		} else {
+        			sb.append("        WHERE INSTR(" + searchKey + ", ?) >= 1 ");
+        		}
+        		
                 sb.append("         AND (alnum > ? ) ");
                 sb.append("         ORDER BY alnum ASC ");
-                sb.append("      ) tb WHERE ROWNUM=1 ");
+                sb.append("      )tb WHERE ROWNUM=1 ");
 
                 pstmt=conn.prepareStatement(sb.toString());
                 pstmt.setString(1, searchValue);
                 pstmt.setInt(2, num);
+                
 			} else {
                 sb.append("SELECT ROWNUM, tb.* FROM ( ");
-                sb.append("  SELECT alnum, subject FROM bbs b JOIN member1 m ON b.userId=m.userId ");
+                sb.append("  SELECT alnum, alsubject ,TO_CHAR(aldate, 'YYYY-MM-DD') aldate, alhit");
+        		sb.append("			FROM ALLAMLIST ");
                 sb.append("     WHERE alnum > ? ");
                 sb.append("         ORDER BY alnum ASC ");
-                sb.append("      ) tb WHERE ROWNUM=1 ");
+                sb.append("      )tb WHERE ROWNUM=1 ");
 
                 pstmt=conn.prepareStatement(sb.toString());
                 pstmt.setInt(1, num);
@@ -389,32 +392,36 @@ public class BoardDAO {
         PreparedStatement pstmt=null;
         ResultSet rs=null;
         StringBuffer sb = new StringBuffer();
-
+        
+        
         try {
             if(searchValue!=null && searchValue.length() != 0) {
                 sb.append("SELECT ROWNUM, tb.* FROM ( ");
-                sb.append("  SELECT alnum, subject FROM bbs b JOIN member1 m ON b.userId=m.userId ");
-                if(searchKey.equals("userName")) {
-                	sb.append("     WHERE (INSTR(userName, ?) = 1)  ");
-                } else if(searchKey.equals("created")) {
-                	searchValue=searchValue.replaceAll("-", "");
-                	sb.append("     WHERE (TO_CHAR(created, 'YYYYMMDD') = ?) ");
-                } else {
-                	sb.append("     WHERE (INSTR(" + searchKey + ", ?) >= 1) ");
-                }
+                sb.append("  SELECT alnum, alsubject ,TO_CHAR(aldate, 'YYYY-MM-DD') aldate, alhit");
+        		sb.append("			FROM ALLAMLIST ");
+        		
+        		if(searchKey.equals("aldate")) {
+        			searchValue=searchValue.replaceAll("-", "");
+        			sb.append("        WHERE TO_CHAR(aldate, 'YYYYMMDD') = ?  ");
+        		} else {
+        			sb.append("        WHERE INSTR(" + searchKey + ", ?) >= 1 ");
+        		}
+        		
                 sb.append("         AND (alnum < ? ) ");
                 sb.append("         ORDER BY alnum DESC ");
-                sb.append("      ) tb WHERE ROWNUM=1 ");
+                sb.append("      )tb WHERE ROWNUM=1 ");
 
                 pstmt=conn.prepareStatement(sb.toString());
                 pstmt.setString(1, searchValue);
                 pstmt.setInt(2, num);
+                              
 			} else {
-                sb.append("SELECT ROWNUM, tb.* FROM ( ");
-                sb.append("  SELECT alnum, subject FROM bbs b JOIN member1 m ON b.userId=m.userId ");
+                sb.append("SELECT ROWNUM, tb.* FROM ( ");                
+                sb.append("  SELECT alnum, alsubject ,TO_CHAR(aldate, 'YYYY-MM-DD') aldate, alhit");
+        		sb.append("			FROM ALLAMLIST ");
                 sb.append("     WHERE alnum < ? ");
                 sb.append("         ORDER BY alnum DESC ");
-                sb.append("      ) tb WHERE ROWNUM=1 ");
+                sb.append("      )tb WHERE ROWNUM=1 ");
 
                 pstmt=conn.prepareStatement(sb.toString());
                 pstmt.setInt(1, num);
@@ -449,7 +456,7 @@ public class BoardDAO {
     }
 	
 	// 게시물 수정
-	public int updateBoard(BoardDTO dto, String userId) {
+	public int updateBoard(BoardDTO dto) {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		String sql;
@@ -461,7 +468,7 @@ public class BoardDAO {
 			pstmt.setString(2, dto.getContent());
 			pstmt.setInt(3, dto.getNum());
 			result = pstmt.executeUpdate();
-			
+
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		} finally {
