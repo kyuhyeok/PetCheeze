@@ -12,9 +12,27 @@
 <meta charset="UTF-8">
 <title>PetCheeze</title>
 
-<link rel="stylesheet" href="<%=cp%>/resource/css/menu.css" type="text/css">	<!-- menu용 CSS(규혁) -->
 <link rel="stylesheet" href="<%=cp%>/resource/css/style.css" type="text/css">
 <link rel="stylesheet" href="<%=cp%>/resource/css/layout.css" type="text/css">
+<style type="text/css">
+.contents {
+    clear: both;
+    margin: 0px auto 15px;
+    min-height: 450px;
+    width: 1150px;
+}
+.menu_title {
+    color: #4a5164;
+    letter-spacing: 8px;
+    text-align: center;
+    margin: 10px auto 27px;
+    padding: 10px;
+    min-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    background: 2px no-repeat;
+}
+</style>
 </head>
 <body>
 
@@ -24,8 +42,21 @@
 	
 <div class="contents">
 	<div class="menu_title">
-	    <h2><span>져키(육포)</span></h2>
+	    <h2><span>
+		<c:choose>
+			<c:when test="${pdkindcode eq '2'}">져키(육포)</c:when>
+			<c:when test="${pdkindcode eq '4'}">뼈&껌</c:when>
+			<c:when test="${pdkindcode eq '1'}">영양파우더</c:when>
+			<c:when test="${pdkindcode eq '3'}">세트메뉴</c:when>
+			<c:when test="${pdkindcode eq '5'}">말이&큐브&땡</c:when>
+		</c:choose>
+	    </span></h2>
 	</div>
+
+<jsp:include page="/WEB-INF/views/menu/menu_list.jsp"/>
+
+<%-- 
+<div class="contents">
 	<div class="menu_content">
 	    <div class="function">
 	        <p class="prdCount">Total <strong>5</strong> items</p>
@@ -61,14 +92,11 @@
 	        </li>
 	    </ul>
 	</div>
-	
 	<div class="menu_paging">
-	    <span class="menu_paging_btn"><a href="#none"><img src="/web/upload/oneday/btn_page_first.gif" alt="첫 페이지"/></a> </span>
-	    <span class="menu_paging_btn"><a href="#none"><img src="/web/upload/oneday/btn_page_prev.gif" alt="이전 페이지"/></a></span>
-	    <span class="menu_paging_num"><a href="#">1</a></span>
-	    <span class="menu_paging_btn"><a href="#none"><img src="/web/upload/oneday/btn_page_next.gif" alt="다음 페이지"/></a> </span>
-	    <span class="menu_paging_btn"><a href="#none"><img src="/web/upload/oneday/btn_page_last.gif" alt="마지막 페이지"/></a> </span>
+		${paging}
 	</div>
+</div>
+--%>
 </div>
 
 <div class="footer">
