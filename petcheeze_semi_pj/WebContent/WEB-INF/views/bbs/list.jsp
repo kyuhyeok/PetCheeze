@@ -58,9 +58,9 @@
 						<td align="right" width="50%">
 							<form name="searchForm" method="post">
 								<select name="searchKey" class="selectField">
-									<option value="subject">제목</option>
-									<option value="content">내용</option>
-									<option value="created">등록일</option>
+									<option value="alSUBJECT">제목</option>
+									<option value="alcotent">내용</option>
+									<option value="alDATE">등록일</option>
 								</select> <input type="text" name="searchValue" class="boxTF">
 								<button type="button" class="btn btn-info btn-sm btn-search" onclick="searchList();" 
 								style="border: 1px solid #e7e8ea; height: 32px; text-align: center; width: 32px;">
@@ -77,19 +77,18 @@
 							style="border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc;">
 							<th style="width: 60; color: #7f7f7f;">번호</th>
 							<th style="color: #7f7f7f;">제목</th>
-							<th style="width: 100; color: #7f7f7f;">글쓴이</th>
-							<th style="width: 80; color: #7f7f7f;">날짜</th>
-							<th style="width: 60; color: #7f7f7f;">조회수</th>
+							<th style="width: 40; color: #7f7f7f;">글쓴이</th>
+							<th style="width: 50; color: #7f7f7f;">날짜</th>
+							<th style="width: 50; color: #7f7f7f;">조회수</th>
 						</tr>
 					</thead>
 
 					<tbody>
 						<c:forEach var="dto" items="${list}">
-							<tr align="center" bgcolor="#ffffff" height="35"
-						style="border-bottom: 1px solid #cccccc;">
+							<tr align="center" bgcolor="#ffffff" height="35" style="border-bottom: 1px solid #cccccc;">
 								<td class="text-center">${dto.listNum}</td>
 								<td align="left" style="padding-left: 10px;"><a href='${articleUrl}&num=${dto.num}'>${dto.subject}</a></td>
-								<td class="text-center">${dto.userName}</td>
+								<td class="text-center"><p>${sessionScope.member.userName}</p></td>
 								<td class="text-center">${dto.created}</td>
 								<td class="text-center">${dto.hitCount}</td>
 							</tr>
@@ -98,28 +97,26 @@
 
 				</table>
 				
-				<div class="paging"
-					style="text-align: center; min-height: 50px; line-height: 50px; border-bottom: 1px solid #cccccc;">
+				
+				
+				<div style="text-align: center; min-height: 50px; line-height: 50px; border-bottom: 1px solid #cccccc;">
+					<table style="width: 100%; margin: 0px auto; border-spacing: 0px;">
 					<c:if test="${dataCount==0 }">
 			                   등록된 게시물이 없습니다.
 			         </c:if>
 					<c:if test="${dataCount!=0 }">
 			               ${paging}
 			         </c:if>
+			         </table>
 				</div>
 				
-				<table style="width: 100%; margin: 0px auto; border-spacing: 0px;">
-					<tr height="35">
-						<td align="center">1 2 3</td>
-					</tr>
-				</table>
 
 				<table style="width: 100%; margin: 10px auto; border-spacing: 10px;">
 
 					<tr height="40">
 						<td align="right" width="100">
 							<button type="button" class="btn btn-default btn-sm wbtn"
-								style="border: 1px solid #e7e8ea; height: 42px; text-align: center; width: 76px;"
+								style="border: 1px solid #e9e8ea; height: 42px; text-align: center; width: 76px;"
 								onclick="javascript:location.href='<%=cp%>/bbs/list.do';">새로고침</button>
 						</td>
 
