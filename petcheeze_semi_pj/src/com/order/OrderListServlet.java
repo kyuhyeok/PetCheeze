@@ -44,6 +44,7 @@ public class OrderListServlet extends MyServlet{
 		
 		String duringdate=req.getParameter("duringdate");
 		Calendar cal=new GregorianCalendar(Locale.KOREA);
+		OrderDTO dto=new OrderDTO();
 		
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 		
@@ -57,7 +58,7 @@ public class OrderListServlet extends MyServlet{
 		
 		req.setAttribute("list", list);
 		
-		System.out.println(list.size());
+		System.out.println(dto.getTotalPrice());
 		
 		try {
 			

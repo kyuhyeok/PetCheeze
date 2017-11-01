@@ -94,7 +94,7 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 
 <tr style="border-collapse: collapse;border-spacing: 0px;"> 
 <td style="width: 135px; height: 130px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver; "  >${list.orderDate}<br>[${list.orderCode}]</td>
-<td style="width: 93px; height: 130px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" ><img style="max-height: 150px;max-width:93px;" src="//www.petcheeze.co.kr/web/product/medium/201701/${list.pdImage}" class="thumb"/></td>
+<td style="width: 93px; height: 130px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" ><img style="max-height: 130px;max-width: 93px;" src="<%=cp%>/resource/images/product_contents/${list.pdCode}/${list.pdImage}" class="thumb"/></td>
 <td style="width: 526px; height: 130px;padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdName}</td>
 <td style="width: 61px; height: 130px;  padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.pdCnt}</td>
 <td style="width: 111px; height: 130px;  padding-top: 5px; padding-bottom:5px;border-bottom: 1px solid silver;  "  >${list.totalPrice}</td>

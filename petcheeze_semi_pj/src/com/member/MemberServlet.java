@@ -54,6 +54,8 @@ public class MemberServlet extends HttpServlet {
 		}else if (uri.indexOf("pwd_ok.do")!=-1) {
 			pwdSubmit(req, resp);
 		}else if (uri.indexOf("update.do")!=-1) {
+			updateForm(req, resp);
+		}else if (uri.indexOf("update_ok.do")!=-1) {
 			updateSubmit(req, resp);
 		}else if (uri.indexOf("email_check.do")!=-1) {
 			checkEmail(req, resp);
@@ -87,10 +89,12 @@ public class MemberServlet extends HttpServlet {
 		}
 		
 		SessionInfo info = new SessionInfo();
+		
 		info.setUserId(email);
 		info.setUserName(dto.getUserName());
 		
 		session.setAttribute("member", info);
+		
 		
 		String cp = req.getContextPath();
 		
@@ -212,6 +216,18 @@ public class MemberServlet extends HttpServlet {
 	
 	protected void updateForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		
+		MemberDAO dao=new MemberDAO();
+		MemberDTO dto=new MemberDTO();
+		
+		req.setAttribute("mode", "update");
+		HttpSession session=req.getSession();
+		SessionInfo info=(SessionInfo)session.getAttribute("member");
+
+		dto=dao.readMember(info.getUserId());
+		
+		req.setAttribute("update", dto);
+
+		
 		forward(req, resp, "/WEB-INF/views/member/member.jsp");
 	}
 	
@@ -220,7 +236,38 @@ public class MemberServlet extends HttpServlet {
 		MemberDAO dao=new MemberDAO();
 		MemberDTO dto=new MemberDTO();
 		
-		forward(req, resp, "/WEB-INF/views/member/member.jsp");
+		
+		dto.setUserEmail(req.getParameter("email1")+"@"+req.getParameter("email2"));
+		dto.setUserName(req.getParameter("userName"));
+		dto.setUserPwd(req.getParameter("userPwd"));
+		dto.setBirth(req.getParameter("birth"));
+		dto.setAddr0(req.getParameter("addr0"));
+		dto.setAddr1(req.getParameter("addr1"));
+		dto.setAddr2(req.getParameter("addr2"));
+		dto.setTel(req.getParameter("tel1")+"-"+req.getParameter("tel2")+"-"+req.getParameter("tel3"));
+		dto.setPname(req.getParameter("pname"));
+
+		int result=dao.updateMember(dto);
+		
+		if(result==0) {
+			String message="정보수정이 실패하였습니다..";
+
+			req.setAttribute("title", "정보수정완료");
+			req.setAttribute("mode", "update");
+			req.setAttribute("message", message);
+			forward(req, resp, "/WEB-INF/views/member/member.jsp");
+			return;
+		}
+		
+		StringBuffer sb=new StringBuffer();
+		sb.append("<b>"+dto.getUserName()+"</b>님 정보수정이 완료 되었습니다.");
+		sb.append("메인화면으로 이동하여 로그인 하시기 바랍니다.<br>");
+		
+		req.setAttribute("title", "정보수정완료");
+		req.setAttribute("message", sb.toString());
+		
+		forward(req, resp,"/WEB-INF/views/member/complete2.jsp");
+		
 	}
 
 }

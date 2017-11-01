@@ -223,8 +223,8 @@ height: 50px; margin: 0px auto; border-collapse: collapse;border-spacing: 0px; t
 <tr>
 <td style="border: 1px solid silver; width:200px ; padding: 10px 10px;" >이메일★</td>
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<input type="text"  name="email1" value="${email1}" style="height: 22px;">
-@<input type="text"  name="email2" value="${email2}" readonly="readonly" style="height: 22px;margin-left: 5px; " >
+<input type="text"  name="email1" value="${mode=='created' ? email1 : update.email1}" style="height: 22px;">
+@<input type="text"  name="email2" value="${mode=='created' ? email2 : update.email2}" readonly="readonly" style="height: 22px;margin-left: 5px; " >
 <select name="selectEmail" onchange="changeEmail();" style="height: 22px; width:100px;margin-left: 5px;">
 <option value="">선택</option>
 <option value="naver.com" ${dto.email2=="naver.com" ? "selected='selected'" : ""}>naver.com</option>
@@ -259,44 +259,46 @@ height: 50px; margin: 0px auto; border-collapse: collapse;border-spacing: 0px; t
 <tr>
 <td  style="border: 1px solid silver; width:200px ; padding: 10px 10px;" >이름★</td>
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<input type="text"  name="userName" value="${dto.userName}" style="height: 22px; float: left;"${mode=="update" ? "readonly='readonly' ":""}>
+<input type="text"  name="userName" value="${update.userName}" style="height: 22px; float: left;"${mode=="update" ? "readonly='readonly' ":""}>
 </td>
 </tr>
 <!-- 주소 -->
 <tr >
 <td rowspan="3" style="border: 1px solid silver; width:200px ; padding: 10px 10px;" >주소★</td>
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<input type="text"  name="addr0" style="height: 22px; width:75px;" >
+<input type="text"  value="${update.addr0}"  name="addr0" style="height: 22px; width:75px;" >
 -<img  src="<%=cp%>/resource/images/btn_zipcode.gif"  name="zipcode" style=" margin-left: 5px;" >
 </td>
 </tr>
 <tr>
 
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<input type="text"  name="addr1" style="height: 22px; width:300px; float: left;">&nbsp;기본주소
+<input type="text"  name="addr1" value="${update.addr1}" style="height: 22px; width:300px; float: left;">&nbsp;기본주소
 </td>
 </tr>
 <tr>
 
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<input type="text"  name="addr2" style="height: 22px; width:300px; float: left;">&nbsp;나머지 주소
+<input type="text"  name="addr2" value="${update.addr2}"  style="height: 22px; width:300px; float: left;">&nbsp;나머지 주소
 </td>
 </tr>
 <!-- 일반전화 -->
 <tr>
 <td  style="border: 1px solid silver; width:200px ; padding: 10px 10px;" >휴대전화★</td>
 <td style="padding: 10px 10px;border: 1px solid silver;">
-<select name="tel1" style="height: 22px; width:50px;">
-<option>010</option>
-<option>011</option>
-<option>016</option>
-<option>017</option>
-<option>018</option>
-<option>019</option>
+<select name="tel1" style="height: 22px; width:50px; ">
+
+<option value="010"  ${update.tel1=="010" ? "selected='selected'" : ""}>010</option>
+<option value="011" ${update.tel1=="011" ? "selected='selected'" : ""}>011</option>
+<option value="016" ${update.tel1=="016" ? "selected='selected'" : ""}>016</option>
+<option value="017" ${update.tel1=="017" ? "selected='selected'" : ""}>017</option>
+<option value="018" ${update.tel1=="018" ? "selected='selected'" : ""}>018</option>
+<option value="019" ${update.tel1=="019" ? "selected='selected'" : ""}>019</option>
+
 </select>
 
--<input type="text"  name="tel2" style="height: 22px; width:100px;margin-left: 5px">
--<input type="text"  name="tel3" style="height: 22px; width:100px;margin-left: 5px">
+-<input type="text"  value="${update.tel2}" name="tel2" style="height: 22px; width:100px;margin-left: 5px">
+-<input type="text"  value="${update.tel3}" name="tel3" style="height: 22px; width:100px;margin-left: 5px">
 </td>
 </tr>
 
@@ -310,7 +312,7 @@ height: 50px; margin: 0px auto; border-collapse: collapse;border-spacing: 0px; t
 <tr>
 <td style="border: 1px solid silver; width:200px ; padding: 10px 10px" >생년월일</td>
 <td style="padding: 10px 10px">
-<input type="text" name="birth" style="width:120px;">
+<input type="text" value="${update.birth}" name="birth" style="width:120px;">
 
  <p class="help-block">생년월일은 2000-01-01 형식으로 입력 합니다.</p>
 </td>
@@ -616,7 +618,7 @@ o 로그 기록 <br>
 	<img onclick="javascript:location.href='<%=cp%>/main/main.do';" src="<%=cp%>/resource/images/btn_member_join_cancel.gif">
 	</c:when>
 	<c:when test="${mode=='update'}">
-	<input  src="<%=cp%>/resource/images/btn_modify_member.gif">
+	<input type="image" src="<%=cp%>/resource/images/btn_modify_member.gif">
 	<img   onclick="javascript:location.href='<%=cp%>/main/main.do';" src="<%=cp%>/resource/images/btn_modify_cancel.gif">
 	</c:when>
 </c:choose>
