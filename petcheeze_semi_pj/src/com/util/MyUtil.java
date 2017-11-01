@@ -22,6 +22,7 @@ public class MyUtil {
     //********************************************
 	// 페이징(paging) 처리(GET 방식) : 부트스트랩
 	public String paging(int current_page, int total_page, String list_url) {
+		
 		StringBuffer sb=new StringBuffer();
 		
 		int numPerBlock=10;
@@ -41,48 +42,53 @@ public class MyUtil {
 		if(current_page%numPerBlock==0)
 			currentPageSetup=currentPageSetup-numPerBlock;
 
-		sb.append("<ul class='pagination pagination-sm'>");
-		// 처음페이지
-		if(current_page > 1) {
-			sb.append("<li><a href='"+list_url+"page=1' aria-label='First'><span aria-hidden='true' class='glyphicon glyphicon-step-backward'></span></a></li>");
-		} else {
-			sb.append("<li class='disabled'><a href='#' aria-label='First'><span aria-hidden='true' class='glyphicon glyphicon-step-backward'></span></a></li>");
-		}
-		// 이전(10페이지 전)
+		sb.append("<style type='text/css'>");
+		
+		sb.append("#paginate {"
+				+ "clear:both;font:12px \"맑은 고딕\",NanumGothic,돋움,Dotum,AppleGothic;padding:15px 0px 0px 0px;"
+				+ "text-align:center;height:28px;white-space:nowrap;}");
+		
+		sb.append("#paginate a {"
+				+ "border:1px solid #ccc;height:28px;color:#000000;text-decoration:none;padding:4px 7px 4px 7px;"
+				+ "margin-left:3px;line-height:normal;vertical-align:middle;outline:none; "
+				+ "select-dummy: expression(this.hideFocus=true);}");
+		
+		sb.append("#paginate a:hover, a:active {"
+				+ "border:1px solid #ccc;color:#6771ff;vertical-align:middle; line-height:normal;}");
+		
+		sb.append("#paginate .curBox {"
+				+ "border:1px solid #e28d8d; background: #fff; color:#cb3536; font-weight:bold;height:28px;"
+				+ "padding:4px 7px 4px 7px;margin-left:3px;line-height:normal;vertical-align:middle;}");
+		sb.append("#paginate .numBox {border:1px solid #ccc;height:28px;font-weight:bold;text-decoration:none;padding:4px 7px 4px 7px;margin-left:3px;line-height:normal;vertical-align:middle;}");
+		sb.append("</style>");
+		
+		
+		sb.append("<div id='paginate'>");
+		// 처음페이지, 이전(10페이지 전)
 		n=current_page-numPerBlock;
 		if(total_page > numPerBlock && currentPageSetup > 0) {
-			sb.append("<li><a href='"+list_url+"page="+n+"' aria-label='Previous'><span aria-hidden='true' class='glyphicon glyphicon-triangle-left'></span></a></li>");
-		} else {
-			sb.append("<li class='disabled'><a href='#' aria-label='Previous'><span aria-hidden='true' class='glyphicon glyphicon-triangle-left'></span></a></li>");
+			sb.append("<a href='"+list_url+"page=1'>처음</a>");
+			sb.append("<a href='"+list_url+"page="+n+"'>이전</a>");
 		}
-		
 		// 바로가기
 		page=currentPageSetup+1;
 		while(page<=total_page && page <=(currentPageSetup+numPerBlock)) {
 			if(page==current_page) {
-				sb.append("<li class='active'><a href='#'>"+page+" <span class='sr-only'>(current)</span></a></li>");
+				sb.append("<span class='curBox'>"+page+"</span>");
 			} else {
-				sb.append("<li><a href='"+list_url+"page="+page+"'>"+page+"</a></li>");
+				sb.append("<a href='"+list_url+"page="+page+"' class='numBox'>"+page+"</a>");
 			}
 			page++;
 		}
 		
-		// 다음(10페이지 후)
+		// 다음(10페이지 후), 마지막페이지
 		n=current_page+numPerBlock;
 		if(n>total_page) n=total_page;
 		if(total_page-currentPageSetup>numPerBlock) {
-			sb.append("<li><a href='"+list_url+"page="+n+"' aria-label='Next'><span aria-hidden='true' class='glyphicon glyphicon-triangle-right'></span></a></li>");
-		} else {
-			sb.append("<li class='disabled'><a href='#' aria-label='Next'><span aria-hidden='true' class='glyphicon glyphicon-triangle-right'></span></a></li>");
+			sb.append("<a href='"+list_url+"page="+n+"'>다음</a>");
+			sb.append("<a href='"+list_url+"page="+total_page+"'>끝</a>");
 		}
-		// 마지막페이지
-		if(current_page<total_page) {
-			sb.append("<li><a href='"+list_url+"page="+total_page+"' aria-label='Last'><span aria-hidden='true' class='glyphicon glyphicon-step-forward'></span></a></li>");
-		} else {
-			sb.append("<li class='disabled'><a href='#' aria-label='Last'><span aria-hidden='true' class='glyphicon glyphicon-step-forward'></span></a></li>");
-		}
-		
-		sb.append("</ul>");
+		sb.append("</div>");
 	
 		return sb.toString();
 	}
