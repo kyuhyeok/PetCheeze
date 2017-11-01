@@ -10,11 +10,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>PetCheeze</title>
+<title>
+<c:choose>
+			<c:when test="${pdkindcode eq '2'}">져키(육포)</c:when>
+			<c:when test="${pdkindcode eq '4'}">뼈&껌</c:when>
+			<c:when test="${pdkindcode eq '1'}">영양파우더</c:when>
+			<c:when test="${pdkindcode eq '3'}">세트메뉴</c:when>
+			<c:when test="${pdkindcode eq '5'}">말이&큐브&땡</c:when>
+		</c:choose>-PetCheeze
+</title>
 
 <link rel="stylesheet" href="<%=cp%>/resource/css/style.css" type="text/css">
 <link rel="stylesheet" href="<%=cp%>/resource/css/layout.css" type="text/css">
 <style type="text/css">
+body, code{
+	font-family: Verdana,Dotum,AppleGothic,sans-serif;
+	font-size:11px;
+	colot:#9a9592;
+}
 .contents {
     clear: both;
     margin: 0px auto 15px;

@@ -46,14 +46,19 @@ public class MenuServlet extends MyServlet {
 		MenuUtil util=new MenuUtil();
 		
 		//페이지 번호 및 메뉴 분류 파라미터
-		int pdKindcode=Integer.parseInt(req.getParameter("pdkindcode"));
+		String pdKindcode=req.getParameter("pdkindcode");
+		if(pdKindcode==null)
+			pdKindcode="0";
+		String sort=req.getParameter("sort");
+		if(sort==null)
+			sort="normal";
 		String page=req.getParameter("page");
 		int current_page=1;
 		if(page!=null)
 			current_page=Integer.parseInt(page);
 		
 		//전체 데이터 개수
-		int dataCount=dao.dataCount();
+		int dataCount=dao.dataCount(Integer.parseInt(pdKindcode));
 		
 		//전체 페이지 수
 		int rows=10;
@@ -68,7 +73,7 @@ public class MenuServlet extends MyServlet {
 		
 		//게시물 가져오기
 		List<MenuDTO> list=null;
-		list=dao.listMenuPage(start, end, pdKindcode);
+		list=dao.listMenuPage(start, end, Integer.parseInt(pdKindcode), sort);
 		
 		//페이징 처리
 		String list_url=cp+"/menu/menu.do?pdkindcode="+pdKindcode;
@@ -77,6 +82,7 @@ public class MenuServlet extends MyServlet {
 		String paging=util.paging(current_page, total_page, list_url);
 		
 		//포워딩할 JSP로 넘길 속성
+		req.setAttribute("type", "menu");
 		req.setAttribute("pdkindcode", pdKindcode);
 		req.setAttribute("list", list);
 		req.setAttribute("page", current_page);
@@ -116,6 +122,7 @@ public class MenuServlet extends MyServlet {
 		dto.setPdMaker(req.getParameter("pdmaker"));
 		dto.setPdMil(Integer.parseInt(req.getParameter("pdmil")));
 		dto.setPdName(req.getParameter("pdname"));
+		dto.setPdNew(req.getParameter("pdnew"));
 		dto.setPdPrice(Integer.parseInt(req.getParameter("pdprice")));
 		dto.setPdKindcode(Integer.parseInt(req.getParameter("pdkindcode")));
 		
@@ -127,6 +134,8 @@ public class MenuServlet extends MyServlet {
 	protected void menuDetail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String cp=req.getContextPath();
 		String page=req.getParameter("page");
+		if(page==null)
+			page="1";
 		int pdCode=Integer.parseInt(req.getParameter("pdcode"));
 		String pdKindcode=req.getParameter("pdKindcode");
 		
