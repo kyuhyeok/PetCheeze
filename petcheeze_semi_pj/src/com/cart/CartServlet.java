@@ -224,9 +224,10 @@ protected void insertCart(HttpServletRequest req, HttpServletResponse resp) thro
 		int chagecnt = dto.getCartCnt()+Integer.parseInt(req.getParameter("cnt"));
 		dto.setCartCnt(chagecnt);
 		dao.updatePdCount(dto);
-		
+
 	}else { //같은 물건을 장바구니에 담지 않았으면
 	//String page = req.getParameter("page");
+		
 		dto=new CartDTO();
 		dto.setPdcode(Integer.parseInt(req.getParameter("pdcode")));
 		dto.setCartCnt(Integer.parseInt(req.getParameter("cnt")));

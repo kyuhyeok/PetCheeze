@@ -236,13 +236,21 @@ function sameInfo() {
 		<form name="cartForm" method="post">
 
 			<ul style="margin: 50px auto 20px;">
-				<li style="list-style: none; text-align: center;">c a r t</li>
+				<li style="list-style: none; text-align: center;">o r d e r</li>
 			</ul>
 			<div align="center">
 				<img class="stepImg" src="<%=cp%>/resource/images/img_step4.gif">
 			</div>
 
-
+			<div align="center" style="margin-bottom: 90px">
+			   <img class="stepImg" src="<%=cp%>/resource/images/com_ok.PNG" style="width: 100px; height: 100px;"><br>
+			   <span style="font-size: 25px; font-weight: bold;">
+			      		고객님의 주문이 완료 되었습니다.
+			   </span><br><br>
+				<span style="font-size: 15px">
+				   주문내역 및 배송에 관한 안내는 주문조회 를 통하여 확인 가능합니다
+				</span> 
+			</div>
 					
 				
 			<table class="carttable">
@@ -259,11 +267,9 @@ function sameInfo() {
 					<th width="90px">배송비</th>
 					<th>합계</th>
 				</tr>
-				
-				
-<c:if test="${mode=='check'}">
 
-				<c:forEach var="dto" items="${cartlist}">
+
+				<c:forEach var="dto" items="${list}">
 				
 					<tr>
 
@@ -274,7 +280,6 @@ function sameInfo() {
 						<td style="border-right: 1px solid #cccccc">
 							<div style="text-align: center;">
 								<div>
-									<input type="hidden" name="cartCode" value="${dto.cartCode}">
 									${dto.cartCnt}
 								</div>
 			
@@ -301,36 +306,8 @@ function sameInfo() {
 					</tr>
 	
 				</c:forEach>
-</c:if>
-<c:if test="${mode=='nocheck'}">
-					<tr>
 
-						<td align="center">
-						 <img src="<%=cp%>/resource/images/product_contents/${dto.pdcode}/${dto.pdimage}" style="height: 80px;">
-						</td>
-						<td style="border-right: 1px solid #cccccc;">${dto.pdname}</td>
-						<td style="border-right: 1px solid #cccccc">
-							<div style="text-align: center;">
-								<div>
-									<input type="hidden" name="cartCode" value="${dto.cartCode}">
-									${dto.cartCnt}
-								</div>
-			
-							</div>
 
-						</td>
-						<td> <fmt:formatNumber value="${dto.pdprice}" pattern="#,###" /> </td>
-						<td>${dto.pdmil}</td>
-						<td>기본배송</td>
-						<td style="border-right: 1px solid #cccccc">
-						<c:if test="${totPrice>=50000}">무료</c:if> 
-						<c:if test="${totPrice<50000}">5,000원<br>조건</c:if></td>
-						<td style="border-right: 1px solid #cccccc">
-							<fmt:formatNumber value="${dto.cartCnt*dto.pdprice}" pattern="#,###" />
-						원</td>
-
-					</tr>
-</c:if>
 				<tr height="50px" style="background: #eeeeee">
 					<td style="text-align: left;">&nbsp;[기본배송]</td>
 					<td colspan="6" style="text-align: right;">
@@ -371,32 +348,6 @@ function sameInfo() {
 							test="${totPrice<50000}"><fmt:formatNumber value="${totPrice+5000}" pattern="#,###" />원</c:if></td>
 			</table>
 			
-			<table class="carttable3" style="margin-bottom: 30px;">
-				<tr>
-				  <td style="background: #eeeeee; font-weight: bold; border-right: 1px solid #cccccc">총 할인 금액</td>
-				  <td>0원</td>
-				</tr>
-				<tr>
-				  <td style="background: #eeeeee; font-weight: bold; border-right: 1px solid #cccccc">총 부가결제금액</td>
-				  <td>0원</td>
-				</tr>
-				<tr>
-				  <td style="border-right: 1px solid #cccccc">적립금</td>
-				  <td>
-				    <input type="text" name="useMil" value="0">원 
-				    <span style="font-size: 12px;">
-				    &nbsp;&nbsp;(총 사용가능 적립금: 3000원 )
-				    <br><br>
-						- 적립금은 최소 0 이상일 때 결제가 가능합니다.<br>
-						- 최대 사용금액은 제한이 없습니다.<br>
-						- 적립금으로만 결제할 경우, 결제금액이 0으로 보여지는 것은 정상이며 [결제하기] 버튼을 누르면 주문이 완료됩니다.
-				    </span>
-				    
-				  </td>
-				</tr>		
-						
-			</table>
-			
 				<table class="delinfo">  <!-- 배송지정보 -->
 				
 			<c:if test="${empty sessionScope.member}">
@@ -405,7 +356,7 @@ function sameInfo() {
 			  <span style="align-content: center; color: red;">*</span>
 			  </th>
 			  <td>
-			  	<input type="text" name="takerEmail" maxlength="4" style="height: 20px;">
+			  	${paydto.email}
 			  </td>
 			</tr>
 			</c:if>
@@ -415,18 +366,22 @@ function sameInfo() {
 			  <span style="align-content: center; color: red;">*</span>
 			  </th>
 			  <td>
-			  	${dto.taker}
+			  	${paydto.taker}
 			  </td>
 			</tr>
 			<tr>
-			  <th>주소
-			  <span style="align-content: center; color: red;">*</span>
+			  <th>우편번호
+			 
 			  </th>
 			  <td>
-			  	<input type="text" name="add0" style="width: 50px; height: 20px; margin-top: 3px;" value="${mdto.addr0}"> - <input type="button" value="우편번호"><br>
-			  	<input type="text" name="add1" style="width: 300px; height: 20px; margin-top: 3px;" value="${mdto.addr1}"><br>
-			  	<input type="text" name="add2" style="width: 300px; height: 20px; margin-top: 3px;"  value="${mdto.addr2}"><br>
+			  	  ${paydto.addr0}
 			
+			  </td>
+			</tr>
+			<tr>
+			  <th>주소</th>
+			  <td>
+			  	 ${paydto.addr1} ${paydto.addr2}
 			  </td>
 			</tr>
 			<tr>
@@ -434,77 +389,29 @@ function sameInfo() {
 			  <span style="align-content: center; color: red;">*</span>
 			  </th>
 			  <td>
-			  	<select name="tel1" style="width: 64px;">
-			  	  <option value="010" selected="selected">010</option>
-			  	  <option value="011">011</option>
-			  	  <option value="016">016</option>
-			  	  <option value="017">017</option>
-			  	  <option value="018">018</option>
-			  	  <option value="019">019</option>
-			  	</select>
-			  	-
-			  	<input type="text" name="tel2" style="width: 70px;" value="${mdto.tel2}">
-			  	-
-			  	<input type="text" name="tel3" style="width: 70px;" value="${mdto.tel3}">
+			  	${paydto.tel}
 			  </td>
 			</tr>
 			<tr>
 			  <th>배송메세지</th>
 			  <td>
-			    <textarea rows="3" cols="50" name="memo"></textarea>
+			    ${paydto.memo}
 			  </td>
 			</tr>
 		
 		
 		</table>
-			
-		<div style="margin-top: 10px; margin-bottom: 10px;">
-		&nbsp;&nbsp;&nbsp;결제수단	
-		</div>
-	
-		 <div style="float: left; border-left: 1px solid; height: 370px; width: 240px;" align="right">
-		  <div><span style="font-weight: bold;">카드결제</span> 최종 결제 금액 </div>
-		  
-		  <div><span style="font-weight: bold;color: pink; font-size: 25px;">
-		   <c:if test="${totPrice>=50000}"><fmt:formatNumber value="${totPrice}" pattern="#,###"/>
-		     <input type="hidden" name="totPrice" value="${totPrice}">
-		   </c:if>
-		   <c:if test="${totPrice<50000}"><fmt:formatNumber value="${totPrice+5000}" pattern="#,###"/>
-		    <input type="hidden" name="totPrice" value="${totPrice+5000}">
-		    </c:if>
-		  </span><span style="color: pink;">원</span></div>
-		  <div style="margin-top: 10px;">
-		     <img src="<%=cp%>/resource/images/paycom.gif" onclick="payCom()" style="cursor: pointer;">
-		  </div>
-		  <div>
-		    <table style="margin-top: 30px;">
-		     <tr>
-		       <td>총 적립예정금액</td>
-		       <td>1607원</td>
-		     </tr>
-		     <tr>
-		       <td>회원 적립금</td>
-		       <td>0원</td>
-		     </tr>
-		     <tr>
-		       <td>쿠폰 적립금</td>
-		       <td>0원</td>
-		     </tr>
-		    </table>
-		  
-		  </div>
-		 </div>
+		<div align="right">
+		<a href="<%=cp%>/main.do">
+		 <img src="<%=cp%>/resource/images/goingshop.gif" style="cursor: pointer;" >
+		</a>
+		</div>	
+		
+		
 	</div>
 		
 		</form>
-		<div style="border: 1px solid #cccccc; background: tomato;" >
-		<span style="font-weight: bold;">무이자 할부 이용안내</span><br>
 		
-		무이자할부가 적용되지 않은 상품과 무이자할부가 가능한 상품을 동시에 구매할 경우 전체 주문 상품 금액에 대해 무이자할부가 적용되지 않습니다.<br>
-		무이자할부를 원하시는 경우 장바구니에서 무이자할부 상품만 선택하여 주문하여 주시기 바랍니다.<br>
-		
-
-		</div>
 		
 	</div>
 

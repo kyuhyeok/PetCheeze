@@ -332,6 +332,63 @@ public class ProcessDAO {
 		return dto;
 	}
 	
+	public List<ProcessDTO> readPayComList(int ordercode) {  //결제완료
+		ProcessDTO dto =null;
+		PreparedStatement pstmt=null;
+		ResultSet rs = null;
+		Connection conn=null;
+		StringBuffer sb = new StringBuffer();
+		List<ProcessDTO> list = new ArrayList<>();
+		
+		try {
+			conn=DBCPConn.getConnection();
+			sb.append("select orderdetail.ordercode ordercode, orderdate, totprice, email, orderdicode, pdcnt, pd.pdcode pdcode ");
+			sb.append(" , pdname, pdimage, pdprice,pdmil ");
+			sb.append(" FROM orderdetail LEFT OUTER JOIN orderbd on orderdetail.ordercode=orderbd.ordercode");
+			sb.append(" LEFT OUTER JOIN pd ON pd.pdcode=orderdetail.pdcode ");
+			sb.append(" where orderbd.ordercode =?");
+			pstmt=conn.prepareStatement(sb.toString());
+			pstmt.setInt(1, ordercode);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				dto=new ProcessDTO();
+				dto.setOrdercode(rs.getInt("ordercode"));
+				dto.setOrderdate(rs.getString("orderdate"));
+				dto.setTotprice(rs.getInt("totprice"));
+				dto.setEmail(rs.getString("email"));
+				dto.setOrderdicode(rs.getInt("orderdicode"));
+				dto.setCartCnt(rs.getInt("pdcnt"));
+				dto.setPdcode(rs.getInt("pdcode"));
+				dto.setPdname(rs.getString("pdname"));
+				dto.setPdimage(rs.getString("pdimage"));
+				dto.setPdprice(rs.getInt("pdprice"));
+				dto.setPdmil(rs.getInt("pdmil"));
+				
+				list.add(dto);
+			}
+			rs.close();
+			pstmt.close();
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}finally {
+			if(conn!=null)
+				DBCPConn.close(conn);
+		}
+
+		return list;
+	}
+	
+	
+	
+	
+			//주문상세에 넣기
+			//결제상세에 넣기
+			//배송주소록에 넣기
+	
+	
 }
 
 

@@ -301,6 +301,7 @@ function sameInfo() {
 								<div>
 									<input type="hidden" name="cartCode" value="${dto.cartCode}">
 									${dto.cartCnt}
+									<input type="hidden" name="pd_cnt" value="${dto.cartCnt}">
 								</div>
 			
 							</div>
@@ -339,6 +340,7 @@ function sameInfo() {
 								<div>
 									<input type="hidden" name="cartCode" value="${dto.cartCode}">
 									${dto.cartCnt}
+									<input type="hidden" name="pd_cnt" value="${dto.cartCnt}">
 								</div>
 			
 							</div>
@@ -392,7 +394,7 @@ function sameInfo() {
 			  <span style="align-content: center; color: red;">*</span>
 			  </th>
 			  <td>
-			  	<input type="text" name="takerEmail" maxlength="4" style="height: 20px;">
+			  	<input type="text" name="takerEmail"style="height: 20px;">
 			  </td>
 			</tr>
 			</c:if>
@@ -501,8 +503,8 @@ function sameInfo() {
 		 <div style="float: left; height: 98px;">
 			<div style="border-bottom-style: double; border-bottom-color: #cccccc;  padding: 17px 20px 20px 20px; width: 860px;height: 15px;">
 			  <input type="hidden" name="orderCode" value="${dto.ordercode}">
-			  <input type="radio" name="paymethod" value="paycard" checked="checked"> <label>카드결제</label>
-		  	  <input type="radio" name="paymethod" value="payaccount"> <label>무통장 입금</label>
+			  <input type="radio" name="paymethod" value="payaccount" checked="checked"> <label>무통장 입금</label>
+		  	  <input type="radio" name="paymethod" value="paycard"> <label>카드결제</label>
 			</div>
 			<!-- 결제수단에 따라 내용이 달라짐 -->
 			<div>
@@ -530,7 +532,8 @@ function sameInfo() {
 		 </div>
 		 
 		 <div style="float: left; border-left: 1px solid; height: 370px; width: 240px;" align="right">
-		  <div><span style="font-weight: bold;">카드결제</span> 최종 결제 금액 </div>
+		 <br>
+		  <div><span style="font-weight: bold;">최종 결제 금액</span>  </div>
 		  
 		  <div><span style="font-weight: bold;color: pink; font-size: 25px;">
 		   <c:if test="${totPrice>=50000}"><fmt:formatNumber value="${totPrice}" pattern="#,###"/>
@@ -540,6 +543,7 @@ function sameInfo() {
 		    <input type="hidden" name="totPrice" value="${totPrice+5000}">
 		    </c:if>
 		  </span><span style="color: pink;">원</span></div>
+		  <br>
 		  <div style="margin-top: 10px;">
 		     <img src="<%=cp%>/resource/images/paycom.gif" onclick="payCom()" style="cursor: pointer;">
 		  </div>
@@ -549,10 +553,7 @@ function sameInfo() {
 		       <td>총 적립예정금액</td>
 		       <td>1607원</td>
 		     </tr>
-		     <tr>
-		       <td>회원 적립금</td>
-		       <td>0원</td>
-		     </tr>
+		   
 		     <tr>
 		       <td>쿠폰 적립금</td>
 		       <td>0원</td>
@@ -564,7 +565,7 @@ function sameInfo() {
 	</div>
 		
 		</form>
-		<div style="border: 1px solid #cccccc; background: tomato;" >
+		<div style="border: 1px solid #cccccc; height: 80px; " >
 		<span style="font-weight: bold;">무이자 할부 이용안내</span><br>
 		
 		무이자할부가 적용되지 않은 상품과 무이자할부가 가능한 상품을 동시에 구매할 경우 전체 주문 상품 금액에 대해 무이자할부가 적용되지 않습니다.<br>

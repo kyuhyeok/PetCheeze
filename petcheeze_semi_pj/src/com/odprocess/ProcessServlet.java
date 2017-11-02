@@ -226,7 +226,13 @@ public class ProcessServlet extends MyServlet {
 		dto.setTotprice(totPrice);
 		dao.insertPayDetail(dto);
 		
+		List<ProcessDTO> list = dao.readPayComList(orderCode);
+		
+		
+		
 		req.setAttribute("paydto", dto);
+		req.setAttribute("list", list);
+		req.setAttribute("totPrice", totPrice);
 		
 		forward(req, resp, "/WEB-INF/views/odprocess/complete.jsp");  // 주문 목록 페이지 보여주는 곳으로 가기로 수정하기
 	}
@@ -343,7 +349,44 @@ public class ProcessServlet extends MyServlet {
 		
 		
 		//배송주소록에 넣기
-	
+		//주문상세 테이블에 넣기
+		
+			String payMethod = req.getParameter("paymethod");
+		
+			dto.setOrdercode(orderCode);
+			
+			if(payMethod.equals("paycard")) {
+				dto.setPayState("결제완료");
+				dto.setPaymethod("카드");
+			}else {
+				dto.setPayState("입금대기중");
+				dto.setPaymethod("계좌이체");
+			}
+			
+			dao.insertPayState(dto);  
+			
+			//배달목록 테이블에 넣기
+			dto.setEmail(req.getParameter("takerEmail"));
+			dto.setTaker(req.getParameter("takerName"));
+			dto.setTel(req.getParameter("tel1")+req.getParameter("tel2")+req.getParameter("tel3"));
+			dto.setAddr0(req.getParameter("add0"));
+			dto.setAddr1(req.getParameter("add1"));
+			dto.setAddr2(req.getParameter("add2"));
+
+			if(req.getParameter("memo")!=null) {
+				dto.setMemo(req.getParameter("memo"));
+			}
+			dao.insertDelivery(dto);  
+
+			//결제상세에 넣기
+			int totPrice = Integer.parseInt(req.getParameter("totPrice"));
+			dto.setUsemil(0);
+			dto.setTotprice(totPrice);
+			dao.insertPayDetail(dto);
+			
+			req.setAttribute("totPrice", totPrice);
+			req.setAttribute("paydto",dto);
+			forward(req, resp, "/WEB-INF/views/odprocess/complete.jsp");  // 주문 목록 페이지 보여주는 곳으로 가기로 수정하기
 			
 	}
 	
