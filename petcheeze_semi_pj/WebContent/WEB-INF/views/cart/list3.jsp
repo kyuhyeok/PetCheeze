@@ -1,7 +1,7 @@
+<%@page import="java.util.regex.Pattern"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 	String cp = request.getContextPath();
 %>
@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="<%=cp%>/resource/css/style.css" type="text/css">
 <link rel="stylesheet" href="<%=cp%>/resource/css/layout.css" type="text/css">
 
-<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 
 <style type="text/css">
@@ -101,8 +100,6 @@
 
 
 <script type="text/javascript">
-
-
 function checkA(){  //전체체크
 	var f = document.cartForm;
 	
@@ -154,7 +151,7 @@ function deleteList() {  //체크한 리스트 삭제
 	}
 	
 	if(confirm("선택한 항목을 삭제하시겟습니까?")){
-		f.action="<%=cp%>/cart/deleteList.do";
+		f.action="<%=cp%>/cart/deleteList_no.do";
 		f.submit();
 	}
 		
@@ -170,70 +167,8 @@ function removeAll(){
 	f.submit();
 	}
 }
-function updateCnt(cartCode){
-	alert("수량변경")
-	var f = document.cartForm;
-	var s = document.getElementById(cartCode);
-	var cnt = s.value;
-	cnt=cnt.trim();
-	
-	if(cnt==0||isNaN(cnt)||!cnt){
-		alert("수량을 입력해주세요");
-		s.focus();
-		return;
-	}
-	
-	f.action="<%=cp%>/cart/updateCart.do";
-	f.submit();
-}
-function subToOrder() {
-	var f = document.cartForm;
-	
-	if(f.checkOne==undefined)
-		return;
-	
-	var cnt=0;
-	
-	if(f.checkOne.length!=undefined){  //체크박스가 둘이상
-		for(var i=0;i<f.checkOne.length;i++){
-			if(f.checkOne[i].checked)
-				cnt++;
-		}
-	}else{ //체크박스가 하나인경우
-		if(f.checkOne.checked)
-			cnt++;
-	}
-	if(cnt==0){
-		alert("선택한 항목이 없습니다.");
-		return;
-	}
-	
-	
-	alert("주문창으로이동?");
 
-	var id = "${sessionScope.member.userId}";
-	if(!id)
-		f.action="<%=cp%>/odprocess/odlist_no.do";
-	else
-	    f.action="<%=cp%>/odprocess/odlist.do";
-	f.submit();
-}
-function subOrder() {
-	var f = document.cartForm;
-	if(f.checkOne==undefined)
-		return;
-	
-	var id = "${sessionScope.member.userId}";
-	
-	if(!id)
-		f.action="<%=cp%>/odprocess/odlist_all_no.do";
-	else
-	    f.action="<%=cp%>/odprocess/odlist_all.do";
-	
-	f.submit();
-	
-}
-function updateCntNoMem(pdcode){//(비회원인경우)
+function updateCntNoMem(pdcode){
 	alert("메롱")
 	var f = document.cartForm;
 	var s = document.getElementById(pdcode);
@@ -250,54 +185,16 @@ function updateCntNoMem(pdcode){//(비회원인경우)
 	   
 	f.submit();
 }
-function deleteList_no() {  //체크한 리스트 삭제  (비회원인경우)
+function subToOrder() {
 	var f = document.cartForm;
-	var cnt=0;
-	
 	if(f.checkOne==undefined)
 		return;
 	
-	if(f.checkOne.length!=undefined){  //체크박스가 둘이상
-		for(var i=0;i<f.checkOne.length;i++){
-			if(f.checkOne[i].checked)
-				cnt++;
-		}
-	}else{ //체크박스가 하나인경우
-		if(f.checkOne.checked)
-			cnt++;
-	}
-	if(cnt==0){
-		alert("선택한 항목이 없습니다.");
-		return;
-	}
-	
-	if(confirm("선택한 항목을 삭제하시겟습니까?")){
-		f.action="<%=cp%>/cart/deleteList_no.do";
-		f.submit();
-	}
-		
-}
-function removeAll_no(){  //비회원인경우  장바구니비우기
-	var f=document.cartForm;
-	
-	if(f.checkOne==undefined)
-		return;
-	
-	if(confirm("장바구니를 비우시겠습니까?")){
-	f.action="<%=cp%>/cart/removeAll_no.do";
+	alert("주문창으로이동?");
+
+	f.action="<%=cp%>/odprocess/odlist.do";
 	f.submit();
-	}
 }
-$(function() {
-	$('.bt_up').click(function() {
-		var n= $('.bt_up').index(this);
-		var num = $('.pd_cnt:eq('+n+')').val();
-		num=$('.pd_cnt:eq('+n+')').val(num*1+1);
-		var pdprice = $('.pd_price:eq('+n+')').val();
-		alert(pdprice);
-	})
-	
-})
 </script>
 </head>
 <body>
@@ -339,18 +236,19 @@ $(function() {
 </div>
 </c:if>
 
+
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">국내배송상품</a></li>
   <li role="presentation"><a href="<%=cp%>/cart/pdpage.do">상품목록</a></li>
 </ul>
 
 <table class="carttable">
-	<tr style="border: 1px solid #cccccc; height: 38px;background: #eeeeee;" >
+	<tr style="border: 1px solid #cccccc; height: 38px;">
 		<td colspan="10" style="text-align: left;">
 		 <span style="font-weight: bold;">
 		  &nbsp;일반상품 (${dataCount}) 
 		</span>
-		</td>
+		 </td>
 	
 	</tr>
 	<tr>
@@ -358,75 +256,24 @@ $(function() {
 			<input type="checkbox" name="checkAll" value="all" onclick="checkA();">
 		</th>
 		<th>이미지</th>
-		<th width="400px">상품정보</th>
+		<th>상품정보</th>
 		<th>수량</th>
 		<th>판매가</th>
 		<th>적립금</th>
 		<th>배송구분</th>
 		<th>배송비</th>
-		<th width="91px">합계</th>
-		<th width="107px">선택</th>	
+		<th width="350px">합계</th>
+		<th>선택</th>	
 	</tr>
 	
-<c:if test="${not empty sessionScope.member}">	
-	 <c:forEach var="dto" items="${list}">
+	 <c:forEach var="dto" items="${pdlist}">
 	
-	<tr height="94px">
-		<td>
-			<input type="checkbox" name="checkOne" value="${dto.cartCode}">
-		</td>
-		<td align="center">
-		 <img src="<%=cp%>/resource/images/product_contents/${dto.pdcode}/${dto.image}" style="height: 80px;width: 80px;">
-		</td>
-		<td>
-			${dto.pdName}
-		</td>
-		<td>
-		  <div style="text-align: center;">
-			<div>
-				<input type="hidden" name="cartCode" value="${dto.cartCode}">
-				<input type="text" class="pd_cnt" name="${dto.cartCode}" id="${dto.cartCode}" value="${dto.cartCnt}" style="height: 26px; width: 26px; text-align: center;">
-				
-			</div>
-			<div style="clear: both;">		
-			  <img src="<%=cp%>/resource/images/changecnt.gif" style="cursor: pointer; margin-top: 5px;" onclick="updateCnt('${dto.cartCode}')"><br>
-			</div>
-		  </div>	
-			
-		</td>
-		<td>
-			<fmt:formatNumber value="${dto.pdPrice}" pattern="#,###" />
-		</td>
-		<td>${dto.pdMil}</td>
-		<td>기본배송</td>
-		<td style="border-right: 1px solid #cccccc">
-		
-		 <c:if test="${totPrice>=50000}">무료</c:if>
-		 <c:if test="${totPrice<50000}">5,000원<br>조건</c:if>
-		</td>
-		<td style="border-right: 1px solid #cccccc"><fmt:formatNumber value="${dto.cartCnt*dto.pdPrice}" pattern="#,###" />원</td>
-		<td style="border-right: 1px solid #cccccc">
-		  <a href="<%=cp%>/odprocess/oddirect.do?cartCode=${dto.cartCode}">
-		     <img src="<%=cp%>/resource/images/ordergo.gif" style="cursor: pointer;"><br>
-		  </a>
-		  <img src="<%=cp%>/resource/images/addwishlist.gif" style="cursor: pointer;"><br>
-		  <a href="<%=cp%>/cart/deleteOne.do?cartCode=${dto.cartCode}">
-		     <img src="<%=cp%>/resource/images/deleteone.gif" style="cursor: pointer;">
-		  </a>
-		</td>	
-	 </tr>
-	</c:forEach>
-</c:if>
-<c:if test="${empty sessionScope.member}">
-  <c:forEach var="dto" items="${pdlist}">
-	
-	<tr height="94px">
+	<tr>
 		<td>
 			<input type="checkbox" name="checkOne" value="${dto.pdcode}">
 		</td>
 		<td align="center">
-		   <img src="<%=cp%>/resource/images/product_contents/${dto.pdcode}/${dto.image}" style="height: 80px;width: 80px;">
-			
+			<input type="image" src="<%=cp%>/resource/images/soganp_image.GIF" style="height: 80px;">
 		</td>
 		<td style="border-right: 1px solid #cccccc;">
 			${dto.pdName}
@@ -437,54 +284,41 @@ $(function() {
 				<input type="hidden" name="pdcode" value="${dto.pdcode}">
 				<input type="text" name="${dto.pdcode}" id="${dto.pdcode}" value="${dto.cartCnt}" style="height: 26px; width: 26px; text-align: center;">
 			</div>
-			<div style="clear: both;">	
-			 <img src="<%=cp%>/resource/images/changecnt.gif" style="cursor: pointer; margin-top: 5px;" onclick="updateCntNoMem('${dto.pdcode}')"><br>	
+			<div style="clear: both;">		
+			 <button class="btn btn-default btn-xs" onclick="updateCntNoMem('${dto.pdcode}')">변_경</button>
 			</div>
 		  </div>	
 			
 		</td>
 		<td>
-		 <input type="hidden" class="pd_price" value="${dto.pdPrice}">
-		   <fmt:formatNumber value="${dto.pdPrice}" pattern="#,###" />
+			${dto.pdPrice}
 		</td>
 		<td>${dto.pdMil}</td>
 		<td>기본배송</td>
 		<td style="border-right: 1px solid #cccccc">
 		
 		 <c:if test="${totPrice>=50000}">무료</c:if>
-		 <c:if test="${totPrice<50000}">5,000원<br>조건</c:if>
+		 <c:if test="${totPrice<50000}">5000원<br>조건</c:if>
 		</td>
+		<td style="border-right: 1px solid #cccccc">${dto.cartCnt*dto.pdPrice}원</td>
 		<td style="border-right: 1px solid #cccccc">
-		  <fmt:formatNumber value="${dto.cartCnt*dto.pdPrice}" pattern="#,###" />원
-		</td>
-		<td style="border-right: 1px solid #cccccc">
-		
-		   <a href="<%=cp%>/odprocess/oddirect_no.do?pdCode=${dto.pdcode}">
-		     <img src="<%=cp%>/resource/images/ordergo.gif" style="cursor: pointer;"><br>
-		  </a>
-		  <img src="<%=cp%>/resource/images/addwishlist.gif" style="cursor: pointer;"><br>
-		  <a href="<%=cp%>/cart/deleteOne_no.do?pdCode=${dto.pdcode}">
-		     <img src="<%=cp%>/resource/images/deleteone.gif" style="cursor: pointer;">
-		  </a>
-	
+			<button class="myButton" style="width:120px;"> 주문하기</button><br>
+			<button class="myButton" style="width:120px;">관심상품등록</button><br>
+			<a class="btn btn-default btn-xs" style="width: 120px;" href="<%=cp%>/cart/deleteOne_no.do?pdCode=${dto.pdcode}">삭제</a>
 		</td>	
 	 </tr>
 	</c:forEach>
-
-</c:if>
-
-
-
-	<tr height="50px" style="background: #eeeeee">
-		<td colspan="2" style="text-align: left;">&nbsp;[기본배송]</td>
-		<td colspan="7" style="text-align: right;">상품구매금액 <fmt:formatNumber value="${totPrice}" pattern="#,###" /> + 
-		 <c:if test="${totPrice>=50000}">배송비 0 = &nbsp;</c:if>
-		 <c:if test="${totPrice<50000}">배송비 5,000 = &nbsp;</c:if>
+	<tr>
+		<td colspan="8" style="text-align: left;">&nbsp;[기본배송] </td>
+		<td style="text-align: right;">상품구매금액 ${totPrice} + 
+		 <c:if test="${totPrice>=50000}">배송비 0 = 합계 &nbsp;</c:if>
+		 <c:if test="${totPrice<50000}">배송비 5,000 = 합계 : &nbsp;</c:if>
 		</td>
 		<td style="border-right: 1px solid #cccccc;">
-		 <c:if test="${totPrice>=50000}"> 합계 : <fmt:formatNumber value="${totPrice}" pattern="#,###" />원</c:if>
-		 <c:if test="${totPrice<50000}"> 합계 :<fmt:formatNumber value="${totPrice+5000}" pattern="#,###" />원</c:if>
-		</td>
+		 <c:if test="${totPrice>=50000}">${totPrice}원</c:if>
+		 <c:if test="${totPrice<50000}">${totPrice+5000}원</c:if>
+
+		 </td>
 	</tr>
   </table>
   <table style="width: 1140px;">
@@ -497,21 +331,12 @@ $(function() {
   	<tr>
   	  <td style="height:50px;">
   	  	&nbsp;선택상품을 
-  	  	<c:if test="${not empty sessionScope.member }">
-  	  	 <img src="<%=cp%>/resource/images/deletecheck.gif" onclick="deleteList()" style="cursor: pointer;">
-  	    </c:if>
-  	    <c:if test="${empty sessionScope.member}">
-  	      <img src="<%=cp%>/resource/images/deletecheck.gif" onclick="deleteList_no()" style="cursor: pointer;">
-  	    </c:if>
+  	  	<img src="<%=cp%>/resource/images/deletecheck.gif" onclick="deleteList()">
   	  </td>
   	  <td align="right">
-  	  
-  	  <c:if test="${not empty sessionScope.member}">
-  	  	<img src="<%=cp%>/resource/images/removeall.gif" onclick="removeAll()" style="cursor: pointer;">
-	  </c:if>
-	  <c:if test="${empty sessionScope.member}">
-  	  	<img src="<%=cp%>/resource/images/removeall.gif" onclick="removeAll_no()" style="cursor: pointer;">
-	  </c:if>
+  	   <button type="button" class="wibtn" onclick="removeAll()">
+  			장바구니비우기
+		</button>
   	  </td>
   	</tr>
   </table>
@@ -523,26 +348,20 @@ $(function() {
 		  <th>결제예정금액</th>
 		</tr>
 		<tr height="60">
-		  <td><fmt:formatNumber value="${totPrice}" pattern="#,###" /> 원</td>
+		  <td>${totPrice} 원</td>
 		  <td>
 		  <c:if test="${totPrice>=50000}">+0원</c:if>
-		  <c:if test="${totPrice<50000}">+5,000원</c:if>
+		  <c:if test="${totPrice<50000}">+5000원</c:if>
 		  </td>
 		  <td style="border-right: 1px solid black;">
-		    <c:if test="${totPrice>=50000}"><fmt:formatNumber value="${totPrice}" pattern="#,###" />원</c:if>
-		    <c:if test="${totPrice<50000}"><fmt:formatNumber value="${totPrice+5000}" pattern="#,###" />원</c:if>
+		    <c:if test="${totPrice>=50000}">${totPrice}원</c:if>
+		    <c:if test="${totPrice<50000}">${totPrice+5000}원</c:if>
 		  </td>
 	</table>
 
 	<div style="text-align: center; margin: 30px auto 70px;">
-	
-		 <img src="<%=cp%>/resource/images/btn_order_all.gif" onclick="subOrder()" style="cursor: pointer;">
-		 <img src="<%=cp%>/resource/images/btn_order_select.gif" onclick="subToOrder()" style="cursor: pointer;">
-		<span style="text-align:right;">
-		<a href="<%=cp%>/main.do">
-		 <img src="<%=cp%>/resource/images/goingshop.gif" style="cursor: pointer;" >
-		</a>
-		</span>
+		 <img src="<%=cp%>/resource/images/byall.PNG" onclick="subToOrder()" style="cursor: pointer;">
+		 <img src="<%=cp%>/resource/images/checkby.PNG" onclick="" style="cursor: pointer;">
 	</div>
 	
 	
@@ -566,6 +385,24 @@ $(function() {
         </ul>
 	</div>
   </div>
+
+<%
+	Cookie[] ck = request.getCookies();
+	if(ck!=null){
+		for(Cookie c : ck){
+			String name = c.getName();
+			String value = c.getValue();
+			
+			if(Pattern.matches("^[0-9]+$", c.getName()))
+			  out.print("쿠키=="+name+":"+value+"<br>");
+			else 
+			  out.print("쿠키아니다=="+name+":"+value+"<br>");
+		}
+	}
+
+%>
+
+
 
 </form>
 </div>
