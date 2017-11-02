@@ -17,6 +17,19 @@
 
 <script type="text/javascript">
 
+function address_Update() {
+	var f = document.addressForm();
+	
+	f.action="<%=cp%>/order/address_update.do;"
+	
+	f.submit();
+}
+
+function alert() {
+	alert("페이지 구성중");
+}
+
+
 
 </script>
 
@@ -31,7 +44,7 @@
 
 <div>
 
-<form name="memberForm" method="post">
+<form name="addressForm" method="post">
 
 <h4><p align="center"  style="width: 1150px; margin:10px auto;">ADDRESS</p></h4>
 <h5><p align="center"  style="width: 1150px; margin:10px auto;">자주 쓰는 배송지를 등록 관리하실 수 있습니다.</p></h5>
@@ -57,25 +70,18 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 
 <td style="width: 131px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >${adlist.tel}</td>
 <td style="width: 500px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >(${adlist.addr0})${adlist.addr1} ${adlist.addr0}</td>
-<td style="width: 87px; height: 38px;  padding-top: 5px; padding-bottom:5px;" ><input type="image" src="<%=cp%>/resource/images/btn_address_modify.gif"></td>
+<td style="width: 87px; height: 38px;  padding-top: 5px; padding-bottom:5px;" ><img onclick="alert(); return false;"  src="<%=cp%>/resource/images/btn_address_modify.gif"></td>
 </tr>
 </table>
 </c:forEach>
 
 <div style="margin: 10px auto; width: 1150px; border-collapse: collapse;border-spacing: 0px;">
-<span style="float: left;"> <input  type="image" src="<%=cp%>/resource/images/btn_address_delete.gif"></span>
-<span style="float: right;"> <input  type="image" src="<%=cp%>/resource/images/btn_address_register.gif"></span>
-
+<span style="float: left;"> <img src="<%=cp%>/resource/images/btn_address_delete.gif"></span>
+<span style="float: right;"> <img onclick="" src="<%=cp%>/resource/images/btn_address_register.gif"></span>
+<!-- -->
 </div>
 <br>
 
-<div align="center" style="margin: 30px auto; border-collapse: collapse;border-spacing: 0px;">
-<input type="image" src="<%=cp%>/resource/images/btn_page_first.gif">
-<input type="image" src="<%=cp%>/resource/images/btn_page_prev.gif">
-
-<input type="image" src="<%=cp%>/resource/images/btn_page_next.gif">
-<input type="image" src="<%=cp%>/resource/images/btn_page_last.gif">
-</div>
 
 <table style="width: 1150px; height: 40px; margin-top:20px;border:1px solid siver; margin-left:auto; margin-right:auto; 
 border-collapse: collapse; border-spacing: 0px; text-align:center; border: 1px solid silver; margin-bottom: 50px;">

@@ -38,6 +38,8 @@ public class OrderListServlet extends MyServlet{
 			orderDateForm(req,resp);
 		}else if(uri.indexOf("address.do")!=-1) {
 			addressForm(req,resp);
+		}else if(uri.indexOf("address_update.do")!=-1) {
+			addressUpdate(req,resp);
 		}else if(uri.indexOf("milege.do")!=-1) {
 			milegeForm(req,resp);
 		}
@@ -141,15 +143,37 @@ public class OrderListServlet extends MyServlet{
 		HttpSession session = req.getSession();
 		SessionInfo info =(SessionInfo)session.getAttribute("member");
 
+		
+		
 		OrderDAO dao =new OrderDAO();
 		
 		List<MemberDTO> list= dao.listAddress(info.getUserId());
+		
 		
 		req.setAttribute("adlist", list);
 		
 		
 		forward(req, resp, "/WEB-INF/views/order/address.jsp");
 	}
+	
+	protected void addressUpdate(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		
+		HttpSession session = req.getSession();
+		SessionInfo info =(SessionInfo)session.getAttribute("member");
+
+		OrderDAO dao =new OrderDAO();
+		
+		List<MemberDTO> list= dao.listAddress(info.getUserId());
+		
+		req.setAttribute("admode", req.getParameter("admode"));
+		req.setAttribute("adlist", list.get(0));
+
+
+		forward(req, resp, "/WEB-INF/views/order/address_update.jsp");
+	}
+	
+	
+
 	
 	protected void milegeForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		forward(req, resp, "/WEB-INF/views/order/milege.jsp");

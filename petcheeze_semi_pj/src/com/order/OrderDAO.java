@@ -138,17 +138,17 @@ public class OrderDAO {
 		
 		
 		Connection conn=null;
-		System.out.println(userEmail);
+
 		try {
 			
 			conn=DBCPConn.getConnection();
 			
 			sb.append("SELECT m1.email email, name, addr0,addr1,addr2,tel");
 			sb.append("       ,pwd,birth,pname");
-			sb.append(" FROM member1 m1");
-			sb.append(" LEFT OUTER JOIN member2 m2 ");
-			sb.append(" ON m1.email=m2.email");
-			sb.append(" WHERE m1.email=?");
+			sb.append("  	FROM member1 m1");
+			sb.append(" 	LEFT OUTER JOIN member2 m2 ");
+			sb.append(" 	ON m1.email=m2.email");
+			sb.append(" 	WHERE m1.email=?");
 			
 			pstmt=conn.prepareStatement(sb.toString());
 			pstmt.setString(1, userEmail);
@@ -168,6 +168,7 @@ public class OrderDAO {
 				dto.setBirth(rs.getString("birth"));
 				dto.setPname(rs.getString("pname"));
 				dto.setTel(rs.getString("tel"));
+				
 				if(dto.getTel()!=null) {
 					String[] ss= dto.getTel().split("-");
 					dto.setTel1(ss[0]);
@@ -181,9 +182,10 @@ public class OrderDAO {
 				list.add(dto);
 				
 			}
+			
 			rs.close();
 			pstmt.close();
-			pstmt=null;
+			
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}finally {
