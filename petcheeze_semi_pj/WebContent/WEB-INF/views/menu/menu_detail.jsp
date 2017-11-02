@@ -71,6 +71,27 @@ function change () {
 			quantity.value = 1;
 		}
 }  
+
+function product_submit(num) {
+	var cnt = document.getElementById("quantity").value;
+	if(num="1"){
+		var f="${sessionScope.member.userId}";
+		if(!f){
+			location.href ="<%=cp%>/cart/insertCart_ok.do?pdcode=${dto.pdCode}&cnt="+cnt;
+		}else{
+			location.href ="<%=cp%>/cart/insertno.do";
+		}
+		
+	}
+	else if(num="2"){
+		location.href = "<%=cp%>/cart/list.do?pdcode=${dto.pdCode}&cnt="+cnt;
+	}
+}
+
+function alert() {
+	alert("준비중입니다.");
+}
+
 </script>
 </head>
 <body onload="init();">
@@ -220,13 +241,13 @@ function change () {
 
                         <div class="xans-element- xans-product xans-product-action ">
                             <div class="btnArea">
-                                <A class="first " onclick="product_submit(1, '/exec/front/order/basket/', this)" href="<%=cp%>/pdcode&pdcnt&pdkindcode">
+                                <A class="first " onclick="product_submit('1')" href="#none">
                                     <img alt="BUY NOW" src="<%=cp%>/resource/images/product_detail_ui/buynow_bt.png">
                                 </A>
-                                <A onclick="product_submit(2, '/exec/front/order/basket/', this)" href="http://petcheeze.co.kr/product/detail.html?product_no=31&amp;cate_no=24&amp;display_group=1#none">
+                                <A onclick="product_submit('2')" href="#none">
                                     <img alt="ADD CART" src="<%=cp%>/resource/images/product_detail_ui/addcart_bt.png">
                                 </A>
-                                <A onclick="add_wishlist_nologin('/member/login.html');" href="http://petcheeze.co.kr/product/detail.html?product_no=31&amp;cate_no=24&amp;display_group=1#none">
+                                <A onclick="alert();" href="#none">
                                     <img alt="WISH LIST" src="<%=cp%>/resource/images/product_detail_ui/wishlist_bt.png">
                                 </A>
                             </div>
