@@ -220,7 +220,7 @@ function change () {
 
                         <div class="xans-element- xans-product xans-product-action ">
                             <div class="btnArea">
-                                <A class="first " onclick="product_submit(1, '/exec/front/order/basket/', this)" href="<%=cp%>/pdcode&pdcnt&pdasd">
+                                <A class="first " onclick="product_submit(1, '/exec/front/order/basket/', this)" href="<%=cp%>/pdcode&pdcnt&pdkindcode">
                                     <img alt="BUY NOW" src="<%=cp%>/resource/images/product_detail_ui/buynow_bt.png">
                                 </A>
                                 <A onclick="product_submit(2, '/exec/front/order/basket/', this)" href="http://petcheeze.co.kr/product/detail.html?product_no=31&amp;cate_no=24&amp;display_group=1#none">
