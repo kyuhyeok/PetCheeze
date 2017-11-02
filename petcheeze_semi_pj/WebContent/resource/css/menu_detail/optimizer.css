@@ -1,0 +1,2006 @@
+.displaynone {
+	display: none !important;
+}
+body.eMobilePopup {
+	overflow: hidden; position: fixed;
+}
+.ec-base-label {
+	margin-right: 5px; display: inline-block;
+}
+.ec-base-label img {
+	vertical-align: middle;
+}
+.ec-solution-box {
+	padding: 20px; border: 5px solid rgb(232, 232, 232); border-image: none; color: rgb(64, 64, 64);
+}
+.ec-solution-box.gHalf {
+	padding: 20px 0px; position: relative;
+}
+.ec-solution-box.gHalf::before {
+	left: 50%; top: 0px; width: 1px; height: 100%; display: block; position: absolute; content: ""; background-color: rgb(230, 230, 230);
+}
+.ec-solution-box.typeBg {
+	background-color: rgb(251, 250, 250);
+}
+.ec-solution-box.typeThin {
+	border-width: 1px; border-color: rgb(215, 213, 213);
+}
+.ec-solution-box.typeThinBg {
+	border-width: 1px; border-color: rgb(215, 213, 213); background-color: rgb(251, 250, 250);
+}
+.ec-solution-box.typeThinBg > .agree {
+	background: rgb(255, 255, 255); padding: 20px; border: 1px solid rgb(230, 230, 230); border-image: none;
+}
+.ec-solution-box.typeThinBg > .agree p {
+	padding: 0px 0px 17px;
+}
+.ec-solution-box.typeMember {
+	padding: 0px;
+}
+.ec-solution-box.typeMember .information {
+	padding: 10px 0px; width: 100%; display: table; table-layout: fixed; box-sizing: border-box;
+}
+.ec-solution-box.typeMember .information > .title {
+	padding: 0px 15px; width: 70px; text-align: center; vertical-align: middle; display: table-cell;
+}
+.ec-solution-box.typeMember .information > .thumbnail {
+	padding: 0px 15px; width: 70px; text-align: center; vertical-align: middle; display: table-cell;
+}
+.ec-solution-box.typeMember .information > .title {
+	vertical-align: middle;
+}
+.ec-solution-box.typeMember .information > .thumbnail img {
+	max-width: 70px;
+}
+.ec-solution-box.typeMember .information .description {
+	padding: 0px 10px; width: auto; line-height: 1.5em; vertical-align: middle; border-left-color: rgb(232, 232, 232); border-left-width: 1px; border-left-style: solid; display: table-cell;
+}
+.ec-solution-box.typeMember.gMessage {
+	border-width: 1px; border-color: rgb(215, 213, 213);
+}
+.ec-solution-box .message {
+	background: url("//img.echosting.cafe24.com/skin/base/common/ico_info.gif") no-repeat 10px rgb(251, 251, 251); padding: 10px 0px 10px 35px; border-bottom-color: rgb(232, 231, 231); border-bottom-width: 1px; border-bottom-style: solid; display: block;
+}
+.ec-solution-box.typeProduct {
+	padding: 15px 0px; width: 100%; display: table; table-layout: fixed; box-sizing: border-box;
+}
+.ec-solution-box.typeProduct .thumbnail {
+	padding: 0px 20px; vertical-align: middle; display: table-cell;
+}
+.ec-solution-box.typeProduct .information {
+	padding: 0px 20px; vertical-align: middle; display: table-cell;
+}
+.ec-solution-box.typeProduct .thumbnail {
+	width: 100px;
+}
+.ec-solution-box.typeProduct .thumbnail img {
+	border: 1px solid rgb(215, 213, 213); border-image: none; max-width: 90px;
+}
+.ec-solution-box.typeProduct .information {
+	padding-left: 0px;
+}
+.ec-solution-button {
+	padding: 10px 0px; text-align: center;
+}
+.ec-solution-button.justify {
+	position: relative;
+}
+.ec-solution-button::after {
+	clear: both; display: block; content: "";
+}
+.ec-solution-button .gLeft {
+	text-align: left; float: left;
+}
+.ec-solution-button .gRight {
+	text-align: right; float: right;
+}
+.ec-solution-button.justify .gLeft {
+	left: 0px; position: absolute;
+}
+.ec-solution-button.justify .gRight {
+	right: 0px; position: absolute;
+}
+.ec-solution-button .text {
+	margin: 0px 6px 0px 10px; color: rgb(53, 53, 53); line-height: 24px;
+}
+.ec-solution-button.typeBorder {
+	padding: 10px 20px; border: 1px solid rgb(215, 213, 213); border-image: none; margin-top: -1px;
+}
+.ec-solution-button.typeBG {
+	background: rgb(251, 250, 250); padding: 10px 20px; border: 1px solid rgb(215, 213, 213); border-image: none;
+}
+.ec-solution-layer li {
+	list-style: none;
+}
+.ec-solution-layer table {
+	border: 0px currentColor; border-image: none; width: 100%; border-collapse: collapse; border-spacing: 0;
+}
+.ec-solution-layer caption {
+	display: none;
+}
+.ec-solution-layer h1 {
+	margin: 0px;
+}
+.ec-solution-layer h3 {
+	margin: 0px;
+}
+.ec-solution-layer {
+	background: rgb(255, 255, 255); border: 1px solid rgb(117, 117, 117); border-image: none; position: absolute; z-index: 100;
+}
+.ec-solution-layer .header {
+	background: rgb(73, 81, 100); padding: 7px 35px 7px 19px; color: rgb(255, 255, 255);
+}
+.ec-solution-layer .header > h1 {
+	line-height: 1.5; font-size: 14px;
+}
+.ec-solution-layer .header > h3 {
+	line-height: 1.5; font-size: 14px;
+}
+.ec-solution-layer .content {
+	padding: 20px; font-size: 12px;
+}
+.ec-solution-layer div.ec-solution-help {
+	margin-top: 0px;
+}
+.ec-solution-layer .ec-solution-button {
+	background: rgb(251, 250, 250); padding: 9px; text-align: center; border-top-color: rgb(215, 213, 213); border-top-width: 1px; border-top-style: solid;
+}
+.ec-solution-layer .close {
+	padding: 11px 20px; top: 0px; right: 0px; position: absolute; cursor: pointer;
+}
+#popup .ec-solution-layer {
+	border: 0px currentColor; border-image: none; position: relative;
+}
+#popup .ec-solution-layer .header {
+	padding: 12px 35px 12px 19px;
+}
+#popup .ec-solution-layer .close {
+	top: 5px;
+}
+.ec-solution-layer .content > .ec-solution-table table:first-child {
+	margin-top: 0px;
+}
+.ec-solution-layer .ec-solution-table table {
+	line-height: 1.4;
+}
+.ec-solution-layer .ec-solution-table thead th {
+	padding: 9px 0px 8px;
+}
+.ec-solution-layer .ec-solution-table tbody th {
+	padding: 9px 0px 8px 10px;
+}
+.ec-solution-layer .ec-solution-table td {
+	padding: 9px 10px 8px;
+}
+.ec-solution-layer .ec-solution-table.typeWrite td {
+	padding: 5px 10px 4px;
+}
+.ec-solution-layer .ec-solution-table.typeList tfoot td {
+	padding: 10px 10px 12px;
+}
+.ec-solution-layer .ec-solution-table.typeBorder tfoot td {
+	padding: 10px 10px 12px;
+}
+.ec-solution-table table {
+	border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(215, 213, 213) rgb(215, 213, 213); margin: 10px 0px 0px; border-image: none; color: rgb(255, 255, 255); line-height: 1.5; position: relative;
+}
+.ec-solution-table.gLayoutFixed table {
+	table-layout: fixed;
+}
+.ec-solution-table.gLayoutFixed .gLayoutAuto table {
+	table-layout: auto;
+}
+.ec-solution-table table::before {
+	background: rgb(215, 213, 213); left: 0px; top: 1px; width: 100%; height: 1px; display: block; position: absolute; content: "";
+}
+.ec-solution-table thead th {
+	background: rgb(251, 250, 250); padding: 11px 0px 10px; color: rgb(53, 53, 53); font-weight: normal; vertical-align: middle; border-bottom-color: rgb(223, 223, 223); border-left-color: rgb(223, 223, 223); border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid;
+}
+.ec-solution-table tbody th {
+	border-width: 1px 1px 0px; border-style: solid; border-color: rgb(223, 223, 223); padding: 11px 0px 10px 18px; border-image: none; text-align: left; color: rgb(53, 53, 53); font-weight: normal; background-color: rgb(251, 250, 250);
+}
+.ec-solution-table th:first-child {
+	border-left-color: currentColor; border-left-width: 0px; border-left-style: none;
+}
+.ec-solution-table td {
+	padding: 11px 10px 10px; color: rgb(53, 53, 53); vertical-align: middle; border-top-color: rgb(223, 223, 223); border-top-width: 1px; border-top-style: solid;
+}
+.ec-solution-table td.clear {
+	padding: 0px !important; border: 0px currentColor !important; border-image: none !important;
+}
+.ec-solution-table.typeWrite td {
+	padding: 8px 10px 7px;
+}
+.ec-solution-table.typeList table {
+	border-top-color: rgb(215, 213, 213);
+}
+.ec-solution-table.typeList table::before {
+	display: none;
+}
+.ec-solution-table.typeList td {
+	padding: 8px 10px 7px;
+}
+.ec-solution-table.typeList tfoot td {
+	background: rgb(251, 250, 250); padding: 15px 10px 17px;
+}
+.ec-solution-table .message {
+	padding: 50px 0px; border: 1px solid rgb(215, 213, 213); border-image: none; text-align: center; color: rgb(117, 117, 117); font-weight: bold;
+}
+.ec-solution-table table + .message {
+	margin: -1px 0px 0px;
+}
+.ec-solution-table table td.message {
+	padding: 50px 0px;
+}
+.ec-solution-table .scroll .message {
+	border: 0px currentColor; border-image: none;
+}
+.ec-solution-table.typeList .head td {
+	background: rgb(251, 250, 250); padding: 11px 0px 10px; text-align: center; color: rgb(53, 53, 53); vertical-align: middle; border-bottom-color: rgb(223, 223, 223); border-left-color: rgb(223, 223, 223); border-bottom-width: 1px; border-left-width: 1px; border-bottom-style: solid; border-left-style: solid;
+}
+.ec-solution-table.typeList .head td:first-child {
+	border-left-color: currentColor; border-left-width: 0px; border-left-style: none;
+}
+.ec-solution-table.typeList .scroll {
+	border-width: 0px 1px 1px; border-style: solid; border-color: rgb(215, 213, 213); border-image: none; margin-top: -1px; position: relative; -ms-overflow-x: hidden; -ms-overflow-y: scroll; min-height: 100px; max-height: 185px;
+}
+.ec-solution-table.typeList .scroll table {
+	margin: 0px; border: 0px currentColor; border-image: none;
+}
+.ec-solution-table.typeList .scroll table::before {
+	display: none;
+}
+.ec-solution-table.typeList .scroll .message {
+	border: 0px currentColor; border-image: none;
+}
+.ec-solution-table thead.blind {
+	display: none;
+}
+.ec-solution-table thead.blind th {
+	display: none;
+}
+.ec-solution-table thead.blind + tbody tr:first-child th {
+	border-top-width: 0px;
+}
+.ec-solution-table thead.blind + tbody tr:first-child td {
+	border-top-width: 0px;
+}
+.ec-solution-table.typeList.gLine table {
+	border-width: 0px 0px 1px;
+}
+.ec-solution-table.typeClear table::before {
+	display: none;
+}
+.ec-solution-table.typeClear table {
+	background: none; border: 0px currentColor; border-image: none;
+}
+.ec-solution-table.typeClear th {
+	background: none; border: 0px currentColor; border-image: none;
+}
+.ec-solution-table.typeClear td {
+	background: none; border: 0px currentColor; border-image: none;
+}
+.ec-solution-table.typeClear th {
+	font-weight: bold;
+}
+.ec-solution-table.gBorder td {
+	border-left-color: rgb(223, 223, 223); border-left-width: 1px; border-left-style: solid;
+}
+.ec-solution-table.gBorder td:first-child {
+	border-left-color: currentColor; border-left-width: 0px; border-left-style: none;
+}
+.ec-solution-table .left {
+	text-align: left;
+}
+.ec-solution-table .center {
+	text-align: center;
+}
+.ec-solution-table .right {
+	text-align: right;
+}
+.ec-solution-table.typeList .center td {
+	padding-right: 0px; padding-left: 0px;
+}
+.ec-solution-table.typeList td.center {
+	padding-right: 0px; padding-left: 0px;
+}
+.ec-solution-table.typeList .center td.left {
+	padding-left: 10px;
+}
+.ec-solution-table.typeList .center td.right {
+	padding-right: 10px;
+}
+.ec-solution-table .top th {
+	vertical-align: top;
+}
+.ec-solution-table th.top {
+	vertical-align: top;
+}
+.ec-solution-table .top td {
+	vertical-align: top;
+}
+.ec-solution-table td.top {
+	vertical-align: top;
+}
+.ec-solution-table .middle th {
+	vertical-align: middle;
+}
+.ec-solution-table th.middle {
+	vertical-align: middle;
+}
+.ec-solution-table .middle td {
+	vertical-align: middle;
+}
+.ec-solution-table td.middle {
+	vertical-align: middle;
+}
+.ec-solution-table img {
+	vertical-align: middle;
+}
+@media print
+{
+.ec-solution-table table::before {
+	display: none;
+}
+}
+.xans-product-detail {
+	margin: 0px auto 80px; padding: 30px 0px; border-bottom-color: rgb(238, 238, 238); border-bottom-width: 1px; border-bottom-style: solid; position: relative;
+}
+.xans-product-detail .detailArea {
+	padding: 0px 0px 0px 540px;
+}
+.xans-product-detail .detailArea::after {
+	clear: both; display: block; content: "";
+}
+.xans-product-detail .imgArea {
+	margin: 0px 0px 0px -546px; width: 550px; float: left;
+}
+.xans-product-detail .imgArea .keyImg {
+	margin: 0px auto; width: 500px;
+}
+.xans-product-detail .imgArea .keyImg img {
+	border: 1px solid rgb(236, 236, 236); border-image: none; cursor: pointer; max-width: 500px;
+}
+.xans-product-detail .imgArea .keyImg .topLogo {
+	padding: 0px 0px 15px; overflow: hidden;
+}
+.xans-product-detail .imgArea .keyImg .topLogo span {
+	line-height: 24px; font-family: tahoma; font-size: 24px; font-weight: bold;
+}
+.xans-product-detail .imgArea .listImg {
+	margin: 30px auto 0px; width: 346px; overflow: hidden;
+}
+.xans-product-detail .imgArea .listImg ul {
+	margin: 0px 0px 0px 2px; height: 77px; line-height: 0; font-size: 0px;
+}
+.xans-product-detail .imgArea .listImg li {
+	margin: 0px 1px; line-height: 14px; font-size: 12px; vertical-align: top; display: inline-block;
+}
+.xans-product-detail .imgArea .listImg li img {
+	border: 1px solid rgb(236, 236, 236); border-image: none; width: 65px; height: 75px; cursor: pointer;
+}
+.xans-product-detail .imgArea .listImg button {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/product/btn_product_detail_ctrl.png") no-repeat; top: 0px; width: 21px; height: 77px; color: transparent; line-height: 0; font-size: 0px; position: absolute;
+}
+.xans-product-detail .imgArea .listImg .prev {
+	background-position: 0px 0px; left: 0px;
+}
+.xans-product-detail .imgArea .listImg .next {
+	background-position: -31px 0px; right: 0px;
+}
+.xans-product-detail .imgArea .control {
+	margin: 10px auto 0px; width: 346px; text-align: center; overflow: hidden;
+}
+.xans-product-detail .imgArea .control .prev {
+	float: left;
+}
+.xans-product-detail .imgArea .control .next {
+	float: right;
+}
+.xans-product-detail .imgArea .color {
+	margin: 20px 0px 17px; overflow: hidden;
+}
+.xans-product-detail .imgArea .chips {
+	margin: 0px 3px 3px 0px; border: 1px solid rgb(227, 227, 227); border-image: none; width: 28px; height: 18px; line-height: 0; font-size: 0px; float: left;
+}
+.xans-product-detail .imgArea .button {
+	margin: 30px auto 0px; padding: 0px 0px 23px; width: 346px; text-align: center; border-top-color: currentColor; border-bottom-color: rgb(232, 232, 232); border-top-width: 0px; border-bottom-width: 1px; border-top-style: none; border-bottom-style: solid; float: none;
+}
+.xans-product-detail .imgArea .button img {
+	margin: 0px 3px;
+}
+.xans-product-detail .infoArea {
+	margin: 0px 0px 0px 100px;
+}
+.xans-product-detail .infoArea h3 {
+	padding: 22px 5px 20px 9px; color: rgb(46, 46, 46); font-size: 12px; border-bottom-color: rgb(232, 232, 232); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.xans-product-detail .infoArea h3 span {
+	font-size: 12px; font-weight: normal;
+}
+.xans-product-detail .infoArea .icon {
+	padding: 0px 0px 0px 10px;
+}
+.xans-product-detail .infoArea .icon img {
+	margin: 0px -3px 0px 0px; vertical-align: middle;
+}
+.xans-product-detail .infoArea p.delivery {
+	padding: 10px 0px 20px;
+}
+.xans-product-detail .infoArea > .info {
+	margin: 7px 0px 0px; padding: 8px 0px 0px 11px; color: rgb(117, 117, 117); border-top-color: rgb(232, 232, 232); border-top-width: 1px; border-top-style: solid;
+}
+.xans-product-detail .infoArea table {
+	margin: 10px 0px 0px; border: 0px currentColor; border-image: none; width: 400px; font-size: 12px;
+}
+.xans-product-detail .infoArea th {
+	padding: 7px 0px 8px 9px; width: 115px; text-align: left; color: rgb(53, 53, 53); font-weight: normal; vertical-align: top;
+}
+.xans-product-detail .infoArea td {
+	padding: 7px 10px 8px 0px; vertical-align: top;
+}
+.xans-product-detail .infoArea td input {
+	height: 22px; color: rgb(53, 53, 53);
+}
+.xans-product-detail .infoArea td select {
+	width: 100%; height: 24px; color: rgb(53, 53, 53); font-size: 12px;
+}
+.xans-product-detail .infoArea td #delivery_cost_prepaid {
+	margin: 0px 0px 5px;
+}
+.xans-product-detail .infoArea td .inputWrap {
+	background: rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(197, 197, 197) rgb(233, 233, 233) rgb(233, 233, 233) rgb(197, 197, 197); padding: 0px 4px; border-image: none; display: block;
+}
+.xans-product-detail .infoArea td .inputWrap input {
+	border: 0px currentColor; border-image: none; width: 100%; line-height: 22px; font-size: 11px;
+}
+.xans-product-detail .infoArea td.social {
+	padding: 4px 0px 0px;
+}
+.xans-product-detail .infoArea td.social img {
+	cursor: pointer;
+}
+.xans-product-detail .infoArea td .sale {
+	text-decoration: line-through;
+}
+.xans-product-detail .infoArea td .period {
+	margin: 7px 0px 0px; color: rgb(53, 53, 53); font-size: 11px; display: block;
+}
+.xans-product-detail .infoArea td .mileage li {
+	line-height: 1.7em;
+}
+.xans-product-detail .infoArea td .quantity {
+	display: block; position: relative;
+}
+.xans-product-detail .infoArea td .quantity input {
+	border: 1px solid rgb(188, 188, 188); border-image: none; width: 30px; height: 18px;
+}
+.xans-product-detail .infoArea td .quantity .QuantityUp {
+	left: 32px; top: 0px; position: absolute;
+}
+.xans-product-detail .infoArea td .quantity .QuantityDown {
+	left: 32px; bottom: 0px; position: absolute;
+}
+.xans-product-detail .infoArea td .delivery input {
+	border: 0px currentColor; border-image: none;
+}
+.xans-product-detail .infoArea td .delivery label {
+	margin: 0px 30px 0px 0px;
+}
+.xans-product-detail .infoArea td img.qrcode {
+	border: 1px solid rgb(225, 225, 225); border-image: none;
+}
+.xans-product-detail .infoArea td #span_product_price_text {
+	font-weight: normal;
+}
+.xans-product-detail .infoArea td #span_product_coupon_dc_price {
+	color: rgb(7, 7, 5);
+}
+.xans-product-detail .infoArea td.fileInfo {
+	color: rgb(117, 117, 117);
+}
+.xans-product-detail .infoArea td.fileInfo input {
+	border-width: 1px; border-style: solid; border-color: rgb(197, 197, 197) rgb(233, 233, 233) rgb(233, 233, 233) rgb(197, 197, 197); border-image: none; width: 288px;
+}
+.xans-product-detail .infoArea td.fileInfo .infoDesc {
+	margin: 0px 0px 10px;
+}
+.xans-product-detail .infoArea td.fileInfo li {
+	margin: 4px 0px 0px; color: rgb(117, 117, 117); font-size: 11px;
+}
+.xans-product-detail .infoArea td.fileInfo li img {
+	vertical-align: bottom;
+}
+.xans-product-detail .delv_price_B strong {
+	font-weight: normal;
+}
+.xans-product-detail .btnTooltip {
+	vertical-align: middle; display: inline-block; position: relative; z-index: 10;
+}
+.xans-product-detail .infoArea .xans-product-option tr th {
+	padding: 5px 0px 5px 4px;
+}
+.xans-product-detail .infoArea .xans-product-option tr td {
+	padding: 4px 10px 4px 0px;
+}
+.xans-product-detail .infoArea .xans-product-option tr:first-child th {
+	padding-top: 14px; border-top-color: rgb(232, 232, 232); border-top-width: 1px; border-top-style: solid;
+}
+.xans-product-detail .infoArea .xans-product-option .xans-product-fileoption th {
+	padding-top: 14px; border-top-color: rgb(232, 232, 232); border-top-width: 1px; border-top-style: solid;
+}
+.xans-product-detail .infoArea .xans-product-option tr:first-child td {
+	padding-top: 10px; border-top-color: rgb(232, 232, 232); border-top-width: 1px; border-top-style: solid;
+}
+.xans-product-detail .infoArea .xans-product-option .xans-product-fileoption td {
+	padding-top: 10px; border-top-color: rgb(232, 232, 232); border-top-width: 1px; border-top-style: solid;
+}
+.xans-product-detail .infoArea .xans-product-option td.selectButton {
+	text-align: right;
+}
+.xans-product-detail .infoArea .xans-product-addoption td .inputWrap {
+	width: 280px; display: inline-block;
+}
+.xans-product-detail .infoArea .xans-product-addoption .txtByte {
+	letter-spacing: -1px; font-size: 11px; vertical-align: middle;
+}
+.xans-product-detail .infoArea .xans-product-addoption .txtByte strong {
+	color: rgb(52, 50, 49);
+}
+.xans-product-action {
+	padding: 30px 0px 10px; width: 468px; border-top-color: rgb(232, 232, 232); border-top-width: 1px; border-top-style: solid;
+}
+.xans-product-action .btnArea {
+	margin: 0px 0px 15px; text-align: left; line-height: 0; overflow: hidden; font-size: 0px;
+}
+.xans-product-action .btnArea a {
+	vertical-align: top; display: inline-block;
+}
+.xans-product-action .btnArea a img {
+	margin: 0px 0px 0px 10px; line-height: 14px; font-size: 12px; cursor: pointer;
+}
+.xans-product-action .btnArea a:first-child img {
+	margin-left: 0px;
+}
+.xans-product-detail .eventArea {
+	color: rgb(53, 53, 53);
+}
+.xans-product-detail .eventArea h3 {
+	padding: 0px 0px 0px 9px; color: rgb(52, 50, 49); line-height: 39px; font-size: 11px; border-top-color: rgb(232, 232, 232); border-bottom-color: rgb(232, 232, 232); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.xans-product-detail .eventArea .event {
+	padding: 27px 10px 46px 9px; color: rgb(53, 53, 53); line-height: 18px;
+}
+.xans-myshop-benefit {
+	margin: 30px 0px; border: 1px solid rgb(214, 212, 212); border-image: none;
+}
+.xans-myshop-benefit .thanks {
+	background: rgb(251, 251, 251); padding: 7px 0px 11px 9px; color: rgb(53, 53, 53); border-bottom-color: rgb(232, 231, 231); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.xans-myshop-benefit .thanks img {
+	margin: -1px 6px 0px 0px; vertical-align: middle;
+}
+.xans-myshop-benefit .myInfo {
+	padding: 9px 10px 10px 100px; overflow: hidden;
+}
+.xans-myshop-benefit .myInfo p {
+	color: rgb(117, 117, 117); line-height: 18px;
+}
+.xans-myshop-benefit .myThumb {
+	margin: 0px 0px 0px -91px; float: left;
+}
+.xans-myshop-benefit .member {
+	margin: 2px 0px 19px;
+}
+.xans-myshop-benefit .member strong {
+	color: rgb(53, 53, 53);
+}
+.xans-myshop-benefit .member em {
+	color: rgb(53, 53, 53); font-style: normal;
+}
+#image_zoom_small {
+	background: rgb(255, 255, 255); border: 1px solid rgb(170, 170, 170); border-image: none; display: block; position: absolute; z-index: 999; opacity: 0.5;
+}
+#zoom_wrap {
+	left: 380px; top: 30px; position: absolute; z-index: 100;
+}
+.image_zoom_large {
+	background: rgb(255, 255, 255); border: 1px solid rgb(170, 170, 170); border-image: none; width: 350px; height: 350px; overflow: hidden; position: absolute; z-index: 999;
+}
+.image_zoom_large .image_zoom_large_relative {
+	position: relative;
+}
+.image_zoom_large .image_zoom_large_relative #zoom_image {
+	position: absolute; z-index: 99;
+}
+#NaverChk_Button {
+	margin: 10px 0px 0px; clear: both; float: right;
+}
+#divNvPointInfo {
+	background: rgb(255, 255, 255); padding: 10px; border: 1px solid rgb(91, 151, 97); border-image: none; width: 245px; color: rgb(119, 119, 119); font-size: 11px; display: none; position: absolute; z-index: 99;
+}
+#divNvPointInfo a {
+	padding: 5px 0px 0px; color: rgb(30, 194, 40); display: block;
+}
+#divNvPointInfo a img {
+	vertical-align: middle;
+}
+#imgNaverMileageHelp {
+	cursor: pointer;
+}
+.infoArea .productSet {
+	margin: 10px 0px 0px; border: 1px solid rgb(215, 213, 213); border-image: none;
+}
+.infoArea .productSet table {
+	margin: 0px; table-layout: fixed;
+}
+.infoArea .productSet th {
+	padding: 5px 5px 5px 8px; width: 100px; color: rgb(53, 53, 53);
+}
+.infoArea .productSet td {
+	padding: 5px 10px; color: rgb(53, 53, 53);
+}
+.infoArea .productSet td.del {
+	text-decoration: line-through;
+}
+.infoArea .productSet td.price {
+	color: rgb(255, 138, 86); font-weight: bold;
+}
+.infoArea .productSet td.sale {
+	color: rgb(249, 89, 89); font-weight: bold;
+}
+.infoArea .productSet td.thumbnail img {
+	margin: 3px 0px 7px; border: 1px solid rgb(236, 236, 236); border-image: none; width: 78px; height: 108px;
+}
+.infoArea .productSet .product {
+	padding: 9px 0px 4px; vertical-align: top; border-top-color: rgb(233, 233, 233); border-top-width: 1px; border-top-style: solid;
+}
+.infoArea .productSet .seperate {
+	vertical-align: top;
+}
+.infoArea .productSet .option {
+	vertical-align: top;
+}
+.infoArea .productSet .option td {
+	padding: 4px 10px;
+}
+.infoArea .productSet .info {
+	padding: 0px 0px 0px 58px; color: rgb(143, 143, 145); font-size: 11px;
+}
+.infoArea .productSet .selectButton {
+	text-align: right;
+}
+.infoArea .productSet .recommend {
+	background: rgb(251, 250, 250); padding: 0px 0px 0px 8px; color: rgb(117, 117, 117); line-height: 38px; font-size: 11px; position: relative;
+}
+.infoArea .productSet .recommend strong {
+	padding: 0px 7px 0px 0px; color: rgb(53, 53, 53); font-size: 12px;
+}
+.infoArea .productSet .recommend .toggle {
+	top: 4px; right: 10px; position: absolute;
+}
+.infoArea .productSet.normal {
+	border: 0px currentColor; border-image: none;
+}
+.infoArea .productSet.normal th {
+	border-right-color: rgb(215, 213, 213); border-right-width: 1px; border-right-style: solid;
+}
+.infoArea .productSet.normal tr:first-child th {
+	background: rgb(251, 250, 250); padding-top: 11px; padding-bottom: 11px; border-bottom-color: rgb(215, 213, 213); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.infoArea .productSet.normal tr:first-child td {
+	background: rgb(251, 250, 250); padding-top: 11px; padding-bottom: 11px; border-bottom-color: rgb(215, 213, 213); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.infoArea .productSet.normal .option th {
+	padding-top: 0px;
+}
+.infoArea .productSet.normal .option td {
+	padding: 1px 10px 7px;
+}
+.infoArea .productSet.normal .option tr:first-child th {
+	background: none; padding-top: 5px; padding-bottom: 6px; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;
+}
+.infoArea .productSet.normal .option tr:first-child td {
+	background: none; padding-top: 1px; padding-bottom: 6px; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;
+}
+.infoArea .productSet.normal .product {
+	margin: 1px 0px 0px; padding: 0px; border: 1px solid rgb(215, 213, 213); border-image: none;
+}
+.infoArea .productSet .xans-product-addoption td .inputWrap {
+	width: 273px; display: inline-block;
+}
+.infoArea .productSet.hide .product {
+	display: none;
+}
+#totalProducts {
+	margin: 21px 0px 0px;
+}
+#totalProducts .info {
+	padding: 0px 0px 9px; color: rgb(246, 91, 84); line-height: 14px; font-size: 11px;
+}
+#totalProducts .info img {
+	margin: 0px 5px 0px 0px;
+}
+#totalProducts table {
+	margin: 0px;
+}
+#totalProducts table .left {
+	text-align: left;
+}
+#totalProducts table .center {
+	text-align: center;
+}
+#totalProducts table .right {
+	text-align: right; color: rgb(52, 50, 49); padding-right: 9px;
+}
+#totalProducts thead th {
+	padding: 0px; height: 0px; line-height: 0; font-size: 0px;
+}
+#totalProducts tbody th {
+	vertical-align: middle;
+}
+#totalProducts tbody td {
+	padding: 9px 0px; color: rgb(53, 53, 53); line-height: 18px; vertical-align: middle; border-top-color: rgb(235, 235, 235); border-top-width: 1px; border-top-style: solid; -ms-word-break: break-all; -ms-word-wrap: break-word;
+}
+#totalProducts tbody tr td:first-child {
+	padding-left: 4px;
+}
+#totalProducts tbody tr:first-child td {
+	border-top-color: rgb(238, 238, 238); border-top-width: 1px; border-top-style: solid;
+}
+#totalProducts tbody td p {
+	padding: 0px 10px 0px 0px; line-height: 21px; font-weight: bold;
+}
+#totalProducts tbody td p.product span {
+	color: rgb(117, 117, 117); line-height: 18px; font-weight: normal;
+}
+#totalProducts tbody td p.product span.soldOut {
+	color: rgb(52, 50, 49);
+}
+#totalProducts tbody td img {
+	vertical-align: middle;
+}
+#totalProducts tbody td .quantity {
+	width: 50px; vertical-align: top; display: inline-block; position: relative;
+}
+#totalProducts tbody td .quantity input {
+	padding: 0px 2px 0px 3px; border-radius: 3px 0px 0px 3px; border: 1px solid rgb(212, 216, 217); border-image: none; width: 22px; height: 23px; line-height: 23px;
+}
+#totalProducts tbody td .quantity .up {
+	left: 28px; top: 0px; position: absolute;
+}
+#totalProducts tbody td .quantity .down {
+	left: 28px; top: 12px; position: absolute;
+}
+#totalProducts tbody td .mileage {
+	display: block; white-space: nowrap;
+}
+#totalProducts tbody td .mileage_price {
+	
+}
+#totalProducts tfoot td {
+	background: rgb(255, 255, 255); padding: 34px 9px 19px; color: rgb(53, 53, 53); vertical-align: middle; border-top-color: rgb(238, 238, 238); border-top-width: 1px; border-top-style: solid;
+}
+#totalProducts tfoot td .total {
+	color: rgb(52, 50, 49);
+}
+#totalProducts tfoot td .total em {
+	font-size: 12px; font-style: normal;
+}
+#totalProducts + .xans-product-action {
+	margin-top: 0px;
+}
+.differentialShipping {
+	margin: 0px 0px 0px -176px; left: 50%; top: 17px; width: 350px; overflow: hidden; display: none; position: absolute; z-index: 100;
+}
+.differentialShipping h3.title {
+	background: rgb(73, 81, 100); padding: 0px 35px 0px 19px; border: 0px currentColor; border-image: none; height: 35px; color: rgb(255, 255, 255); line-height: 35px; font-size: 14px;
+}
+.differentialShipping .content {
+	background: rgb(255, 255, 255); border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentColor rgb(117, 117, 117) rgb(117, 117, 117); padding: 12px 18px 14px; border-image: none; text-align: center;
+}
+.differentialShipping .close {
+	top: 12px; right: 14px; position: absolute;
+}
+.differentialShipping .close img {
+	cursor: pointer;
+}
+.differentialShipping .content ul {
+	color: rgb(117, 117, 117); line-height: 25px;
+}
+.differentialShipping .content li {
+	overflow: hidden;
+}
+.differentialShipping .content li strong {
+	font-weight: normal; float: left;
+}
+.differentialShipping .content li span {
+	color: rgb(46, 46, 46); float: right;
+}
+.differentialShipping .content .info {
+	margin: 7px 0px 0px; padding: 7px 0px 0px; text-align: right; color: rgb(128, 174, 239); font-size: 11px; border-top-color: rgb(176, 177, 179); border-top-width: 1px; border-top-style: dotted;
+}
+.xans-product-customsns {
+	vertical-align: middle; display: inline;
+}
+.xans-product-customsns ul {
+	vertical-align: middle; display: inline;
+}
+.xans-product-customsns li {
+	vertical-align: middle; display: inline;
+}
+.xans-product-customsns img {
+	margin-bottom: 2px;
+}
+.xans-product-detail .infoArea td > span > ul.discountMember > li {
+	float: left; position: relative;
+}
+.xans-product-detail .infoArea td ul.discountMember li a {
+	margin: 0px 4px 4px 0px; display: block;
+}
+.xans-product-detail .infoArea td ul li .discount_layer {
+	background: rgb(255, 255, 255); padding: 15px; border: 1px solid rgb(86, 89, 96); border-image: none; left: -140px; top: 19px; overflow: auto; margin-top: 7px; position: absolute; z-index: 10; max-height: 400px; min-width: 300px;
+}
+.xans-product-detail .infoArea td ul li .discount_layer h3 {
+	background: url("http://img.echosting.cafe24.com/skin/admin_ko_KR/product/ico_layer_title.gif") no-repeat 0px 50%; margin: 0px 0px 8px; padding: 0px 10px; font-size: 12px; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;
+}
+.xans-product-detail .infoArea td ul li .discount_layer p {
+	padding: 0px 10px;
+}
+.xans-product-detail .infoArea td ul li .discount_layer ul {
+	padding: 0px 10px;
+}
+.xans-product-detail .infoArea td ul li .discount_layer p.info {
+	padding: 10px 10px 0px;
+}
+.xans-product-detail .infoArea td ul li .discount_layer p strong {
+	color: rgb(0, 136, 212);
+}
+.xans-product-detail .infoArea td ul li .discount_layer ul li {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/board/ico_function.gif") no-repeat 0px 5px; padding: 0px 0px 5px 5px; line-height: 1.4em; float: none;
+}
+.xans-product-detail .infoArea td ul li .discount_layer thead th {
+	padding: 0px; height: 0px; line-height: 0; font-size: 0px;
+}
+.xans-product-detail .infoArea td ul li .discount_layer tbody {
+	border: 1px solid rgb(215, 213, 214); border-image: none;
+}
+.xans-product-detail .infoArea td ul li .discount_layer th {
+	background: rgb(251, 249, 250); padding: 5px 0px 5px 15px; color: rgb(54, 54, 54); border-right-color: rgb(232, 232, 232); border-right-width: 1px; border-right-style: solid;
+}
+.xans-product-detail .infoArea td ul li .discount_layer.member_rating th {
+	width: 50px;
+}
+.xans-product-detail .infoArea td ul li .discount_layer th {
+	height: 15px; border-bottom-color: rgb(232, 232, 232); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.xans-product-detail .infoArea td ul li .discount_layer td {
+	height: 15px; border-bottom-color: rgb(232, 232, 232); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.xans-product-detail .infoArea td ul li .discount_layer td {
+	padding: 5px 15px 5px 5px; text-align: right;
+}
+.xans-product-detail .infoArea td ul li .discount_layer tr:last-of-type th {
+	border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;
+}
+.xans-product-detail .infoArea td ul li .discount_layer tr:last-of-type td {
+	border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;
+}
+.xans-product-detail .infoArea td ul li .discount_layer .close {
+	border: 0px currentColor; border-image: none; top: 15px; right: 15px; position: absolute;
+}
+.xans-product-detail .infoArea td ul li .arrow {
+	left: 46%; top: 22px; position: absolute; z-index: 20;
+}
+.xans-coupon-productdetail {
+	overflow: hidden; clear: both;
+}
+.xans-coupon-productdetail > .title {
+	border-top-color: rgb(232, 232, 232); border-bottom-color: rgb(232, 232, 232); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; position: relative;
+}
+.xans-coupon-productdetail > .title h3 {
+	padding: 0px 0px 0px 9px; color: rgb(0, 139, 204); line-height: 39px; font-size: 12px;
+}
+.xans-coupon-productdetail > .title .button {
+	background: rgb(255, 255, 255); padding: 0px 0px 0px 7px; top: 7px; right: 0px; position: absolute;
+}
+.xans-coupon-productdetail .couponSkinArea {
+	padding: 30px 0px 0px; text-align: center;
+}
+.xans-coupon-productdetail .couponSkinArea ul {
+	margin: 0px auto; padding: 0px; -ms-zoom: 1;
+}
+.xans-coupon-productdetail .couponSkinArea ul::after {
+	clear: both; display: block; content: "";
+}
+.xans-coupon-productdetail .couponSkinArea ul li {
+	list-style: none; padding: 0px; width: 216px; float: left; display: inline;
+}
+.xans-coupon-productdetail .couponSkinArea ul.grid1 {
+	width: 216px;
+}
+.xans-coupon-productdetail .couponSkinArea ul.grid2 {
+	width: 472px;
+}
+.xans-coupon-productdetail .couponSkinArea ul.grid2 li {
+	margin: 0px 10px;
+}
+.xans-coupon-productdetail .couponSkinArea ul.grid3 {
+	width: 708px;
+}
+.xans-coupon-productdetail .couponSkinArea ul.grid3 li {
+	margin: 0px 10px;
+}
+.xans-coupon-productdetail .couponSkinArea .coupon {
+	width: 216px; height: 105px; text-align: center; line-height: 1.5; font-family: Dotum sans-serif; font-size: 12px; margin-bottom: 20px; background-repeat: no-repeat;
+}
+.xans-coupon-productdetail .couponSkinArea .coupon img {
+	border: 0px currentColor; border-image: none;
+}
+.xans-coupon-productdetail .couponSkinArea .coupon p {
+	margin: 0px; padding: 0px;
+}
+.xans-coupon-productdetail .couponSkinArea .coupon .title {
+	padding: 8px 0px 0px; text-align: center; line-height: 15px; font-family: Arial; font-size: 10px; font-weight: normal; display: block;
+}
+.xans-coupon-productdetail .couponSkinArea .coupon .discount {
+	text-align: center; line-height: 28px; letter-spacing: -1px; font-family: Dotum; font-size: 18px; font-weight: bold;
+}
+.xans-coupon-productdetail .couponSkinArea .coupon .discount span {
+	font-family: Verdana; font-size: 22px;
+}
+.xans-coupon-productdetail .couponSkinArea .coupon .period {
+	text-align: center; line-height: 13px; letter-spacing: -1px; font-family: Dotum; font-size: 11px; font-weight: bold;
+}
+.xans-coupon-productdetail .couponSkinArea .coupon .button {
+	margin: 5px 0px 0px; text-align: center;
+}
+.xans-coupon-productdetail .couponSkinArea .imgCoupon .title {
+	display: none;
+}
+.xans-coupon-productdetail .couponSkinArea .imgCoupon .discount {
+	display: none;
+}
+.xans-coupon-productdetail .couponSkinArea .imgCoupon .period {
+	display: none;
+}
+.xans-coupon-productdetail .couponSkinArea .imgCoupon .button {
+	display: none;
+}
+.xans-coupon-productdetail .couponSkinArea .imgCoupon .detail {
+	height: 100%;
+}
+#dCouponDetail {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/coupon/bg_coupon_detail.gif") repeat-x 0px 100% rgb(255, 255, 255); padding: 0px 0px 69px; border: 1px solid rgb(117, 117, 117); border-image: none; width: 398px; overflow: hidden; position: relative; box-shadow: 5px 5px 5px #d3d3d3;
+}
+#dCouponDetail h3 {
+	background: rgb(73, 81, 100); padding: 0px 35px 0px 19px; height: 35px; color: rgb(255, 255, 255); line-height: 35px; font-size: 14px;
+}
+#dCouponDetail h3 + a {
+	top: 10px; right: 20px; position: absolute;
+}
+#dCouponDetail ul {
+	background: rgb(245, 245, 245); margin: 25px 19px 0px; padding: 16px 10px 17px 20px; clear: both;
+}
+#dCouponDetail ul li {
+	margin: 7px 0px 0px; color: rgb(46, 46, 46); line-height: 18px;
+}
+#dCouponDetail ul li:first-child {
+	margin-top: 0px;
+}
+#dCouponDetail ul + a {
+	margin: 0px 0px 0px -50px; left: 50%; bottom: 9px; position: absolute;
+}
+.xans-product-additional ul.link {
+	margin: 30px 0px 11px; line-height: 1.5; border-bottom-color: rgb(41, 41, 41); border-left-color: currentColor; border-bottom-width: 1px; border-left-width: 0px; border-bottom-style: solid; border-left-style: none;
+}
+.xans-product-additional ul.link::after {
+	clear: both; display: block; content: "";
+}
+.xans-product-additional ul.link li {
+	margin: 0px 0px 0px -1px; width: 12.4%; border-top-color: rgb(203, 205, 206); border-top-width: 1px; border-top-style: solid; float: left;
+}
+.xans-product-additional ul.link li.selected {
+	width: 13%;
+}
+.xans-product-additional ul.link li a {
+	background: rgb(240, 242, 242); padding: 0px 15px; height: 38px; text-align: center; color: rgb(117, 117, 117); line-height: 38px; text-decoration: none; border-right-color: rgb(203, 205, 206); border-left-color: rgb(203, 205, 206); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; display: block;
+}
+.xans-product-additional ul.link li.selected a {
+	background: rgb(74, 81, 100); margin: 0px 0px -1px; border: 1px solid rgb(41, 41, 41); border-image: none; top: -1px; color: rgb(255, 255, 255); font-weight: bold; position: relative;
+}
+.xans-product-additional ul.link li:first-child {
+	margin-left: 0px;
+}
+.xans-product-additional ul.link li:first-child.selected {
+	margin-left: 0px;
+}
+.xans-product-additional .cont {
+	padding: 27px 10px 46px 9px; color: rgb(53, 53, 53); line-height: 18px;
+}
+.xans-product-additional .cont h3 {
+	margin: 0px 0px 20px; color: rgb(68, 68, 68); font-size: 12px;
+}
+.xans-product-additional div.board {
+	padding: 27px 0px 46px; text-align: center; color: rgb(53, 53, 53); line-height: 18px;
+}
+.xans-product-additional div.board h3 {
+	padding: 0px 10px 10px 9px; letter-spacing: 8px; font-size: 11px;
+}
+.xans-product-additional div.board p.desc {
+	padding: 0px 10px 0px 9px; font-size: 11px;
+}
+.xans-product-additional div.board p.nodata {
+	margin: 15px 0px 0px; border: 1px solid rgb(215, 213, 213); border-image: none; color: rgb(52, 50, 49); line-height: 39px; vertical-align: middle;
+}
+.xans-product-additional div.board .btnArea {
+	padding: 10px 0px; text-align: right; float: right;
+}
+.xans-product-additional div.board .btnArea img {
+	margin: 0px 0px 0px 4px;
+}
+.xans-product-additional div.board > .btnArea {
+	padding: 8px 0px 12px; border-top-color: currentColor; border-top-width: 0px; border-top-style: none;
+}
+.xans-product-additional table.board {
+	margin: 15px 0px 0px; border: 1px solid rgb(215, 213, 213); border-image: none; color: rgb(97, 94, 93); line-height: 140%; font-size: 11px;
+}
+.xans-product-additional table.board th {
+	background: rgb(255, 255, 255); padding: 5px; color: rgb(154, 149, 146); font-size: 9px; font-weight: normal; border-right-color: rgb(227, 227, 227); border-right-width: 1px; border-right-style: solid;
+}
+.xans-product-additional table.board td {
+	padding: 5px; text-align: center; color: rgb(97, 94, 93); vertical-align: middle; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-top-width: 1px; border-right-width: 1px; border-top-style: solid; border-right-style: solid;
+}
+.xans-product-additional table.board th:last-child {
+	border-right-color: currentColor; border-right-width: medium; border-right-style: none;
+}
+.xans-product-additional table.board td:last-child {
+	border-right-color: currentColor; border-right-width: medium; border-right-style: none;
+}
+.xans-product-additional table.board a {
+	color: rgb(97, 94, 93);
+}
+.xans-product-additional table.board a:hover {
+	
+}
+.xans-product-additional table.board .subject {
+	text-align: left; padding-left: 8px; -ms-word-break: break-all;
+}
+.xans-product-additional table.board .subject img {
+	margin: 0px 1px; vertical-align: middle;
+}
+.xans-product-additional table.board .txtLess {
+	font-size: 10px;
+}
+.xans-product-additional table.board td .view {
+	padding: 16px 19px 0px; text-align: left; line-height: 18px;
+}
+.xans-product-additional .paging {
+	margin: -1px 0px 0px; padding: 5px 0px; text-align: center;
+}
+.xans-product-additional .paging p {
+	vertical-align: top; display: inline-block;
+}
+.xans-product-additional .paging p.first {
+	margin: 0px -4px 0px 0px;
+}
+.xans-product-additional .paging p.last {
+	margin: 0px 0px 0px -4px;
+}
+.xans-product-additional .paging ol {
+	margin: 0px -4px; line-height: 0; font-size: 0px; vertical-align: top; display: inline-block;
+}
+.xans-product-additional .paging li {
+	margin: 0px 0px 0px -1px; color: rgb(117, 117, 117); font-size: 12px; vertical-align: top; display: inline-block;
+}
+.xans-product-additional .paging li:first-child {
+	margin-left: 0px;
+}
+.xans-product-additional .paging img {
+	vertical-align: top;
+}
+.xans-product-additional .paging li a {
+	background: rgb(255, 255, 255); padding: 9px 0px; width: 33px; color: rgb(53, 53, 53); line-height: 14px; font-weight: bold; display: block;
+}
+.xans-product-additional .paging li a:hover {
+	background: rgb(240, 242, 242); text-decoration: none;
+}
+.xans-product-additional .paging li a.this {
+	color: rgb(52, 50, 49); padding-bottom: 6px;
+}
+.xans-product-additional .paging a.nolink {
+	cursor: default;
+}
+#commentWriteForm_4 {
+	padding: 0px 19px;
+}
+#SecretForm_4 {
+	background: rgb(251, 249, 250);
+}
+#SecretForm_4 .view {
+	padding: 8px 0px 7px;
+}
+#SecretForm_4 input {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_ico_submit.gif") no-repeat 0px 0px; margin: 0px 0px 0px 6px; border: 0px currentColor; border-image: none; width: 41px; height: 24px; line-height: 0; font-size: 0px; cursor: pointer;
+}
+#SecretForm_4 input#secure_password {
+	background: rgb(255, 255, 255); padding: 2px 2px 2px 4px; border: 1px solid rgb(217, 217, 217); border-image: none; width: 130px; height: 18px; line-height: 14px; font-size: 12px; margin-left: 11px; cursor: text;
+}
+#product-review-read td {
+	padding: 0px;
+}
+#product-qna-read td {
+	padding: 0px;
+}
+#product-review-read td #SecretForm_4 .view {
+	padding-left: 79px;
+}
+#product-qna-read td #SecretForm_4 .view {
+	padding-left: 213px;
+}
+.xans-product-additional .boardComment {
+	padding: 0px 19px;
+}
+.xans-product-additional .boardComment li {
+	margin: 10px 0px 0px; padding: 12px 0px 0px; text-align: left; color: rgb(53, 53, 53); line-height: 14px; overflow: hidden; border-top-color: rgb(215, 213, 214); border-top-width: 1px; border-top-style: solid; position: relative;
+}
+.xans-product-additional .boardComment li:first-child {
+	margin-top: 0px;
+}
+.xans-product-additional .boardComment li .comment {
+	margin: 9px 0px 0px; padding: 16px 0px 15px 9px; line-height: 18px; border-top-color: rgb(233, 233, 233); border-top-width: 1px; border-top-style: solid; -ms-word-break: break-all;
+}
+.xans-product-additional .boardComment li .name {
+	margin: 0px 21px 0px 0px;
+}
+.xans-product-additional .boardComment li .name input {
+	margin: 0px 2px 0px 0px; width: 13px; height: 13px; vertical-align: -2px;
+}
+.xans-product-additional .boardComment li .date {
+	margin: 0px 10px 0px 0px; font-size: 10px;
+}
+.xans-product-additional .boardComment li .grade {
+	margin: 0px 10px 0px 0px;
+}
+.xans-product-additional .boardComment li .button {
+	top: 6px; right: 0px; position: absolute;
+}
+.xans-product-additional .memoCont {
+	background: rgb(251, 250, 250); margin: 20px 15px; padding: 10px 20px 15px; border: 1px solid rgb(233, 233, 233); border-image: none; text-align: left; color: rgb(53, 53, 53);
+}
+.xans-product-additional .memoCont .user {
+	padding: 0px 90px 0px 0px; overflow: hidden;
+}
+.xans-product-additional .memoCont .user input {
+	border: 1px solid rgb(217, 217, 217); border-image: none;
+}
+.xans-product-additional .memoCont .user textarea {
+	border: 1px solid rgb(217, 217, 217); border-image: none;
+}
+.xans-product-additional .memoCont .user input {
+	margin: 0px 10px 0px 9px; padding: 2px 2px 2px 4px; width: 135px; height: 18px;
+}
+.xans-product-additional .memoCont .user .secret input {
+	width: 13px; height: 13px; margin-right: 3px;
+}
+.xans-product-additional .memoCont .user .secret {
+	margin: 0px 20px 0px 0px;
+}
+.xans-product-additional .memoCont .user textarea {
+	padding: 2px 0px; width: 100%; height: 44px; text-indent: 4px; float: left;
+}
+.xans-product-additional .memoCont .user a {
+	margin: 0px -90px 0px 0px; float: right;
+}
+.xans-product-additional .memoCont .nameArea {
+	margin: 0px 0px 10px; display: block;
+}
+.xans-product-additional .memoCont .rating {
+	margin: 12px 0px 0px;
+}
+.xans-product-additional .memoCont .rating input {
+	margin: 0px 2px 0px 0px; padding: 0px; border: 0px currentColor; border-image: none; width: 13px; height: 13px; vertical-align: -2px;
+}
+.xans-product-additional .memoCont .rating label {
+	padding: 0px 10px 0px 0px;
+}
+.xans-product-additional .memoCont .rating em {
+	font-style: normal;
+}
+.xans-product-additional .memoCont .text {
+	margin: 5px 0px 0px; font-size: 11px;
+}
+.xans-product-additional .memoCont .text span {
+	color: rgb(52, 50, 49);
+}
+.xans-product-additional .memoCont .captcha {
+	margin: 8px 0px 0px; padding: 10px 0px 0px; color: rgb(117, 117, 117); font-size: 11px; border-top-color: rgb(233, 233, 233); border-top-width: 1px; border-top-style: solid;
+}
+.xans-product-additional .memoCont .captcha img {
+	vertical-align: middle;
+}
+.xans-product-additional .memoCont .captcha input {
+	margin: 0px 10px 0px 20px; font-size: 12px;
+}
+.xans-product-additional table.board td .view + form .memoCont {
+	margin-top: 0px;
+}
+.xans-product-additional .boardComment li.replyArea {
+	background: url("http://img.echosting.cafe24.com/skin/admin_ko_KR/board/ico_comment.gif") no-repeat 20px 15px; margin: -1px 0px 0px; padding: 10px 0px 7px 33px; border: 1px solid rgb(233, 233, 233); border-image: none;
+}
+.xans-product-additional .boardComment li.replyArea .commentSecret {
+	margin-right: 30px;
+}
+.xans-product-additional .boardComment li.replyArea .comment {
+	margin: 7px 0px 0px; padding: 0px; border-top-color: currentColor; border-top-width: 0px; border-top-style: none;
+}
+.xans-product-additional .noAccess {
+	margin: 15px 0px 10px; border: 1px solid rgb(215, 213, 213); border-image: none; text-align: center; color: rgb(52, 50, 49); line-height: 39px; font-weight: bold;
+}
+.xans-product-additional .minor {
+	margin: 15px 0px 0px; padding: 35px 0px 24px; border: 1px solid rgb(215, 213, 213); border-image: none; text-align: center; color: rgb(53, 53, 53); line-height: 14px; font-weight: bold;
+}
+.xans-product-additional .minor p:first-child img {
+	margin: -11px 8px 0px 0px; vertical-align: top;
+}
+.xans-product-additional .minor strong {
+	color: rgb(52, 50, 49);
+}
+.xans-product-additional .minor .button {
+	margin: -7px 0px 0px;
+}
+.xans-product-additional .commentSecret {
+	margin: 10px 10px 5px 0px; padding: 10px 15px; border: 1px solid rgb(233, 233, 233); border-image: none; color: rgb(53, 53, 53); background-color: rgb(251, 250, 250);
+}
+.xans-product-additional .commentSecret input[type=password] {
+	padding: 2px 2px 2px 4px; border: 1px solid rgb(217, 217, 217); border-image: none; height: 20px;
+}
+.xans-product-relation ul.link {
+	margin: 30px 0px 11px; line-height: 1.5; border-bottom-color: rgb(41, 41, 41); border-left-color: currentColor; border-bottom-width: 1px; border-left-width: 0px; border-bottom-style: solid; border-left-style: none;
+}
+.xans-product-relation ul.link::after {
+	clear: both; display: block; content: "";
+}
+.xans-product-relation ul.link li {
+	margin: 0px 0px 0px -1px; width: 12.4%; border-top-color: rgb(203, 205, 206); border-top-width: 1px; border-top-style: solid; float: left;
+}
+.xans-product-relation ul.link li.selected {
+	width: 13%;
+}
+.xans-product-relation ul.link li a {
+	background: rgb(240, 242, 242); padding: 0px 15px; height: 38px; text-align: center; color: rgb(117, 117, 117); line-height: 38px; text-decoration: none; border-right-color: rgb(203, 205, 206); border-left-color: rgb(203, 205, 206); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; display: block;
+}
+.xans-product-relation ul.link li.selected a {
+	background: rgb(74, 81, 100); margin: 0px 0px -1px; border: 1px solid rgb(41, 41, 41); border-image: none; top: -1px; color: rgb(255, 255, 255); font-weight: bold; position: relative;
+}
+.xans-product-relation ul.link li:first-child {
+	margin-left: 0px;
+}
+.xans-product-relation ul.link li:first-child.selected {
+	margin-left: 0px;
+}
+.xans-product-relation .relation {
+	padding: 20px 0px 50px; color: rgb(143, 143, 145); line-height: 1.8em;
+}
+.xans-product-relation .relation h3 {
+	margin: 0px auto 30px; padding: 0px 10px 0px 9px; text-align: center; color: rgb(68, 68, 68); font-size: 12px; letter-spancing: 8px;
+}
+.xans-product-relation .relation ul.prdList {
+	margin: 0px; border: 1px solid rgb(238, 238, 238); border-image: none; width: 100%; line-height: 0; font-size: 0px; display: table; min-width: 756px;
+}
+.xans-product-relation .relation ul.prdList img {
+	vertical-align: middle;
+}
+.xans-product-relation .relation ul.prdList li.item {
+	margin: 20px 0px; color: rgb(117, 117, 117); vertical-align: top; display: inline-block;
+}
+.xans-product-relation .relation ul.prdList li.item .box {
+	margin: 0px auto; line-height: 18px; font-size: 12px;
+}
+.xans-product-relation .relation ul.prdList li.item {
+	width: 25%;
+}
+.xans-product-relation .relation ul.prdList li.item .box {
+	width: 200px;
+}
+.xans-product-relation .relation ul.prdList li.item .box strong {
+	color: rgb(0, 139, 204); display: block;
+}
+.xans-product-relation .relation ul.prdList li.item .thumb {
+	margin: 0px; border: 1px solid rgb(236, 236, 236); border-image: none; width: 200px;
+}
+img {
+	vertical-align: bottom;
+}
+html {
+	margin: 0px; padding: 0px;
+}
+body {
+	margin: 0px; padding: 0px;
+}
+div {
+	margin: 0px; padding: 0px;
+}
+dl {
+	margin: 0px; padding: 0px;
+}
+dt {
+	margin: 0px; padding: 0px;
+}
+dd {
+	margin: 0px; padding: 0px;
+}
+ul {
+	margin: 0px; padding: 0px;
+}
+ol {
+	margin: 0px; padding: 0px;
+}
+li {
+	margin: 0px; padding: 0px;
+}
+h1 {
+	margin: 0px; padding: 0px;
+}
+h2 {
+	margin: 0px; padding: 0px;
+}
+h3 {
+	margin: 0px; padding: 0px;
+}
+h4 {
+	margin: 0px; padding: 0px;
+}
+h5 {
+	margin: 0px; padding: 0px;
+}
+h6 {
+	margin: 0px; padding: 0px;
+}
+pre {
+	margin: 0px; padding: 0px;
+}
+code {
+	margin: 0px; padding: 0px;
+}
+form {
+	margin: 0px; padding: 0px;
+}
+fieldset {
+	margin: 0px; padding: 0px;
+}
+legend {
+	margin: 0px; padding: 0px;
+}
+input {
+	margin: 0px; padding: 0px;
+}
+textarea {
+	margin: 0px; padding: 0px;
+}
+p {
+	margin: 0px; padding: 0px;
+}
+blockquote {
+	margin: 0px; padding: 0px;
+}
+th {
+	margin: 0px; padding: 0px;
+}
+td {
+	margin: 0px; padding: 0px;
+}
+img {
+	margin: 0px; padding: 0px;
+}
+html {
+	width: 100%; height: 100%;
+}
+body {
+	background: rgb(255, 255, 255); color: rgb(154, 149, 146); font-family: Verdana,Dotum,AppleGothic,sans-serif; font-size: 11px;
+}
+code {
+	background: rgb(255, 255, 255); color: rgb(154, 149, 146); font-family: Verdana,Dotum,AppleGothic,sans-serif; font-size: 11px;
+}
+body {
+	min-width: 1480px;
+}
+body#popup {
+	min-width: 0px;
+}
+li {
+	list-style: none;
+}
+img {
+	border: currentColor; border-image: none; vertical-align: top;
+}
+fieldset {
+	border: currentColor; border-image: none; vertical-align: top;
+}
+table {
+	border: 0px currentColor; border-image: none; width: 100%; border-collapse: collapse; border-spacing: 0;
+}
+caption {
+	display: none;
+}
+th {
+	border: 0px currentColor; border-image: none; vertical-align: top;
+}
+td {
+	border: 0px currentColor; border-image: none; vertical-align: top;
+}
+input {
+	color: rgb(53, 53, 53); font-family: Verdana,Trebuchet MS,Dotum,AppleGothic,sans-serif; font-size: 100%; vertical-align: middle;
+}
+select {
+	color: rgb(53, 53, 53); font-family: Verdana,Trebuchet MS,Dotum,AppleGothic,sans-serif; font-size: 100%; vertical-align: middle;
+}
+textarea {
+	color: rgb(53, 53, 53); font-family: Verdana,Trebuchet MS,Dotum,AppleGothic,sans-serif; font-size: 100%; vertical-align: middle;
+}
+.inputTypeText {
+	padding: 3px 0px 0px 9px; border: 1px solid rgb(213, 213, 213); border-image: none; height: 19px;
+}
+select {
+	border: 1px solid rgb(213, 213, 213); border-image: none; height: 24px;
+}
+textarea {
+	padding: 5px 6px; border: 1px solid rgb(213, 213, 213); border-image: none; line-height: 1.5;
+}
+legend {
+	left: -9999px; top: -9999px; width: 0px; height: 0px; line-height: 0; visibility: hidden; position: absolute;
+}
+hr.layout {
+	display: none;
+}
+a {
+	color: rgb(154, 149, 146); text-decoration: none;
+}
+a:hover {
+	color: rgb(154, 149, 146); text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+.objHidden {
+	left: -1000px; top: -1000px; width: 0px; height: 0px; visibility: hidden; position: absolute;
+}
+table tr.radioType input {
+	background: none !important; margin: 0px 3px 0px 0px !important; border: currentColor !important; border-image: none !important; width: auto !important; height: auto !important; vertical-align: middle !important;
+}
+span.noBorder input {
+	background: none !important; margin: 0px 3px 0px 0px !important; border: currentColor !important; border-image: none !important; width: auto !important; height: auto !important; vertical-align: middle !important;
+}
+#content_CONTAINER td {
+	width: auto !important;
+}
+table.nneditor-table {
+	width: auto !important;
+}
+#progressPaybarBackground {
+	left: 0px; top: 0px; width: 100%; height: 100%; position: absolute; z-index: 99;
+}
+#progressPaybarView {
+	left: 20px; top: 160px; width: 471px; font-size: 12px; position: absolute; z-index: 100;
+}
+#progressPaybarView .box {
+	background: url("http://img.cafe24.com/images/ec_hosting/popup/layer_guide/bg_layer_box1.gif") no-repeat 0px 0px; height: 180px;
+}
+#progressPaybarView .box .graph {
+	padding: 15px 0px 0px; text-align: center;
+}
+#progressPaybarView .box .graph span {
+	margin: 20px 0px; text-align: center; display: block;
+}
+#progressPaybarView .box .txt {
+	padding: 15px 0px 0px; text-align: center; color: rgb(85, 85, 85);
+}
+div.layerProgress {
+	opacity: 0.4; background-color: rgb(153, 153, 153); -moz-opacity: 0.4;
+}
+#skipNavigation {
+	left: 0px; top: 0px; width: 100%; height: 0px; position: absolute; z-index: 100;
+}
+#skipNavigation p {
+	height: 0px;
+}
+#skipNavigation ul {
+	height: 0px;
+}
+#skipNavigation ul li {
+	height: 0px;
+}
+#skipNavigation p a {
+	left: 0px; top: 0px; width: 1px; height: 1px; text-align: center; color: rgb(0, 0, 0); overflow: hidden; margin-bottom: -1px; margin-left: -1px; display: block; white-space: nowrap; position: absolute;
+}
+#skipNavigation p a:focus {
+	background: rgb(196, 18, 47); padding: 10px 0px; width: 100%; height: auto; color: rgb(255, 255, 255); z-index: 100;
+}
+#skipNavigation p a:hover {
+	background: rgb(196, 18, 47); padding: 10px 0px; width: 100%; height: auto; color: rgb(255, 255, 255); z-index: 100;
+}
+#skipNavigation p a:active {
+	background: rgb(196, 18, 47); padding: 10px 0px; width: 100%; height: auto; color: rgb(255, 255, 255); z-index: 100;
+}
+.displaynone {
+	display: none;
+}
+.gray {
+	background: rgb(52, 50, 49); padding: 5px; border: 1px solid rgb(154, 149, 146); border-image: none; color: rgb(255, 255, 255);
+}
+.white {
+	background: rgb(255, 255, 255); padding: 5px; border: 1px solid rgb(219, 216, 216); border-image: none; color: rgb(154, 149, 146);
+}
+.color {
+	background: rgb(203, 159, 160); padding: 5px; border: 1px solid rgb(219, 216, 216); border-image: none; color: rgb(255, 255, 255);
+}
+.gray:hover {
+	background: rgb(52, 50, 49); padding: 5px; border: 1px solid rgb(52, 50, 49); border-image: none; color: rgb(255, 255, 255);
+}
+.white:hover {
+	background: rgb(52, 50, 49); padding: 5px; border: 1px solid rgb(52, 50, 49); border-image: none; color: rgb(255, 255, 255);
+}
+.color:hover {
+	background: rgb(52, 50, 49); padding: 5px; border: 1px solid rgb(52, 50, 49); border-image: none; color: rgb(255, 255, 255);
+}
+.gray:active {
+	background: rgb(52, 50, 49); padding: 5px; border: 1px solid rgb(52, 50, 49); border-image: none; color: rgb(255, 255, 255);
+}
+.white:active {
+	background: rgb(52, 50, 49); padding: 5px; border: 1px solid rgb(52, 50, 49); border-image: none; color: rgb(255, 255, 255);
+}
+.color:active {
+	background: rgb(52, 50, 49); padding: 5px; border: 1px solid rgb(52, 50, 49); border-image: none; color: rgb(255, 255, 255);
+}
+#header {
+	background: url(" ") repeat-x 0px 0px;
+}
+#header .inner {
+	margin: 0px auto; width: 1150px; position: relative;
+}
+#header .inner::after {
+	clear: both; display: block; content: "";
+}
+#header .topArea {
+	padding: 111px 0px 120px; height: 112px; text-align: center;
+}
+#header .topArea::after {
+	clear: both; display: block; content: "";
+}
+#header .special {
+	border-left-color: rgb(216, 216, 216); border-left-width: 1px; border-left-style: solid; float: left;
+}
+#header .special li {
+	float: left;
+}
+#header .special a {
+	padding: 16px 15px 9px; height: 20px; color: rgb(53, 53, 53); text-decoration: none; border-right-color: rgb(216, 216, 216); border-right-width: 1px; border-right-style: solid; display: block;
+}
+#header .special a:hover {
+	color: rgb(52, 50, 49); padding-bottom: 7px; border-bottom-color: rgb(52, 50, 49); border-bottom-width: 2px; border-bottom-style: solid;
+}
+#header .link {
+	left: 0px; top: 0px; height: 35px; line-height: 35px; position: absolute;
+}
+#header .link > a {
+	float: left;
+}
+#header .link > span {
+	float: left;
+}
+#header .link > a {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/layout/ico_util2.gif") no-repeat 100% 12px; margin: 0px 9px 0px 0px; padding: 0px 10px 0px 0px; color: rgb(102, 102, 102); text-decoration: none;
+}
+#header .link > span img {
+	vertical-align: middle;
+}
+#header .link .xans-layout-bookmark span {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/layout/ico_bookmark.gif") no-repeat 0px 1px; padding-left: 17px;
+}
+#wrap {
+	margin: 10px auto 0px; width: 1460px; position: relative;
+}
+#container {
+	margin: 0px auto; width: 1150px;
+}
+#container::after {
+	clear: both; display: block; content: "";
+}
+
+#contents {
+	width: 1150px; float: right;
+}
+
+#quick {
+	top: 0px; width: 90px; right: 0px; position: absolute;
+}
+#quick .banner a {
+	margin: 15px 0px 0px; display: block;
+}
+#footer {
+	background: url("/web/upload/oneday/underbg.png") repeat-x 0px 100%; clear: both; font-size: 11px;
+}
+#footer .inner {
+	margin: 40px auto 0px; width: 1150px; overflow: hidden; position: relative;
+}
+#boardArea {
+	margin: 50px 0px 0px; overflow: hidden; border-top-color: rgb(216, 216, 216); border-top-width: 1px; border-top-style: solid;
+}
+#bannerArea {
+	margin: 22px 0px 0px;
+}
+#bannerArea h2 {
+	margin: 0px 0px 16px; text-align: center; color: rgb(46, 46, 46); letter-spacing: 8px; font-family: courier,verdana; font-size: 20px; font-weight: normal;
+}
+.path {
+	height: 30px; line-height: 30px; overflow: hidden; display: none;
+}
+.path h2 {
+	width: 0px; height: 0px; text-indent: 100%; letter-spacing: 8px; overflow: hidden; font-family: courier,verdana; white-space: nowrap; position: absolute;
+}
+.path ol {
+	float: right;
+}
+.path li {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/common/ico_path.gif") no-repeat 0px 10px; margin: 0px 0px 0px 8px; padding: 0px 0px 0px 12px; color: rgb(117, 117, 117); float: left;
+}
+.path li:first-child {
+	background: none;
+}
+.path li a {
+	color: rgb(117, 117, 117);
+}
+.path li strong {
+	color: rgb(46, 46, 46);
+}
+.path li strong a {
+	color: rgb(46, 46, 46);
+}
+.titleArea {
+	margin: 10px auto 27px; text-align: center; min-height: 30px;
+}
+.titleArea h2 {
+	background: url(" ") no-repeat 0px 2px; padding: 10px; width: auto; text-align: center; color: rgb(74, 81, 100); letter-spacing: 10px; font-family: courier,verdana; font-size: 12px; display: inline-block;
+}
+.titleArea p {
+	background: url(" ") no-repeat 0px 0px; margin: 0px 0px 0px 6px; padding: 0px 0px 0px 10px; color: rgb(147, 147, 147);
+}
+.titleArea ul {
+	padding: 5px 0px; color: rgb(147, 147, 147); line-height: 18px;
+}
+.titleArea ul li {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/common/ico_info.gif") no-repeat 4px 7px; padding: 0px 0px 0px 9px;
+}
+.help {
+	margin: 40px 0px 0px; border: 1px solid rgb(214, 212, 212); border-image: none; line-height: 18px;
+}
+.help h3 {
+	background: rgb(251, 251, 251); padding: 9px 0px 6px 10px; color: rgb(53, 53, 53); font-size: 12px; border-bottom-color: rgb(232, 231, 231); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.help .content {
+	padding: 0px 9px 12px;
+}
+.help .content h4 {
+	margin: 22px 0px -4px; color: rgb(0, 0, 0); font-size: 12px; font-weight: normal;
+}
+.help .content h4:first-child {
+	margin-top: 13px;
+}
+.help .content p {
+	margin: 15px 0px 0px 10px; color: rgb(117, 117, 117);
+}
+.help .content ul {
+	margin: 15px 0px 0px 11px;
+}
+.help .content li {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/common/ico_number.png") no-repeat; padding: 0px 0px 0px 25px; color: rgb(117, 117, 117);
+}
+.help .content li.item1 {
+	background-position: -484px 0px;
+}
+.help .content li.item2 {
+	background-position: -434px -100px;
+}
+.help .content li.item3 {
+	background-position: -384px -200px;
+}
+.help .content li.item4 {
+	background-position: -334px -300px;
+}
+.help .content li.item5 {
+	background-position: -284px -400px;
+}
+.help .content li.item6 {
+	background-position: -234px -500px;
+}
+.help .content li.item7 {
+	background-position: -184px -600px;
+}
+.help .content li.item8 {
+	background-position: -134px -700px;
+}
+.help .content li.item9 {
+	background-position: -84px -800px;
+}
+.help .content li.item10 {
+	background-position: -34px -900px;
+}
+.boardMain {
+	overflow: hidden;
+}
+.boardMain td img {
+	margin: 1px; vertical-align: middle;
+}
+.boardMain .board {
+	margin: 0px 0px 65px;
+}
+.boardMain .leftArea {
+	width: 50%; float: left;
+}
+.boardMain .leftArea .board {
+	margin: 0px 23px 65px 0px;
+}
+.boardMain .rightArea {
+	width: 50%; float: right;
+}
+.boardMain .rightArea .board {
+	margin: 0px 0px 65px 23px;
+}
+#modalBackpanel {
+	background: rgb(0, 0, 0); left: 0px; top: 0px; width: 100%; height: 100%; display: none; position: absolute; z-index: 10000;
+}
+#modalContainer {
+	background: rgb(255, 255, 255); border: 1px solid rgb(51, 51, 51); border-image: none; left: 100px; top: 100px; width: 975px; height: 720px; display: none; position: absolute; z-index: 10001;
+}
+#modalContainer #modalContent {
+	width: 100%; height: 100%;
+}
+.xans-layout-logotop {
+	margin: 0px auto; width: 800px; text-align: center;
+}
+.xans-layout-logotop img {
+	width: 400px; max-height: 500px;
+}
+.xans-layout-multishoplist.list {
+	margin: 0px 0px 0px 6px; height: 45px; float: right; position: relative; z-index: 10;
+}
+.xans-layout-multishoplist.list button {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/layout/ico_util1.gif") no-repeat 0px 17px; padding: 0px 0px 0px 10px; height: 45px; color: rgb(117, 117, 117); line-height: 45px; font-family: dotum,sans-serif; font-size: 12px; display: block;
+}
+.xans-layout-multishoplist.list button span {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/layout/ico_multishop1.png") no-repeat 100% 4px; padding: 0px 25px 0px 0px;
+}
+.xans-layout-multishoplist.list > ul {
+	background: rgb(255, 255, 255); border: 1px solid rgb(213, 213, 213); border-image: none; top: 44px; width: 248px; height: 155px; right: 0px; overflow: auto; display: none; position: absolute;
+}
+.xans-layout-multishoplist.list > ul li {
+	margin: -1px 0px 0px; height: 39px; line-height: 39px; border-top-color: rgb(213, 213, 213); border-top-width: 1px; border-top-style: solid; position: relative;
+}
+.xans-layout-multishoplist.list > ul li a {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/layout/ico_multishop2.png") no-repeat 100% -24px; padding: 0px 62px 0px 48px; color: rgb(53, 53, 53); overflow: hidden; text-decoration: none; display: block; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+.xans-layout-multishoplist.list > ul li.selected a {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/layout/ico_multishop2.png") no-repeat 100% 16px rgb(243, 243, 243);
+}
+.xans-layout-multishoplist.list > ul li a img {
+	left: 10px; top: 9px; position: absolute;
+}
+.xans-layout-multishoplist.list > ul li a .name strong {
+	font-weight: normal;
+}
+.xans-layout-multishoplist.list > ul li a .unit {
+	top: 0px; right: 38px; color: rgb(117, 117, 117); font-family: tahoma,sans-serif; font-size: 11px; position: absolute;
+}
+.xans-layout-multishoplist.list.show > ul {
+	display: block;
+}
+.xans-layout-multishoplist.thumb {
+	left: 0px; top: 45px; position: absolute;
+}
+.xans-layout-multishoplist.thumb > ul {
+	overflow: hidden;
+}
+.xans-layout-multishoplist.thumb > ul li {
+	margin: 0px 4px 0px 0px; width: 32px; float: left;
+}
+.xans-layout-multishoplist.thumb > ul li a {
+	text-decoration: none;
+}
+.xans-layout-statelogoff {
+	top: 0px; height: 20px; line-height: 20px; float: left; position: absolute;
+}
+.xans-layout-statelogoff {
+	vertical-align: middle;
+}
+.xans-layout-statelogoff a {
+	background: no-repeat 0px 1px; color: rgb(117, 117, 117); font-size: 11px; float: left; display: block;
+}
+.xans-layout-statelogoff span {
+	width: 18px;
+}
+.xans-layout-statelogoff .log {
+	background: none;
+}
+.xans-layout-statelogoff a .count {
+	background: no-repeat; display: inline-block; position: relative;
+}
+.xans-layout-statelogoff a .count span {
+	background: no-repeat; display: inline-block; position: relative;
+}
+.xans-layout-statelogoff a .count {
+	background-position: 0px 0px; margin: 0px -5px 0px 3px; padding: 2px 0px 0px 3px; left: -5px; vertical-align: middle;
+}
+.xans-layout-statelogoff a .count span {
+	background-position: right -26px; padding: 1px 7px 1px 0px; height: 20px; color: rgb(106, 106, 106); line-height: 20px; font-size: 10px; vertical-align: middle;
+}
+.xans-layout-statelogon {
+	top: 0px; height: 26px; line-height: 26px; vertical-align: middle; float: left; position: absolute;
+}
+.xans-layout-statelogon a {
+	background: url(" ") no-repeat 0px 1px; padding: 0px; color: rgb(117, 117, 117); font-size: 12px; float: left; display: block;
+}
+.xans-layout-statelogon .myinfo {
+	color: rgb(117, 117, 117); font-size: 11px;
+}
+.xans-layout-statelogon .myinfo strong {
+	color: rgb(53, 53, 53); font-size: 12px;
+}
+.xans-layout-statelogon .myinfo a {
+	background: none;
+}
+.xans-layout-statelogon a .count {
+	background: url(" ") no-repeat; display: inline-block; position: relative;
+}
+.xans-layout-statelogon a .count span {
+	background: url(" ") no-repeat; display: inline-block; position: relative;
+}
+.xans-layout-statelogon a .count {
+	background-position: 0px 0px; margin: 0px -5px 0px 3px; padding: 2px 0px 0px 3px; left: -5px; top: -2px; vertical-align: middle;
+}
+.xans-layout-statelogon a .count span {
+	background-position: right -26px; padding: 1px 8px 1px 0px; height: 26px; color: rgb(106, 106, 106); line-height: 26px; font-size: 10px; vertical-align: middle;
+}
+.xans-layout-searchheader {
+	top: 0px; height: 26px; right: 0px; line-height: 26px; position: absolute;
+}
+.xans-layout-searchheader fieldset {
+	border-bottom-color: rgb(52, 50, 49); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.xans-layout-searchheader #keyword {
+	background: rgb(255, 255, 255); padding: 0px 0px 0px 9px; border: 0px currentColor; border-image: none; width: 143px; height: 25px; color: rgb(124, 131, 137); line-height: 25px; font-size: 12px;
+}
+.xans-layout-category {
+	margin: 0px 0px 30px; width: 1150px; height: 35px; border-bottom-color: rgb(52, 50, 49); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.xans-layout-category h2 {
+	
+}
+.xans-layout-category .position {
+	
+}
+.xans-layout-category .position > ul {
+	
+}
+.xans-layout-category .position > ul > li {
+	margin: 0px 55px; float: left; display: inline; position: relative; z-index: 10;
+}
+.xans-layout-category .position > ul > li > a {
+	background: url(" ") no-repeat 165px 17px; padding: 0px; color: rgb(46, 46, 46); font-family: Tahoma,Dotum,sans-serif; font-size: 14px; font-weight: bold; text-decoration: none; word-spacing: -1px; display: block;
+}
+.xans-layout-category .position > ul > li > a:hover {
+	
+}
+.xans-layout-category .position > ul > li.selected > a {
+	
+}
+.xans-layout-category .position > ul > li.on > a {
+	
+}
+.xans-layout-category .sub-category {
+	background: rgb(72, 69, 68); left: 0px; top: 46px; width: 110px; color: rgb(255, 255, 255); border-top-color: rgb(174, 174, 174); border-bottom-color: rgb(174, 174, 174); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; position: absolute;
+}
+.xans-layout-category .sub-category ul {
+	
+}
+.xans-layout-category .sub-category li {
+	padding: 0px 10px; border-right-color: rgb(174, 174, 174); border-left-color: rgb(174, 174, 174); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.xans-layout-category .sub-category li:first-child {
+	
+}
+.xans-layout-category .sub-category li:first-child a {
+	border-top-color: rgb(255, 255, 255);
+}
+.xans-layout-category .sub-category a {
+	padding: 7px 0px; color: rgb(255, 255, 255); font-size: 11px; text-decoration: none; display: block;
+}
+.xans-layout-category .sub-category a:hover {
+	color: rgb(168, 137, 134);
+}
+.xans-layout-category .sub-category li.selected a {
+	color: rgb(168, 137, 134);
+}
+.xans-layout-orderbasketcount {
+	background: rgb(73, 81, 100); padding: 8px 6px 6px 7px; text-align: right; color: rgb(255, 255, 255); line-height: 16px; overflow: hidden;
+}
+.xans-layout-orderbasketcount strong {
+	font-weight: normal; float: left;
+}
+.xans-layout-orderbasketcount span {
+	float: right;
+}
+.xans-layout-orderbasketcount span a {
+	color: rgb(255, 255, 255); font-weight: bold;
+}
+.xans-layout-productrecent {
+	background: rgb(255, 255, 255); text-align: center;
+}
+.xans-layout-productrecent h2 a {
+	height: 30px; color: rgb(46, 46, 46); line-height: 30px; font-size: 10px; font-weight: normal; display: block;
+}
+.xans-layout-productrecent ul {
+	margin: 0px auto 10px; width: 76px;
+}
+.xans-layout-productrecent li a {
+	color: rgb(46, 46, 46); font-size: 11px;
+}
+.xans-layout-productrecent li img {
+	max-width: 76px;
+}
+.xans-layout-productrecent li span {
+	padding: 2px 0px; line-height: 16px; display: block;
+}
+.xans-layout-productrecent .player {
+	overflow: hidden;
+}
+.xans-layout-productrecent .player img {
+	float: left;
+}
+.xans-layout-productrecent .pageTop {
+	margin: 20px 0px 0px;
+}
+.xans-layout-footer {
+	height: 176px; float: left;
+}
+.xans-layout-footer .utilMenu {
+	height: 42px; line-height: 43px; overflow: hidden; border-bottom-color: rgb(232, 232, 232); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.xans-layout-footer .utilMenu li {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/layout/ico_util_footer.gif") no-repeat 0px 15px; padding: 0px 10px; font-size: 11px; float: left;
+}
+.xans-layout-footer .utilMenu li.home {
+	background: none; padding-left: 0px;
+}
+.xans-layout-footer .utilMenu li a {
+	color: rgb(46, 46, 46);
+}
+.xans-layout-footer .address {
+	padding: 13px 0px 0px; color: rgb(117, 117, 117); line-height: 18px;
+}
+.xans-layout-footer .address span {
+	padding: 0px 25px 0px 0px;
+}
+.xans-layout-footer .address span a {
+	color: rgb(117, 117, 117);
+}
+.xans-layout-footer .copyright {
+	left: 204px; height: 32px; bottom: 0px; color: rgb(237, 237, 237); line-height: 32px; font-size: 11px; position: absolute;
+}
+.xans-layout-footer .pageTop {
+	top: 10px; right: 0px; position: absolute;
+}
+.xans-layout-footer .hosting {
+	top: 77px; right: 0px; position: absolute;
+}
+.xans-layout-conversionpc a {
+	padding: 21px 0px 22px; border-radius: 4px; border: 2px solid rgb(157, 157, 176); border-image: none; text-align: center; color: rgb(99, 102, 110); font-size: 38px; font-weight: bold; display: block;
+}
+.xans-layout-conversionpc a {
+	
+}
+.xans-layout-conversionpc a:hover {
+	text-decoration: none;
+}
+.xans-layout-conversionpc a span {
+	background: url("http://img.echosting.cafe24.com/skin/base_ko_KR/layout/ico_mobile.png") no-repeat 0px 50% / 27px 35px; padding: 0px 0px 0px 42px;
+}

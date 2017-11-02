@@ -26,11 +26,11 @@
 	<c:forEach var="dto" items="${list}">
         <li class="menu_list_li">
             <div class="box">
-                <a href="${menu_detail_url}?page=${page}&pdkindcode=${pdKindcode}&pdcode=${dto.pdCode}">
+                <a href="${menu_detail_url}?page=${page}&pdkindcode=${pdkindcode}&pdcode=${dto.pdCode}">
                 	<img src="<%=cp%>/resource/images/product_contents/${dto.pdCode}/${dto.pdImage}" class="thumb"/>
                	</a>
                 <p class="name_box">
-                    <a href="${menu_detail_url}?page=${page}&pdkindcode=${pdKindcode}&pdcode=${dto.pdCode}">
+                    <a href="${menu_detail_url}?page=${page}&pdkindcode=${pdkindcode}&pdcode=${dto.pdCode}">
                     	<span class="name">${dto.pdName}</span>
                     </a>
                 </p>
