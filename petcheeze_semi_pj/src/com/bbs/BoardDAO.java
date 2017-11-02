@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.util.DBConn;
+import com.util.DBCPConn;
 
 public class BoardDAO {
-	private Connection conn=DBConn.getConnection();
+	private Connection conn;
 	
 
 	public int insertBoard(BoardDTO dto) {
@@ -20,6 +20,7 @@ public class BoardDAO {
 		StringBuffer sb=new StringBuffer();
 		
 		try {
+			conn=DBCPConn.getConnection();
 			sb.append("INSERT INTO ALLAMLIST(ALNUM, ALSUBJECT, ALCONTENT) ");
 			sb.append(" VALUES (ALLAMLIST_seq.NEXTVAL, ?, ?)");
 			
@@ -40,6 +41,7 @@ public class BoardDAO {
 					pstmt.close();
 				} catch (SQLException e) {
 				}
+			DBCPConn.close(conn);
 		}
 		
 		return result;
@@ -52,6 +54,7 @@ public class BoardDAO {
 		String sql;
 		
 		try {
+			conn=DBCPConn.getConnection();
 			sql="SELECT NVL(COUNT(*), 0) FROM ALLAMLIST";
 			pstmt=conn.prepareStatement(sql);
 			
@@ -75,6 +78,7 @@ public class BoardDAO {
 				} catch (SQLException e) {
 				}
 			}
+			DBCPConn.close(conn);
 		}
 		
 		return result;
@@ -88,7 +92,7 @@ public class BoardDAO {
 		String sql = null;
 		
 		try {
-			
+			conn=DBCPConn.getConnection();
 			//날짜 검색
 			sql="SELECT COUNT(*) FROM ALLAMLIST ";
 			if(searchKey.equals("aldate")) {
@@ -123,6 +127,7 @@ public class BoardDAO {
 				} catch (SQLException e) {
 				}
 			}
+			DBCPConn.close(conn);
 		}
 		
 		return result;
@@ -136,6 +141,7 @@ public class BoardDAO {
 		StringBuffer sb=new StringBuffer();
 		
 		try {
+			conn=DBCPConn.getConnection();
 			sb.append("SELECT * FROM (");
 			sb.append("    SELECT ROWNUM rnum, tb.* FROM (");
 			sb.append("        SELECT alnum, ALSUBJECT, alcontent ,TO_CHAR(ALDATE, 'YYYY-MM-DD') ALDATE");
@@ -178,6 +184,7 @@ public class BoardDAO {
 				} catch (SQLException e) {
 				}
 			}
+			DBCPConn.close(conn);
 		}
 		return list;
 	}
@@ -190,6 +197,7 @@ public class BoardDAO {
 		StringBuffer sb=new StringBuffer();
 		
 		try {
+			conn=DBCPConn.getConnection();
 			sb.append("SELECT * FROM (");
 			sb.append("    SELECT ROWNUM rnum, tb.* FROM (");
 			sb.append("        SELECT alNUM, alSUBJECT");
@@ -240,6 +248,7 @@ public class BoardDAO {
 				} catch (SQLException e) {
 				}
 			}
+			DBCPConn.close(conn);
 		}
 		return list;
 	}
@@ -251,6 +260,7 @@ public class BoardDAO {
 		String sql;
 		
 		try {
+			conn=DBCPConn.getConnection();
 			sql="UPDATE ALLAMLIST SET alhit=alhit+1  WHERE alnum=?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
@@ -264,6 +274,7 @@ public class BoardDAO {
 				} catch (Exception e2) {
 				}
 			}
+			DBCPConn.close(conn);
 		}
 		
 		return result;
@@ -277,6 +288,7 @@ public class BoardDAO {
 		StringBuffer sb=new StringBuffer();
 		
 		try {
+			conn=DBCPConn.getConnection();
 			sb.append("SELECT alnum, alsubject, alcontent");
 			sb.append("   ,aldate, alhit");
 			sb.append("		FROM ALLAMLIST");
@@ -311,6 +323,7 @@ public class BoardDAO {
 				} catch (SQLException e) {
 				}
 			}
+			DBCPConn.close(conn);
 		}
 		
 		return dto;
@@ -325,6 +338,7 @@ public class BoardDAO {
         StringBuffer sb = new StringBuffer();
 
         try {
+			conn=DBCPConn.getConnection();
             if(searchValue!=null && searchValue.length() != 0) {
                 sb.append("SELECT ROWNUM, tb.* FROM ( ");
                 sb.append("  SELECT alnum, alsubject ,TO_CHAR(aldate, 'YYYY-MM-DD') aldate, alhit");
@@ -380,6 +394,7 @@ public class BoardDAO {
 				} catch (SQLException e) {
 				}
 			}
+			DBCPConn.close(conn);
 		}
     
         return dto;
@@ -395,6 +410,7 @@ public class BoardDAO {
         
         
         try {
+			conn=DBCPConn.getConnection();
             if(searchValue!=null && searchValue.length() != 0) {
                 sb.append("SELECT ROWNUM, tb.* FROM ( ");
                 sb.append("  SELECT alnum, alsubject ,TO_CHAR(aldate, 'YYYY-MM-DD') aldate, alhit");
@@ -450,6 +466,7 @@ public class BoardDAO {
 				} catch (SQLException e) {
 				}
 			}
+			DBCPConn.close(conn);
 		}
 
         return dto;
@@ -463,6 +480,7 @@ public class BoardDAO {
 		
 		sql="UPDATE ALLAMLIST SET alsubject=?, alcontent=? WHERE alnum=?";
 		try {
+			conn=DBCPConn.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getSubject());
 			pstmt.setString(2, dto.getContent());
@@ -478,6 +496,7 @@ public class BoardDAO {
 				} catch (SQLException e) {
 				}
 			}
+			DBCPConn.close(conn);
 		}		
 		return result;
 	}
@@ -489,6 +508,7 @@ public class BoardDAO {
 		String sql;
 		
 		try {
+			conn=DBCPConn.getConnection();
 			if(userId.equals("admin@aaa.aaa")) {
 				sql="DELETE FROM ALLAMLIST WHERE alnum=?";
 				pstmt = conn.prepareStatement(sql);
@@ -511,6 +531,7 @@ public class BoardDAO {
 				} catch (SQLException e) {
 				}
 			}
+			DBCPConn.close(conn);
 		}		
 		return result;
 	}
