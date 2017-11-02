@@ -16,7 +16,6 @@ public class MemberDAO {
       ResultSet rs = null;
       
       Connection conn=null;
-      System.out.println(userEmail);
       try {
          
          conn=DBCPConn.getConnection();
@@ -79,7 +78,6 @@ public class MemberDAO {
       PreparedStatement pstmt=null;
       Connection conn=null;
       StringBuffer sb=new StringBuffer();
-      System.out.println("sd");
       
       try {
          conn=DBCPConn.getConnection();
@@ -133,7 +131,6 @@ public class MemberDAO {
       PreparedStatement pstmt=null;
       Connection conn=null;
       StringBuffer sb=new StringBuffer();
-      System.out.println("sd");
       
       try {
          conn=DBCPConn.getConnection();

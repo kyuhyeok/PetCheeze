@@ -16,13 +16,13 @@ import com.util.MyServlet;
 @WebServlet("/menu/*")
 public class MenuServlet extends MyServlet {
 	private static final long serialVersionUID = 1L;
-
+	
 	@Override
 	protected void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		
 		String uri=req.getRequestURI();
-		
+				
 		if(uri.indexOf("menu.do")!=-1) {
 			menuPage(req, resp);
 		}else if(uri.indexOf("menu_create.do")!=-1) {

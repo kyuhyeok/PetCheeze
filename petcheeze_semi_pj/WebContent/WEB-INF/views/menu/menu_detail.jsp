@@ -300,7 +300,7 @@ style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="
                             </span>
                             </span>
                             </span>
-                            </span><%=cp%>
+                            </span>
                             </span>
                             </span>
                             </em>
@@ -494,7 +494,7 @@ style="font-family: 궁서,Gungsuh;">﻿</span>﻿</span>
                         <p>
                             <br>
                         </p>
-                        <img style="width: 500px; height: 500px;" src="<%=cp%>/resource/images/product_contents/1/1484734345-1.jpg" vspace="0" hspace="5">
+                        <img style="width: 500px; height: 500px;" src="<%=cp%>/resource/images/product_contents/${dto.pdCode}/01.jpg" vspace="0" hspace="5">
                         <p></p>
                         <p>
                             <br>
@@ -635,7 +635,7 @@ style="font-family: 궁서,Gungsuh;">
                             <p>
                                 <br>
                             </p>
-                            <img style="width: 500px; height: 500px;" src="오리안심져키(50g)%20-%20펫치즈_files/copy(1484734357)-3.jpg" vspace="0" hspace="5">
+                            <img style="width: 500px; height: 500px;" src="<%=cp%>/resource/images/product_contents/${dto.pdCode}/02.jpg" vspace="0" hspace="5">
                         <p></p>
                         <p>
                             <br>
@@ -752,7 +752,7 @@ style="font-family: 궁서,Gungsuh;"><br></span>
                             <p>
                                 <br>
                             </p>
-                            <img style="width: 500px; height: 500px;" src="오리안심져키(50g)%20-%20펫치즈_files/copy(1484734379)-2.jpg" vspace="0" hspace="5">
+                            <img style="width: 500px; height: 500px;" src="<%=cp%>/resource/images/product_contents/${dto.pdCode}/03.jpg" vspace="0" hspace="5">
                         <p></p>
                         <p>
                             <font size="3">
@@ -860,7 +860,7 @@ style="font-size: 18pt;">.</span></span>
                             </font>
                         </p>
                         <p>
-                            <img style="width: 745px; height: 828px;" src="오리안심져키(50g)%20-%20펫치즈_files/copy(1477543735)-A.jpg" vspace="0" hspace="5">
+                            <!--  >img style="width: 745px; height: 828px;" src="오리안심져키(50g)%20-%20펫치즈_files/copy(1477543735)-A.jpg" vspace="0" hspace="5"-->
                         </p>
                         <p>
                             <font face="궁서" size="5"></font>

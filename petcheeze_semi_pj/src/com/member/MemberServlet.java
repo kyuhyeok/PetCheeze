@@ -34,7 +34,7 @@ public class MemberServlet extends HttpServlet {
       req.setCharacterEncoding("utf-8");
       
       String uri = req.getRequestURI();
-      System.out.println(uri);
+      
       //uri에 따른 작업 구분
       if(uri.indexOf("login.do")!=-1) {
          loginForm(req,resp);
@@ -180,7 +180,6 @@ public class MemberServlet extends HttpServlet {
       
       if(result==0) {
          String message="회원 가입이 실패 했습니다.";
-         System.out.println("회원 가입이 실패 했습니다.");
          req.setAttribute("title", "회원가입");
          req.setAttribute("mode", "created");
          req.setAttribute("message", message);
