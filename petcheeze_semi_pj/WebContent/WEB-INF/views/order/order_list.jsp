@@ -15,12 +15,18 @@
 <link rel="stylesheet" href="<%=cp%>/resource/css/style.css" type="text/css">
 <link rel="stylesheet" href="<%=cp%>/resource/css/layout.css" type="text/css">
 
+
 <script type="text/javascript">
-	function searchList() {
-		var f=document.searchForm;
-		f.action="<%=cp%>/bbs/list.do";
-		f.submit();
-	}
+
+function searchOrderList() {
+	var f=document.orderForm;
+
+	f.action="<%=cp%>/order/order_date.do;"
+	f.submit();
+}
+
+
+
 </script>
 
 </head>
@@ -29,6 +35,7 @@
 <div class="header">
     <jsp:include page="/WEB-INF/views/layout/header.jsp"></jsp:include>
 </div>
+
 
 
 <form name="orderForm" method="post">
@@ -42,30 +49,29 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 
 <tr>
 
-<td style="float: left; width: 199px; height: 30px; border-right: 1px solid silver; padding-top: 10px;"  ><a>주문내역조회(0)</a></td>
-<td style="float: left; width: 199px; height: 30px; border-right: 1px solid silver; padding-top: 10px;" ><a>취소/반품/교환 내역(0)</a></td>
+<td style="float: left; width: 199px; height: 30px; border-right: 1px solid silver; padding-top: 10px;"  ><a>주문내역조회</a></td>
+<td style="float: left; width: 199px; height: 30px; border-right: 1px solid silver; padding-top: 10px;" ><a>취소/반품/교환 내역</a></td>
 <td style="float: left; width: 544px; height: 30px;  padding-top: 10px; " ></td>
 
 </tr>
 
 </table>
 
-
 <table style="width: 1150px; height: 90px; margin: 30px auto 0px; border: 5px solid #EAEAEA;
 border-collapse: collapse;border-spacing: 0px; font-size: 12px;" >
 <tr >
-<td style="margin-left: 20px; padding-top:2px; margin-top: 25px; width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=today" onclick="date()" >오늘</a></td>
-<td style="margin-top: 25px;padding-top:2px; width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=week"  onclick="date()">1주일</a></td>
-<td style="margin-top: 25px; padding-top:2px;width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=month" onclick="date()">1달</a></td>
-<td style="margin-top: 25px; padding-top:2px;width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=3month" onclick="date()">3달</a></td>
-<td style="margin-top: 25px; padding-top:2px;width: 39px; height: 22px;  float: left; border: 1px solid silver; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=6month"  onclick="date()">6달</a></td>
-<td style="margin-left: 20px; margin-top: 25px; float: left;  " ><input type="text" value="${today}" style="height: 22px;width: 120px;text-align: center; "></td>
-<td style="float: left; margin-left: 5px; margin-top: 30px;text-align: right; "><input type="image" id="datepicker1" src="<%=cp%>/resource/images/ico_cal.gif"></td>
+<td style="margin-left: 20px; padding-top:2px; margin-top: 25px; width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=today" >오늘</a></td>
+<td style="margin-top: 25px;padding-top:2px; width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=week" >1주일</a></td>
+<td style="margin-top: 25px; padding-top:2px;width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=month" >1달</a></td>
+<td style="margin-top: 25px; padding-top:2px;width: 39px; height: 22px;  float: left; border: 1px solid silver;border-right:none; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=3month" >3달</a></td>
+<td style="margin-top: 25px; padding-top:2px;width: 39px; height: 22px;  float: left; border: 1px solid silver; text-align: center; background: #f2f2f2;" ><a href="<%=cp%>/order/order_list.do?duringdate=6month" >6달</a></td>
+<td style="margin-left: 20px; margin-top: 25px; float: left;  " ><input type="text" name="firstday" value="${duringdate}" style="height: 22px;width: 120px;text-align: center; "></td>
+<td style="float: left; margin-left: 5px; margin-top: 30px;text-align: right;"><img  src="<%=cp%>/resource/images/ico_cal.gif"></td>
 <td style="float: left; margin-left: 5px; margin-top: 28px;text-align: right;" >~</td>
-<td style="margin-left: 10px; margin-top: 25px; float: left; " ><input type="text" value="${duringdate}" style="height: 22px;width: 120px;text-align: center;"></td>
-<td style="float: left; margin-left: 5px; margin-top: 30px;text-align: right; " ><input type="image" id="datepicker2" src="<%=cp%>/resource/images/ico_cal.gif"></td>
-<td style="float: left; margin-left: 10px; margin-top: 27px;text-align: right; " ><input type="image" src="<%=cp%>/resource/images/btn_search.gif"></td>
-
+<td style="margin-left: 10px; margin-top: 25px; float: left; " ><input type="text" name="endday"  value="${today}" style="height: 22px;width: 120px;text-align: center;"></td>
+<td style="float: left; margin-left: 5px; margin-top: 30px;text-align: right; " ><img src="<%=cp%>/resource/images/ico_cal.gif"></td>
+<td style="float: left; margin-left: 10px; margin-top: 27px;text-align: right; " ><img onclick="searchOrderList();" src="<%=cp%>/resource/images/btn_search.gif"></td>
+ 
 </tr>
 
 </table>
@@ -111,7 +117,7 @@ border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px so
 <td style="width: 111px; height: 130px; padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >${list.orederState}</td>
 <td style="width: 111px; height: 130px;  padding-top: 5px; padding-bottom:5px; border-bottom: 1px solid silver;" >취소/교환/반품</td>
 </tr>
-
+	
 </c:forEach>
 </c:when>
 

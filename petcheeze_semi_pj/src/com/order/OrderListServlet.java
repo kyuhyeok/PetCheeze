@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.bbs.BoardDTO;
+import com.member.MemberDAO;
+import com.member.MemberDTO;
 import com.member.SessionInfo;
 import com.util.MyServlet;
 @WebServlet("/order/*")
@@ -32,6 +34,8 @@ public class OrderListServlet extends MyServlet{
 		
 		if(uri.indexOf("order_list.do")!=-1) {
 			orderListForm(req,resp);
+		}else if(uri.indexOf("order_date.do")!=-1) {
+			orderDateForm(req,resp);
 		}else if(uri.indexOf("address.do")!=-1) {
 			addressForm(req,resp);
 		}else if(uri.indexOf("milege.do")!=-1) {
@@ -57,9 +61,8 @@ public class OrderListServlet extends MyServlet{
 		
 		
 		req.setAttribute("list", list);
-		
-		System.out.println(dto.getTotalPrice());
-		
+	
+			
 		try {
 			
 			if(duringdate.equals("today")) {
@@ -101,13 +104,7 @@ public class OrderListServlet extends MyServlet{
 				req.setAttribute("duringdate", strDate);
 			}
 			
-			
-			
-			
-			
-			
-			
-			
+
 		} catch (Exception e) {
 			
 		}finally {
@@ -117,7 +114,40 @@ public class OrderListServlet extends MyServlet{
 		forward(req, resp, "/WEB-INF/views/order/order_list.jsp");
 	}
 	
+	protected void orderDateForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		
+		OrderDAO dao = new OrderDAO();
+		HttpSession session = req.getSession();
+		SessionInfo info =(SessionInfo)session.getAttribute("member");
+		if(info==null) {
+			forward(req, resp, "/WEB-INF/views/meber/login.jsp");
+			return;
+		}
+		String email =info.getUserId();//email	
+		String endday=req.getParameter("endday"); //검색마지막일
+		String firstday=req.getParameter("firstday");//검색시작일
+		
+		List<OrderDTO>list=dao.listDateOrder(email,endday,firstday);
+
+		req.setAttribute("list", list);
+		
+		forward(req, resp, "/WEB-INF/views/order/order_list.jsp");
+	}
+	
+	
+	
 	protected void addressForm(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		
+		HttpSession session = req.getSession();
+		SessionInfo info =(SessionInfo)session.getAttribute("member");
+
+		OrderDAO dao =new OrderDAO();
+		
+		List<MemberDTO> list= dao.listAddress(info.getUserId());
+		
+		req.setAttribute("adlist", list);
+		
+		
 		forward(req, resp, "/WEB-INF/views/order/address.jsp");
 	}
 	

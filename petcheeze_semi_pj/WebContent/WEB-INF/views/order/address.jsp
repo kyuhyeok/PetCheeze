@@ -36,30 +36,31 @@
 <h4><p align="center"  style="width: 1150px; margin:10px auto;">ADDRESS</p></h4>
 <h5><p align="center"  style="width: 1150px; margin:10px auto;">자주 쓰는 배송지를 등록 관리하실 수 있습니다.</p></h5>
 
+<c:forEach var="adlist" items="${adlist}"> 
 
 <table style="width: 1150px; height: 30px; margin-top:20px;border:1px solid siver; margin-left:auto; margin-right:auto; 
 border-collapse: collapse;border-spacing: 0px; text-align:center; border: 1px solid silver; font-size: 12px; ">
 <tr style="border-collapse: collapse;border-spacing: 0px;">
 <td style="width: 27px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;  "  ><input type="checkbox" value></td>
-<td style="width: 81px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;  "  >주소록 고정</td>
-<td style="width: 96px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >배송지명</td>
-<td style="width: 96px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >수령인</td>
-<td style="width: 121px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >일반전화</td>
-<td style="width: 121px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >휴대전화</td>
-<td style="width: 529px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >주소</td>
-<td style="width: 77px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >수정</td>
+<td style="width: 91px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;  "  >주소록 고정</td>
+<td style="width: 106px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >배송지명</td>
+<td style="width: 106px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >수령인</td>
+<td style="width: 131px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >휴대전화</td>
+<td style="width: 500px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >주소</td>
+<td style="width: 87px; height: 36px; border: 1px solid silver; padding-top: 5px; padding-bottom:5px;" >수정</td>
 </tr>
 <tr style="border-collapse: collapse;border-spacing: 0px;"> 
 <td style="width: 27px; height: 38px;  padding-top: 5px; padding-bottom:5px;  "  ><input type="checkbox" value></td>
-<td style="width: 81px; height: 38px;  padding-top: 5px; padding-bottom:5px;  "  ><input type="image" src="<%=cp%>/resource/images/btn_address_clear.gif"></td>
-<td style="width: 96px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >김갑도</td>
-<td style="width: 96px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >김갑도</td>
-<td style="width: 121px; height: 38px; padding-top: 5px; padding-bottom:5px;" >02--</td>
-<td style="width: 121px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >010-3701-1776</td>
-<td style="width: 529px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >(04405)서울특별시 용산구 우사단로12길 21 (이태원동)</td>
-<td style="width: 77px; height: 38px;  padding-top: 5px; padding-bottom:5px;" ><input type="image" src="<%=cp%>/resource/images/btn_address_modify.gif"></td>
+<td style="width: 91px; height: 38px;  padding-top: 5px; padding-bottom:5px;  "  ><input type="image" src="<%=cp%>/resource/images/btn_address_clear.gif"></td>
+<td style="width: 106px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >${adlist.userName}</td>
+<td style="width: 106px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >${adlist.userName}</td>
+
+<td style="width: 131px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >${adlist.tel}</td>
+<td style="width: 500px; height: 38px;  padding-top: 5px; padding-bottom:5px;" >(${adlist.addr0})${adlist.addr1} ${adlist.addr0}</td>
+<td style="width: 87px; height: 38px;  padding-top: 5px; padding-bottom:5px;" ><input type="image" src="<%=cp%>/resource/images/btn_address_modify.gif"></td>
 </tr>
 </table>
+</c:forEach>
 
 <div style="margin: 10px auto; width: 1150px; border-collapse: collapse;border-spacing: 0px;">
 <span style="float: left;"> <input  type="image" src="<%=cp%>/resource/images/btn_address_delete.gif"></span>

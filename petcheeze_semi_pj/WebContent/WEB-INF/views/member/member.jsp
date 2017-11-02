@@ -195,8 +195,14 @@ function emailcheck() {
 
 <form name="memberForm" method="post" onsubmit="return memberOk();">
 
+<c:choose>
+<c:when test="${mode=='created'}">
 <h1><p align="center"  style="width: 1150px; margin:10px auto;">J O I N</p></h1>
-
+</c:when>
+<c:when test="${mode=='update'}">
+<h1><p align="center"  style="width: 1150px; margin:10px auto;">A D A P T</p></h1>
+</c:when>
+</c:choose>
 
 <table style="border: 1px solid silver; width: 1150px; 
 height: 50px; margin: 10px auto; border-collapse: collapse;border-spacing: 0px; text-align: justify;" >
