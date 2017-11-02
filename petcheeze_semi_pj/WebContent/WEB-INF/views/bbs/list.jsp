@@ -86,7 +86,7 @@
 							<tr align="center" bgcolor="#ffffff" height="35" style="border-bottom: 1px solid #cccccc;">
 								<td class="text-center">${dto.listNum}</td>
 								<td align="left" style="padding-left: 10px;"><a href='${articleUrl}&num=${dto.num}'>${dto.subject}</a></td>
-								<td class="text-center"><p>${sessionScope.member.userName}</p></td>
+								<td class="text-center"><p>관리자</p></td>
 								<td class="text-center">${dto.created}</td>
 								<td class="text-center">${dto.hitCount}</td>
 							</tr>
@@ -111,7 +111,7 @@
 
 					<tr height="40">
 						<td align="center" width="100">
-							<c:if test="${sessionScope.member.userId=='admin'}">
+							<c:if test="${sessionScope.member.userId=='admin@aaa.aaa'}">
 							<button type="button" style="border: 1px solid #c0c0c0; height: 42px; text-align: center; width: 76px;"
 								onclick="javascript:location.href='<%=cp%>/bbs/created.do';">글쓰기</button>
 							</c:if>

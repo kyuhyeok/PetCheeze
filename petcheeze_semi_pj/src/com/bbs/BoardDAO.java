@@ -489,7 +489,7 @@ public class BoardDAO {
 		String sql;
 		
 		try {
-			if(userId.equals("admin")) {
+			if(userId.equals("admin@aaa.aaa")) {
 				sql="DELETE FROM ALLAMLIST WHERE alnum=?";
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, num);

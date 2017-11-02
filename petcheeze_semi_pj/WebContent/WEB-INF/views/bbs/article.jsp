@@ -27,7 +27,7 @@
 <script type="text/javascript">
 
 function deleteBoard(num) {
-<c:if test="${sessionScope.member.userId=='admin' || sessionScope.member.userId==dto.userId}">
+<c:if test="${sessionScope.member.userId=='admin@aaa.aaa'}">
     var page = "${page}";
     var query = "num="+num+"&page="+page;
     var url = "<%=cp%>/bbs/delete.do?" + query;
@@ -39,7 +39,7 @@ function deleteBoard(num) {
 }
 
 function updateBoard(num) {
-<c:if test="${sessionScope.member.userId=='admin'}">
+<c:if test="${sessionScope.member.userId=='admin@aaa.aaa'}">
     var page = "${page}";
     var query = "num="+num+"&page="+page;
     var url = "<%=cp%>/bbs/update.do?" + query;
@@ -122,11 +122,11 @@ function updateBoard(num) {
 								<tfoot>
 									<tr height="60">
 										<td align="left" width="100">
-											<c:if test="${sessionScope.member.userId=='admin'}">
+											<c:if test="${sessionScope.member.userId=='admin@aaa.aaa'}">
 												<button type="button" style="border: 1px solid #e9e8ea; height: 42px; text-align: center; width: 76px;"
 													onclick="updateBoard('${dto.num}');">수정</button>
 											</c:if> 
-											<c:if test="${sessionScope.member.userId=='admin'}">
+											<c:if test="${sessionScope.member.userId=='admin@aaa.aaa'}">
 												<button type="button"
 													style="border: 1px solid #e9e8ea; height: 42px; text-align: center; width: 76px;"
 													onclick="deleteBoard('${dto.num}');">삭제</button>
