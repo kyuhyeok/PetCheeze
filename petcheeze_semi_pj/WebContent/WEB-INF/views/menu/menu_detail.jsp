@@ -88,7 +88,7 @@ function product_submit(num) {
 	}
 }
 
-function alert() {
+function alertm() {
 	alert("준비중입니다.");
 }
 
@@ -247,8 +247,8 @@ function alert() {
                                 <A onclick="product_submit('2')" href="#none">
                                     <img alt="ADD CART" src="<%=cp%>/resource/images/product_detail_ui/addcart_bt.png">
                                 </A>
-                                <A onclick="alert();" href="#none">
-                                    <img alt="WISH LIST" src="<%=cp%>/resource/images/product_detail_ui/wishlist_bt.png">
+                                <A href="#none">
+                                    <img alt="WISH LIST" src="<%=cp%>/resource/images/product_detail_ui/wishlist_bt.png" onclick="alertm();">
                                 </A>
                             </div>
                         </div>
@@ -300,7 +300,7 @@ style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="
                             </span>
                             </span>
                             </span>
-                            </span>
+                            </span><%=cp%>
                             </span>
                             </span>
                             </em>
@@ -308,7 +308,7 @@ style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="
                             </span>
                         </p>
                         <p>
-                            <img style="width: 598px; height: 960px;" src="<%=cp%>/resource/images/product_contents/1/copy(1475992713)-KakaoTalk_20161008_153217967.jpg" vspace="0" hspace="5">
+                            <img style="width: 598px; height: 960px;" src="<%=cp%>/resource/images/product_contents/copy(1475992713)-KakaoTalk_20161008_153217967.jpg" vspace="0" hspace="5">
                                 <strong><em><font 
 face="Comic Sans MS"><br></font></em></strong>
                             </p>
@@ -521,8 +521,8 @@ style="font-family: 궁서,Gungsuh;">﻿</span>﻿</span>
 style="font-family: 궁서,Gungsuh;"><span style="font-family: 궁서,Gungsuh;"><span 
 style="font-size: 16pt;"><!--StartFragment--></span>
                         <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
-                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">오리안심은 저지방</span></span>
+                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+                            <span style="font-size: 16pt;">오리안심은 저지방</span></span>
                             <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;"><span 
 style="font-size: 16pt;">,</span></span>
                             <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 

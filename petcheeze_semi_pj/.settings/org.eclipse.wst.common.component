@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="petcheeze_semi_pj">
+    <wb-module deploy-name="petcheeze">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="java-output-path" value="/petcheeze_semi_pj/build/classes"/>
-        <property name="context-root" value="petcheeze_semi_pj"/>
+        <property name="java-output-path" value="/petcheeze/build/classes"/>
+        <property name="context-root" value="petcheeze"/>
     </wb-module>
 </project-modules>
