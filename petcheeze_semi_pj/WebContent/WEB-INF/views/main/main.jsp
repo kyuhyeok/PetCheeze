@@ -37,7 +37,7 @@
                     	<a href="#">notice</a>
                     </h2>
                 </div>
-            </div> 
+            </div>
             <div class="main1_2_board">
                 <div class="board_sj">
                     <h2>
