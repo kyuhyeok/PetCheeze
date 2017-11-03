@@ -39,7 +39,7 @@
                 </div>
                 <c:forEach var="dto" items="${allamlist}">
                 <p style="text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;width:350px;overflow:hidden;color:#4a4542; font-size:14px; padding: 3px 5px">
-                <a href="<%=cp%>/bbs/list.do?page=1&num=${dto.num}">${dto.subject}</a>
+                <a href="<%=cp%>/bbs/article.do?page=1&num=${dto.num}">${dto.subject}</a>
                 </p>
                 </c:forEach>
             </div>
