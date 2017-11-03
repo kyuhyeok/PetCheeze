@@ -34,9 +34,14 @@
             <div class="main1_2_board">
                 <div class="board_sj">
                     <h2>
-                    	<a href="#">notice</a>
+                    	<a href="<%=cp%>/bbs/list.do">notice</a>
                     </h2>
                 </div>
+                <c:forEach var="dto" items="${allamlist}">
+                <p style="text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;width:350px;overflow:hidden;color:#4a4542; font-size:14px; padding: 3px 5px">
+                <a href="<%=cp%>/bbs/list.do?page=1&num=${dto.num}">${dto.subject}</a>
+                </p>
+                </c:forEach>
             </div>
             <div class="main1_2_board">
                 <div class="board_sj">
@@ -44,6 +49,7 @@
                     	<a href="#">event</a>
                     </h2>
                 </div>
+                <span style="vertical-align: middle; color: #cccccc">준비중입니다.</span>
             </div>
             <div class="main1_2_board">
                 <div class="board_sj">
@@ -51,6 +57,7 @@
                     	<a href="#">Review</a>
                     </h2>
                 </div>
+                <span style="vertical-align: middle; color: #cccccc">준비중입니다.</span>
             </div>
         </div>
     </div>

@@ -77,9 +77,9 @@ function product_submit(num) {
 	if(num="1"){
 		var f="${sessionScope.member.userId}";
 		if(!f){
-			location.href ="<%=cp%>/cart/insertno.do?pdcode=${dto.pdCode}&cnt="+cnt;
+			location.href ="<%=cp%>/cart/insertno.do?pdcode=${dto.pdCode}&pdkindcode=${dto.pdKindcode}&cnt="+cnt;
 		}else{
-			location.href ="<%=cp%>/cart/insertCart_ok.do?pdcode=${dto.pdCode}&cnt="+cnt;
+			location.href ="<%=cp%>/cart/insertCart_ok.do?pdcode=${dto.pdCode}&pdkindcode=${dto.pdKindcode}&cnt="+cnt;
 		}
 		
 	}
