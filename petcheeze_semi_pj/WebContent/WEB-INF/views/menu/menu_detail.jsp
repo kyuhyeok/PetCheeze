@@ -260,273 +260,60 @@ function alertm() {
             <div class="xans-element- xans-product xans-product-additional ">
                 <!-- 상품상세정보 -->
                 <div id="prdDetail">
-                    <!-- <ul class="link">
-        <li class="selected"><a href="#prdDetail">상품상세정보</a></li>
-        <li><a href="#prdPayment">상품결제정보</a></li>
-        <li><a href="#prdDelivery">배송정보</a></li>
-        <li><a href="#prdChange">교환 및 반품정보</a></li>
-        <li><a href="#prdService">서비스문의</a></li>
-        <li><a href="#prdReview">상품사용후기</a></li>
-        <li><a href="#prdQnA">상품Q&amp;A</a></li>
-        <li><a href="#prdRelated">관련상품</a></li>
-    </ul>-->
                     <div class="cont">
-                        <H3></H3>
-                        <p>
+                        <br>
+                        <img style="width: 598px; height: 960px;" src="<%=cp%>/resource/images/product_contents/copy(1475992713)-KakaoTalk_20161008_153217967.jpg" vspace="0" hspace="5">
+                        <br>
+                            <span style="font-family: Comic Sans MS;">
+	                            <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
+		                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; font-style: italic; font-weight: bold; mso-fareast-font-family: Sandoll 미생;">
+		                            <span style="font-size: 16pt;">마음을 담다</span>
+		                            </span>
+	                       	 	</p>
+		                        <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
+		                            <!--[if !supportEmptyParas]-->&nbsp;
+		                            <!--[endif]-->
+		                        </p>
+	                        	<p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
+	                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; font-style: italic; font-weight: bold; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;">
+	                            	<span style="font-size: 16pt;">Hand Made Food</span>
+	                            </span>
+	                            <span style="background: rgb(255, 255, 255); color: rgb(255, 170, 0); font-family: Sandoll 미생; font-size: 22pt; font-style: italic; font-weight: bold; mso-fareast-font-family: Sandoll 미생;">
+		                            <span style="font-size: 18pt;">
+		                            <span style="font-size: 20pt;">펫치즈</span></span>
+	                            </span>
+	                        	</p>
+                        	</span>
                             <br>
-                        </p>
-                        <p>
-                            <span style="font-size: 14pt;"><strong><em><span style="font-family: 궁서,Gungsuh;"><span 
-style="color: rgb(0, 0, 0);"><span style="font-family: 궁서,Gungsuh;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: Comic Sans MS;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="font-family: Comic Sans MS;"><br></span></span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </em>
-                            </strong>
-                            </span>
-                        </p>
-                        <p>
-                            <span style="font-size: 14pt;"><strong><em><span style="font-family: 궁서,Gungsuh;"><span 
-style="color: rgb(0, 0, 0);"><span style="font-family: 궁서,Gungsuh;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: Comic Sans MS;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="font-family: Comic Sans MS;"><br></span></span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </em>
-                            </strong>
-                            </span>
-                        </p>
-                        <p>
-                            <img style="width: 598px; height: 960px;" src="<%=cp%>/resource/images/product_contents/copy(1475992713)-KakaoTalk_20161008_153217967.jpg" vspace="0" hspace="5">
-                                <strong><em><font 
-face="Comic Sans MS"><br></font></em></strong>
-                            </p>
-                            <span style="font-size: 14pt;"><strong><em><span 
-style="font-family: 궁서,Gungsuh;"><span style="color: rgb(0, 0, 0);"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: 궁서,Gungsuh;"><span style="font-family: Comic Sans MS;"><span 
-style="font-family: 궁서,Gungsuh;"><span style="font-family: helvetica;"><span 
-style="font-family: Meiryo;"><span style="font-family: Comic Sans MS;">
-<p align="left"><br></p>
-<p></p></span>
-                            <p></p>
-                            </span>
-                            <p></p>
-                            </span>
-                            <p></p>
-                            </span>
-                            <p></p>
-                            </span>
-                            <p></p>
-                            </span>
-                            <p></p>
-                            </span>
-                            <p></p>
-                            </span>
-                            <p></p>
-                            </span>
-                            <p></p>
-                            </em>
-                            <p></p>
-                            </strong>
-                            <p></p>
-                            </span>
-                            <span style="font-size: 14pt;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="color: rgb(0, 0, 0);"><span style="font-family: 궁서,Gungsuh;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: Comic Sans MS;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="font-family: Comic Sans MS;">
-<p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;"><span 
-style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; font-style: italic; font-weight: bold; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">마음을 담다</span></span>
-                        </p>
-                        <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
-                            <!--[if !supportEmptyParas]-->&nbsp;
-                            <!--[endif]-->
-                            <o:p></o:p>
-                        </p>
-                        <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
-                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; font-style: italic; font-weight: bold; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;"><span 
-style="font-size: 16pt;">Hand Made Food</span></span>
-                            <span style="background: rgb(255, 255, 255); color: rgb(255, 170, 0); font-family: Sandoll 미생; font-size: 22pt; font-style: italic; font-weight: bold; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 18pt;"><span 
-style="font-size: 20pt;">펫치즈</span></span>
-                            </span>
-                        </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <span style="font-size: 14pt;"><strong><em><span style="font-family: 궁서,Gungsuh;"><span 
-style="color: rgb(0, 0, 0);"><span style="font-family: 궁서,Gungsuh;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: Comic Sans MS;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="font-family: Comic Sans MS;"><span 
-style="font-family: Comic Sans MS;"><span style="color: rgb(255, 170, 0);"><span 
-style="font-size: 20pt;"><span 
-style="font-size: 22pt;"><br></span></span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </em>
-                            </strong>
-                            </span>
-                        </p>
-                        <p>
-                            <span style="font-size: 14pt;"><strong><em><span style="font-family: 궁서,Gungsuh;"><span 
-style="color: rgb(0, 0, 0);"><span style="font-family: 궁서,Gungsuh;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: Comic Sans MS;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="font-family: Comic Sans MS;"><span 
-style="font-family: Comic Sans MS;"><span style="color: rgb(255, 170, 0);"><span 
-style="font-size: 20pt;"><span 
-style="font-size: 22pt;"></span></span>
-                            </span>
-                            <span style="background-color: rgb(255, 239, 0);">﻿</span>﻿</span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            <span style="font-family: 궁서,Gungsuh;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: Comic Sans MS;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="font-family: Comic Sans MS;"><span 
-style="font-family: Comic Sans MS;">﻿</span></span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            <span style="font-family: 궁서,Gungsuh;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: Comic Sans MS;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: helvetica;"><span style="font-family: Meiryo;"><span style="font-family: Comic Sans MS;"><span 
-style="font-family: Comic Sans MS;">﻿</span></span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </span>
-                            </em>
-                            </strong>
-                            </span>
-                        </p>
-                        <p>
-                            <span style="font-size: 14pt;"><span 
-style="font-family: 궁서,Gungsuh;">﻿</span>﻿</span>
-                        </p>
-                        <p>
-                            <span style="font-size: 14pt;"></span>&nbsp;</p>
-                        <p>
-                            <span style="font-size: 14pt;">&nbsp;</span>
-                        </p>
-                        <p>
-                            <br>
-                        </p>
-                        <p></p>
-                        <p></p>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <br>
-                        </p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p>
-                            <br>
-                        </p>
+	                    <br>
+	                    <br>
+	                    <br>
+	                    <br>
                         <img style="width: 500px; height: 500px;" src="<%=cp%>/resource/images/product_contents/${dto.pdCode}/01.jpg" vspace="0" hspace="5">
-                        <p></p>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <br>
-                        </p>
-                        <span style="font-size: 14pt;"><span 
-style="font-family: 궁서,Gungsuh;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-size: 16pt;"><!--StartFragment--></span>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <span style="font-size: 16pt;"><!--StartFragment--></span>
                         <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
                             <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
                             <span style="font-size: 16pt;">오리안심은 저지방</span></span>
-                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;"><span 
-style="font-size: 16pt;">,</span></span>
-                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">고단백 식품으로 필수아미노산과 불포화지방산이</span></span>
+                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;">
+                            <span style="font-size: 16pt;">,</span></span>
+                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+                            <span style="font-size: 16pt;">고단백 식품으로 필수아미노산과 불포화지방산이</span></span>
                         </p>
                         <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
                             <span style="font-size: 16pt;"></span>
@@ -534,11 +321,10 @@ style="font-size: 16pt;">고단백 식품으로 필수아미노산과 불포화�
                             <span style="font-size: 16pt;">&nbsp;</span>
                             <span style="font-size: 16pt;"><!--[endif]--></span>
                             <span style="font-size: 16pt;">  </span>
-                            <o:p></o:p>
                         </p>
                         <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
-                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">풍부하여 체내에 쌓인 지방을 배출하여 혈액순환에 도움을 주고</span></span>
+                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+                            <span style="font-size: 16pt;">풍부하여 체내에 쌓인 지방을 배출하여 혈액순환에 도움을 주고</span></span>
                         </p>
                         <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
                             <span style="font-size: 16pt;"></span>
@@ -546,119 +332,33 @@ style="font-size: 16pt;">풍부하여 체내에 쌓인 지방을 배출하여 �
                             <span style="font-size: 16pt;">&nbsp;</span>
                             <span style="font-size: 16pt;"><!--[endif]--></span>
                             <span style="font-size: 16pt;">  </span>
-                            <o:p></o:p>
                         </p>
                         <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
-                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">강아지</span></span>
-                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;"><span 
-style="font-size: 16pt;">,</span></span>
-                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">고양이에게 면역력을 증가시켜주고</span></span>
-                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;"><span 
-style="font-size: 16pt;">, </span></span>
-                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">원기회복에도 좋습니다</span></span>
-                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;"><span 
-style="font-size: 16pt;">.</span></span>
+                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+                            <span style="font-size: 16pt;">강아지</span></span>
+                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;">
+                            <span style="font-size: 16pt;">,</span></span>
+                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+                            <span style="font-size: 16pt;">고양이에게 면역력을 증가시켜주고</span></span>
+                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;">
+                            <span style="font-size: 16pt;">, </span></span>
+                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+                            <span style="font-size: 16pt;">원기회복에도 좋습니다</span></span>
+                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;">
+                            <span style="font-size: 16pt;">.</span></span>
                         </p>
-                        </span>
-                        <p>
                             <br>
-                        </p>
-                        </span>
-                        <p>
-                            <br>
-                        </p>
-                        </span>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <span style="font-size: 14pt;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: 궁서,Gungsuh;"></span></span>
-                            </span>
-                        </p>
-                        <p>
-                            <span style="font-size: 14pt;"><span style="font-family: 궁서,Gungsuh;"><span 
-style="font-family: 궁서,Gungsuh;">﻿</span></span>
-                            </span>
-                        </p>
-                        <p>
-                            <span style="font-size: 14pt;"><span 
-style="font-family: 궁서,Gungsuh;"></span></span>
-                        </p>
-                        <span style="font-size: 14pt;"><span 
-style="font-family: 궁서,Gungsuh;">
-<p><br></p>
-<p><br></p>
-<p><br></p>
-<p><br></p>
-<p><br></p>
-<p><br></p>
-<p><br></p>
-<p><br></p></span>
-                            <p>
-                                <br>
-                            </p>
-                            </span>
-                            <p>
-                                <br>
-                            </p>
-                            <span style="font-size: 14pt;">
-<p><br></p><span style="font-family: 궁서,Gungsuh;">
-<p><br></p>
-<p><br></p></span>
-                            <p></p>
-                            </span>
-                            <p>
-                                <font face="굴림" size="3"> </font>
-                            </p>
-                            <p>
-                                <font face="굴림" size="3">
-                                    <br>
-                                </font>
-                            </p>
-                            <p>
-                                <br>
-                            </p>
-                            <p>
-                                <br>
-                            </p>
-                            <p>
-                                <br>
-                            </p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p>
-                                <br>
-                            </p>
                             <img style="width: 500px; height: 500px;" src="<%=cp%>/resource/images/product_contents/${dto.pdCode}/02.jpg" vspace="0" hspace="5">
-                        <p></p>
-                        <p>
                             <br>
-                        </p>
-                        <p>
                             <br>
-                        </p>
-                        <p>
                             <br>
-                        </p>
-                        <p>
                             <br>
-                        </p>
-                        <p>
                             <br>
-                        </p>
-                        <p>
-                            <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"><br></span>
-                        </p>
-                        <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"><!--StartFragment-->
-<p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;"><span 
-style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">알러지가 적은 식품이기 떄문에 체질 개선에 도움을 주며</span></span>
+                            <br>
+                        <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"><!--StartFragment--></span>
+						<p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
+						<span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+						<span style="font-size: 16pt;">알러지가 적은 식품이기 떄문에 체질 개선에 도움을 주며</span></span>
                         </p>
                         <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
                             <span style="font-size: 16pt;"></span>
@@ -666,348 +366,114 @@ style="font-size: 16pt;">알러지가 적은 식품이기 떄문에 체질 개�
                             <span style="font-size: 16pt;">&nbsp;</span>
                             <span style="font-size: 16pt;"><!--[endif]--></span>
                             <span style="font-size: 16pt;">  </span>
-                            <o:p></o:p>
                         </p>
                         <p class="0" style="background: rgb(255, 255, 255); mso-pagination: none; mso-padding-alt: 0pt 0pt 0pt 0pt;">
-                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">고양이</span></span>
-                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;"><span 
-style="font-size: 16pt;">,</span></span>
-                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;">강아지들에게 기호성이 좋습니다</span></span>
-                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;"><span 
-style="font-size: 16pt;">.</span></span>
+                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+                            <span style="font-size: 16pt;">고양이</span></span>
+                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;">
+                            <span style="font-size: 16pt;">,</span></span>
+                            <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+                            <span style="font-size: 16pt;">강아지들에게 기호성이 좋습니다</span></span>
+                            <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;">
+                            <span style="font-size: 16pt;">.</span></span>
                         </p>
-                        </span>
-                        <p>
-                            <br>
-                        </p>
-                        <p>
-                            <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"></span>
-                        </p>
-                        <p>
-                            <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"></span>
-                        </p>
-                        <p>
-                            <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"></span>
-                        </p>
-                        <p>
-                            <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"><br></span>
-                        </p>
-                        <p>
-                            <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"><br></span>
-                        </p>
-                        <p>
-                            <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"><br></span>
-                        </p>
-                        <p>
-                            <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"><br></span>
-                        </p>
-                        <p>
-                            <span style="font-family: 궁서,Gungsuh; font-size: 14pt;"><br></span>
-                        </p>
-                        <font size="3">
-                            <p>
-                                <br>
-                            </p>
-                            <p>
-                                <br>
-                            </p>
-                        </font>
-                        <font size="3">
-                            <p>
-                                <br>
-                            </p>
-                            <p></p>
-                        </font>
-                        <p>
-                            <span style="font-size: 14pt;"><strong><span 
-style="font-family: 궁서,Gungsuh;"><br></span>
-                            </strong>
-                            </span>
-                        </p>
-                        <span style="font-size: 14pt;"><strong><em>
-<p><br></p>
-<p></p></em>
-<p></p></strong>
-<p></p></span>
-                            <p>
-                                <br>
-                            </p>
-                            <p>
-                                <br>
-                            </p>
-                            <p>
-                                <br>
-                            </p>
-                            <p>
-                                <br>
-                            </p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p>
-                                <font size="3"></font>
-                            </p>
-                            <p>
-                                <br>
-                            </p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
                             <img style="width: 500px; height: 500px;" src="<%=cp%>/resource/images/product_contents/${dto.pdCode}/03.jpg" vspace="0" hspace="5">
-                        <p></p>
-                        <p>
-                            <font size="3">
                                 <br>
-                            </font>
-                        </p>
                         <p>
                             <font face="궁서" size="5">&nbsp;&nbsp;&nbsp;&nbsp;
-                                <span style="font-family: Sandoll 미생; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;"><span style="font-size: 18pt;"><span style="background-color: rgb(255, 239, 0);">펫치즈</span>의</span>
+                                <span style="font-family: Sandoll 미생; mso-fareast-font-family: Sandoll 미생;">
+                                <span style="font-size: 16pt;">
+                                <span style="font-size: 18pt;">
+                                <span style="background-color: rgb(255, 239, 0);">펫치즈</span>의</span>
                                 </span>
                                 </span>
-                                <span style="font-size: 16pt;"><span 
-style="font-size: 18pt;">&nbsp;</span></span>
-                                <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;"><span style="font-size: 18pt;">모든 간식은 
-</span></span>
-                                    </span>
-                                    <span style="background: rgb(255, 255, 255); color: rgb(255, 0, 0); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;"><span 
-style="font-size: 18pt;">무</span></span>
+                                <span style="font-size: 16pt;">
+                                <span style="font-size: 18pt;">&nbsp;</span></span>
+                                <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+	                                <span style="font-size: 16pt;">
+	                                <span style="font-size: 18pt;">모든 간식은 </span></span>
                                 </span>
-                                <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;"><span style="font-size: 18pt;">색소 
-</span></span>
-                                    </span>
-                                    <span style="background: rgb(255, 255, 255); color: rgb(255, 0, 0); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;"><span 
-style="font-size: 18pt;">무</span></span>
+                                <span style="background: rgb(255, 255, 255); color: rgb(255, 0, 0); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+	                                <span style="font-size: 16pt;">
+	                                <span style="font-size: 18pt;">무</span></span>
                                 </span>
-                                <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;"><span style="font-size: 18pt;">방부제 
-</span></span>
-                                    </span>
-                                    <span style="background: rgb(255, 255, 255); color: rgb(255, 0, 0); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;"><span 
-style="font-size: 18pt;">무</span></span>
+                                <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+	                                <span style="font-size: 16pt;">
+	                                <span style="font-size: 18pt;">색소 </span></span>
                                 </span>
-                                <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;"><span 
-style="font-size: 16pt;"><span style="font-size: 18pt;">첨가물 
-입니다</span></span>
-                                    </span>
-                                    <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;"><span 
-style="font-size: 16pt;"><span 
-style="font-size: 18pt;">.</span></span>
+                                <span style="background: rgb(255, 255, 255); color: rgb(255, 0, 0); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+	                                <span style="font-size: 16pt;">
+	                                <span style="font-size: 18pt;">무</span></span>
+                                </span>
+                                <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+	                                <span style="font-size: 16pt;">
+	                                <span style="font-size: 18pt;">방부제 </span></span>
+                                </span>
+                                <span style="background: rgb(255, 255, 255); color: rgb(255, 0, 0); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+	                                <span style="font-size: 16pt;">
+	                                <span style="font-size: 18pt;">무</span></span>
+                                </span>
+                                <span style="background: rgb(255, 255, 255); font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생;">
+	                                <span style="font-size: 16pt;">
+	                                <span style="font-size: 18pt;">첨가물 입니다</span></span>
+                                </span>
+                                <span lang="EN-US" style="background: rgb(255, 255, 255); letter-spacing: 0pt; font-family: Sandoll 미생; font-size: 14pt; mso-fareast-font-family: Sandoll 미생; mso-ascii-font-family: Sandoll 미생; mso-font-width: 100%; mso-text-raise: 0pt;">
+	                                <span style="font-size: 16pt;">
+	                                <span style="font-size: 18pt;">.</span></span>
                                 </span>
                             </font>
                         </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
+                        <br>
                             <font face="궁서" size="5">원재료/원산지 :오리안심(국내산)</font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <font face="궁서" size="5">
-                                <br>
-                            </font>
-                        </p>
-                        <p>
-                            <!--  >img style="width: 745px; height: 828px;" src="오리안심져키(50g)%20-%20펫치즈_files/copy(1477543735)-A.jpg" vspace="0" hspace="5"-->
-                        </p>
-                        <p>
-                            <font face="궁서" size="5"></font>
-                        </p>
-                        <font face="궁서" size="5">
-                            <p>
-                                <br>
-                            </p>
-                            <p>
-                                <br>
-                            </p>
-                        </font>
-                        <p>
-                            <br>
-                        </p>
+                        <br>
+                        <br>
                     </div>
                 </div>
                 <!-- //상품상세정보 -->
-                <!-- 상품결제정보 -->
-                <div id="prdPayment">
-                    <!-- <ul class="link">
-        <li><a href="#prdDetail">상품상세정보</a></li>
-        <li class="selected"><a href="#prdPayment">상품결제정보</a></li>
-        <li><a href="#prdDelivery">배송정보</a></li>
-        <li><a href="#prdChange">교환 및 반품정보</a></li>
-        <li><a href="#prdService">서비스문의</a></li>
-        <li><a href="#prdReview">상품사용후기</a></li>
-        <li><a href="#prdQnA">상품Q&amp;A</a></li>
-        <li><a href="#prdRelated">관련상품</a></li>
-    </ul>-->
-                    <!--<div class="cont">
-        <h3></h3>
-        <p><br></p>        </div> -->
-                </div>
-                <!-- //상품결제정보 -->
-                <!-- 배송정보 -->
-                <div id="prdDelivery">
-                    <!-- <ul class="link">
-        <li><a href="#prdDetail">상품상세정보</a></li>
-        <li><a href="#prdPayment">상품결제정보</a></li>
-        <li class="selected"><a href="#prdDelivery">배송정보</a></li>
-        <li><a href="#prdChange">교환 및 반품정보</a></li>
-        <li><a href="#prdService">서비스문의</a></li>
-        <li><a href="#prdReview">상품사용후기</a></li>
-        <li><a href="#prdQnA">상품Q&amp;A</a></li>
-        <li><a href="#prdRelated">관련상품</a></li>
-    </ul>-->
-                    <!-- <div class="cont">
-        <h3>배송정보</h3>
-        <ul class="delivery">
-            <li>배송 방법 : 택배</li>
-            <li>배송 지역 : 전국지역</li>
-            <li>배송 비용 : 5,000원</li>
-            <li>배송 기간 : 3일 ~ 7일</li>
-            <li>배송 안내 : <p><br></p></li>
-        </ul>
-    </div>-->
-                </div>
-                <!-- //배송정보 -->
-                <!-- 교환 및 반품정보 -->
-                <div id="prdChange">
-                    <!--  <ul class="link">
-        <li><a href="#prdDetail">상품상세정보</a></li>
-        <li><a href="#prdPayment">상품결제정보</a></li>
-        <li><a href="#prdDelivery">배송정보</a></li>
-        <li class="selected"><a href="#prdChange">교환 및 반품정보</a></li>
-        <li><a href="#prdService">서비스문의</a></li>
-        <li><a href="#prdReview">상품사용후기</a></li>
-        <li><a href="#prdQnA">상품Q&amp;A</a></li>
-        <li><a href="#prdRelated">관련상품</a></li>
-    </ul>-->
-
-                    <div class="cont">
-                        <H3></H3>
-                        <p>
-                            <br>
-                        </p>
-                    </div>
-                </div>
-                <!-- //교환 및 반품정보 -->
-                <!-- 서비스문의 -->
-                <div id="prdService">
-                    <!--  <ul class="link">
-        <li><a href="#prdDetail">상품상세정보</a></li>
-        <li><a href="#prdPayment">상품결제정보</a></li>
-        <li><a href="#prdDelivery">배송정보</a></li>
-        <li><a href="#prdChange">교환 및 반품정보</a></li>
-        <li class="selected"><a href="#prdService">서비스문의</a></li>
-        <li><a href="#prdReview">상품사용후기</a></li>
-        <li><a href="#prdQnA">상품Q&amp;A</a></li>
-        <li><a href="#prdRelated">관련상품</a></li>
-    </ul>-->
-                    <!--   <div class="cont">
-        <h3>서비스문의</h3>
-        <p><br></p>        </div>-->
-                </div>
-                <!-- //서비스문의 -->
                 <!-- 상품사용후기 -->
                 <div id="prdReview">
-                    <!--  <ul class="link">
-        <li><a href="#prdDetail">상품상세정보</a></li>
-        <li><a href="#prdPayment">상품결제정보</a></li>
-        <li><a href="#prdDelivery">배송정보</a></li>
-        <li><a href="#prdChange">교환 및 반품정보</a></li>
-        <li><a href="#prdService">서비스문의</a></li>
-        <li class="selected"><a href="#prdReview">상품사용후기</a></li>
-        <li><a href="#prdQnA">상품Q&amp;A</a></li>
-        <li><a href="#prdRelated">관련상품</a></li>
-    </ul>-->
-
-                        <div class="board">
-                            <H3>REVIEW</H3>
-                            <p class="desc">상품의 사용후기를 적어주세요.</p>
-                            <p class="nodata">게시물이 없습니다</p>
-                            <p class="btnArea">
-                                <A href="http://petcheeze.co.kr/board/product/write.html?board_no=4&amp;product_no=31&amp;cate_no=24&amp;display_group=1"><span 
-class="sherbetbt_b white">WRITE</span></A>
-                                <A href="http://petcheeze.co.kr/board/product/list.html?board_no=4"><span 
-class="sherbetbt_b white">LIST</span></A> </p>
-                        </div>
+                    <div class="board">
+                        <h3>REVIEW</h3>
+                        <p class="desc">상품의 사용후기를 적어주세요.</p>
+                        <p class="nodata">게시물이 없습니다</p>
+                        <p class="btnArea">
+                        <a href="#">
+                        <span class="sherbetbt_b white">WRITE</span></a>
+                        <a href="#">
+                        <span class="sherbetbt_b white">LIST</span></a> </p>
                     </div>
-                    <!-- //상품사용후기 -->
+                </div>
+                <!-- //상품사용후기 -->
                 <!-- 상품 Q&A -->
                 <div id="prdQnA">
-                    <!-- <ul class="link">
-        <li><a href="#prdDetail">상품상세정보</a></li>
-        <li><a href="#prdPayment">상품결제정보</a></li>
-        <li><a href="#prdDelivery">배송정보</a></li>
-        <li><a href="#prdChange">교환 및 반품정보</a></li>
-        <li><a href="#prdService">서비스문의</a></li>
-        <li><a href="#prdReview">상품사용후기</a></li>
-        <li class="selected"><a href="#prdQnA">상품Q&amp;A</a></li>
-        <li><a href="#prdRelated">관련상품</a></li>
-    </ul>-->
-
-                        <div class="board">
-                            <H3>Q&amp;A</H3>
-                            <p class="desc">상품에 대해 궁금한 점을 해결해 드립니다.</p>
-                            <p class="nodata">게시물이 없습니다</p>
-                            <p class="btnArea">
-                                <A href="http://petcheeze.co.kr/board/product/write.html?board_no=6&amp;product_no=31&amp;cate_no=24&amp;display_group=1"><span 
-class="sherbetbt_b white">WRITE</span></A>
-                                <A href="http://petcheeze.co.kr/board/product/list.html?board_no=6&amp;link_product_no=31"><span 
-class="sherbetbt_b white">LIST</span></A> </p>
-                        </div>
+                    <div class="board">
+                        <h3>Q&amp;A</h3>
+                        <p class="desc">상품에 대해 궁금한 점을 해결해 드립니다.</p>
+                        <p class="nodata">게시물이 없습니다</p>
+                        <p class="btnArea">
+                            <a href="#">
+                            <span class="sherbetbt_b white">WRITE</span></a>
+                            <a href="#">
+                            <span class="sherbetbt_b white">LIST</span></a> </p>
                     </div>
-                    <!-- //상품Q&A -->
+                </div>
+                <!-- //상품Q&A -->
             </div>
         </div>
     </div>
