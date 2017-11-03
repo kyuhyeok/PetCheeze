@@ -311,9 +311,6 @@ $(function() {
 
 <form name="cartForm" method="post">
 
-<a href="<%=cp%>/cart/pdpage.do">소간파우더</a>
-
-
 <ul style="margin: 50px auto 20px;">
 	<li style="list-style: none; text-align: center;">c a r t</li>
 </ul>
